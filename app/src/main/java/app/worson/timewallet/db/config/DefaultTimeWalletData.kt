@@ -1,4 +1,4 @@
-package app.worson.timewallet.page.db.config
+package app.worson.timewallet.db.config
 
 import app.worson.timewallet.db.entity.EventTypeEntity
 

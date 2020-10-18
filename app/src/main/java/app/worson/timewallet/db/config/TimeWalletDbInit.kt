@@ -1,4 +1,4 @@
-package app.worson.timewallet.page.db.config
+package app.worson.timewallet.db.config
 
 import androidx.sqlite.db.SupportSQLiteDatabase
 import app.worson.timewallet.db.TimeWalletDb

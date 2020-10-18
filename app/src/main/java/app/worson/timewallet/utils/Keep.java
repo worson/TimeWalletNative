@@ -1,4 +1,4 @@
-package app.worson.timewallet.page.utils;
+package app.worson.timewallet.utils;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

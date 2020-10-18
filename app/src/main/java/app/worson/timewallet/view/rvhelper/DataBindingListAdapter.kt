@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.DiffUtil
-import app.worson.timewallet.page.view.rvhelper.ExtListAdapter
 
 open class DataBindingListAdapter<T, DB : ViewDataBinding>(
     private val layoutId: Int,

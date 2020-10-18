@@ -2,9 +2,8 @@ package app.worson.timewallet.db.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import app.worson.timewallet.page.utils.Keep
+import app.worson.timewallet.utils.Keep
 import org.jetbrains.annotations.NotNull
-import java.io.Serializable
 
 /**
  * 待办事务类型

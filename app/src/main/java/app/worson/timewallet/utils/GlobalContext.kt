@@ -1,7 +1,6 @@
 package app.worson.timewallet.utils
 
 import android.app.Application
-import app.worson.timewallet.page.utils.ApplicationUtil
 
 
 object GlobalContext {
