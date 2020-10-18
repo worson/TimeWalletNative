@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package app.sen.musics.comm
+package app.worson.timewallet.comm
 
 /**
  * Used as a wrapper for data that is exposed via a LiveData that represents an event.

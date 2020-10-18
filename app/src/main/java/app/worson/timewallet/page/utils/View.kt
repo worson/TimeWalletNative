@@ -1,4 +1,4 @@
-package app.sen.musics.utils
+package app.worson.timewallet.utils
 
 import android.graphics.Rect
 import android.graphics.drawable.Drawable

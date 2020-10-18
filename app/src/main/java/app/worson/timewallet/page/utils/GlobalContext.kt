@@ -1,4 +1,4 @@
-package app.sen.musics.utils
+package app.worson.timewallet.utils
 
 import android.app.Application
 import app.worson.timewallet.page.utils.ApplicationUtil

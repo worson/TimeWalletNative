@@ -19,8 +19,8 @@ import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.List;
 
-import app.sen.musics.view.rvhelper.AdapterDataObserverProxy;
-import app.sen.musics.view.rvhelper.BaseViewHolder;
+import app.worson.timewallet.view.rvhelper.AdapterDataObserverProxy;
+import app.worson.timewallet.view.rvhelper.BaseViewHolder;
 
 public abstract class ExtListAdapter<T, VH extends BaseViewHolder> extends ListAdapter<T, VH> {
 

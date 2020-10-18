@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import app.worson.timewallet.R
+import app.worson.timewallet.db.TimeWalletDb
 
 class HomeFragment : Fragment() {
 
