@@ -1,13 +1,13 @@
-package app.worson.timewallet.ui.home
+package app.worson.timewallet.page.home.setting
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class HomeViewModel : ViewModel() {
+class SettingViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is home Fragment"
+        value = "This is Setting Fragment"
     }
     val text: LiveData<String> = _text
 }
