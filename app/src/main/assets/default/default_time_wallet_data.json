@@ -1,0 +1,85 @@
+{
+  "default_events": [
+    {
+      "uid": "0",
+      "color": -12207748,
+      "desc": "花费在学习的时间",
+      "id": 1,
+      "imgIndex": 0,
+      "name": "学习",
+      "order": 1
+    },
+    {
+      "uid": "0",
+      "color": -15858,
+      "desc": "健身跑步身体棒",
+      "id": 2,
+      "imgIndex": 0,
+      "name": "运动",
+      "order": 2
+    },
+    {
+      "uid": "0",
+      "color": -8667158,
+      "desc": "一切为工作而消耗的时间",
+      "id": 3,
+      "imgIndex": 0,
+      "name": "工作",
+      "order": 3
+    },
+    {
+      "uid": "0",
+      "color": -6184026,
+      "desc": "奔波在路上",
+      "id": 4,
+      "imgIndex": 0,
+      "name": "路上",
+      "order": 4
+    },
+    {
+      "uid": "0",
+      "color": -350379,
+      "desc": "一日三餐",
+      "id": 5,
+      "imgIndex": 0,
+      "name": "吃饭",
+      "order": 5
+    },
+    {
+      "uid": "0",
+      "color": -953428,
+      "desc": "刷手机玩游戏逛街",
+      "id": 6,
+      "imgIndex": 0,
+      "name": "娱乐",
+      "order": 6
+    },
+    {
+      "uid": "0",
+      "color": -11487295,
+      "desc": "洗澡刷牙呢",
+      "id": 7,
+      "imgIndex": 0,
+      "name": "洗漱",
+      "order": 7
+    },
+    {
+      "uid": "0",
+      "color": -15653297,
+      "desc": "睡觉觉",
+      "id": 8,
+      "imgIndex": 0,
+      "name": "睡觉",
+      "order": 8
+    },
+    {
+      "uid": "0",
+      "color": -7386312,
+      "desc": "归并不到以上项的事情",
+      "id": 9,
+      "imgIndex": 0,
+      "name": "杂项",
+      "order": 9
+    }
+  ]
+}

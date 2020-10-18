@@ -8,7 +8,10 @@ import app.worson.timewallet.db.dao.EventTypeEntityDao
 import app.worson.timewallet.db.entity.EventTypeEntity
 import app.worson.timewallet.db.entity.SubEventTypeEntity
 import app.worson.timewallet.db.entity.TaskEntity
+import app.worson.timewallet.page.db.config.DefaultTimeWalletData
+import app.worson.timewallet.page.db.config.TimeWalletDbInit
 import app.worson.timewallet.utils.GlobalContext
+import com.blankj.utilcode.util.GsonUtils
 import com.worson.lib.log.L
 
 /**
@@ -41,7 +44,7 @@ abstract class TimeWalletDb : RoomDatabase(){
                 override fun onCreate(db: SupportSQLiteDatabase) {
                     super.onCreate(db)
                     L.i(TAG, "time_wallet.db onCreate: ,version=${db.version}")
-
+                    TimeWalletDbInit.onCreate(db)
 
                 }
             })

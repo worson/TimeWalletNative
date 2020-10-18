@@ -72,6 +72,10 @@ dependencies {
     implementation libs.arch_comp_room_ktx
     kapt libs.arch_room_compiler
 
+    implementation libs.utilcode
+
     implementation 'com.github.worson:AndroidLog:0.3'
+
+
 
 }

@@ -193,8 +193,12 @@ ext {
 
             branch_io                   : "io.branch.sdk.android:library:${versions.branch_io}",
 
+            utilcode                    : "com.blankj:utilcode:1.29.0",
+
             firebase_appindexing        : "com.google.firebase:firebase-appindexing:${versions.firebase_appindexing}",
             google_ads                  : "com.google.android.gms:play-services-ads-identifier:${versions.google_ads}",
             huawei_ads                  : "com.huawei.hms:ads-identifier:${versions.huawei_ads}"
+
+
     ]
 }
