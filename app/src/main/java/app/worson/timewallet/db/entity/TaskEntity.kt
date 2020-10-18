@@ -1,8 +1,8 @@
 package app.worson.timewallet.db.entity
 
+import androidx.annotation.Keep
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import app.worson.timewallet.utils.Keep
 import org.jetbrains.annotations.NotNull
 
 /**

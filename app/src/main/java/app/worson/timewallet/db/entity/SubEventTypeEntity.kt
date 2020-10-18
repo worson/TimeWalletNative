@@ -2,7 +2,7 @@ package app.worson.timewallet.db.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import app.worson.timewallet.utils.Keep
+import androidx.annotation.Keep
 
 /**
  * 说明:子事件类型
