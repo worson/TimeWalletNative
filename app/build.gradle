@@ -53,9 +53,18 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.0'
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    implementation libs.fragment
+    implementation libs.lifecycle
+    implementation libs.livedata
+    implementation libs.arch_comp_livedata
+    implementation libs.arch_comp_livedata_rx
+    implementation libs.arch_comp_viewmodel
+    implementation libs.arch_comp_extension
 
     implementation libs.retrofit
     implementation libs.retrofit_gson

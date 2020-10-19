@@ -29,7 +29,7 @@ object TimeWalletDbInit {
             if (version==0) {
                 val dao=valletDb.getEventEntityDao()
                 defaultData.default_events?.forEach {
-                    dao.addEvent(it)
+                    dao.addEvent(it.copy(uid = ""))
                 }
 
             }

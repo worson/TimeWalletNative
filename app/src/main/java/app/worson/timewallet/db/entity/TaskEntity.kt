@@ -18,4 +18,6 @@ data class TaskEntity (
     val folderId: String,
     val name: String,
     val colorId: String
-)
+){
+
+}

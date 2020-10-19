@@ -10,6 +10,10 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import app.worson.timewallet.R
 import app.worson.timewallet.db.TimeWalletDb
+import app.worson.timewallet.page.eventtype.EventListSelectDialogFragment
+import com.blankj.utilcode.util.FragmentUtils
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
 
@@ -28,4 +32,13 @@ class HomeFragment : Fragment() {
         })
         return root
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        btTask.setOnClickListener{
+            val fragment= EventListSelectDialogFragment.newInstance()
+            FragmentUtils.add(requireActivity().supportFragmentManager,fragment,R.id.fragment_containner)
+            FragmentUtils.show(fragment)
+        }
+    }
+
 }
