@@ -6,6 +6,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import app.worson.timewallet.db.entity.EventTypeEntity
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface EventTypeEntityDao {
@@ -15,6 +16,9 @@ interface EventTypeEntityDao {
 
     @Query("DELETE FROM EventTypeEntity WHERE uid = :uid AND id = :id")
     suspend fun deleteEvent(uid: String, id: String)
+
+    @Query("SELECT * FROM EventTypeEntity WHERE uid = :uid")
+    fun queryEventsFlow(uid: String): Flow<List<EventTypeEntity>>
 
     @Query("SELECT * FROM EventTypeEntity WHERE uid = :uid")
     fun queryLiveEvents(uid: String): LiveData<List<EventTypeEntity>>

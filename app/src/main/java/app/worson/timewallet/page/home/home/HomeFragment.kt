@@ -4,15 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import app.worson.timewallet.R
-import app.worson.timewallet.db.TimeWalletDb
-import app.worson.timewallet.page.eventtype.EventListSelectDialogFragment
+import app.worson.timewallet.page.eventtype.TimeEventSelectDialogFragment
 import com.blankj.utilcode.util.FragmentUtils
-import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
@@ -35,7 +32,7 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         btTask.setOnClickListener{
-            val fragment= EventListSelectDialogFragment.newInstance()
+            val fragment= TimeEventSelectDialogFragment.newInstance()
             FragmentUtils.add(requireActivity().supportFragmentManager,fragment,R.id.fragment_containner)
             FragmentUtils.show(fragment)
         }
