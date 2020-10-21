@@ -11,6 +11,8 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import app.worson.timewallet.R
+import app.worson.timewallet.db.entity.EventTypeEntity
+import com.blankj.utilcode.util.FragmentUtils
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.worson.lib.log.L
 import kotlinx.android.synthetic.main.fragment_event_list_select_dialog.*
@@ -28,6 +30,11 @@ class TimeEventSelectDialogFragment : BottomSheetDialogFragment() {
     private val mTimeEventViewModel by activityViewModels<TimeEventViewModel>()
     private val mAdapter:TimeEventAdapter=TimeEventAdapter(mutableListOf())
 
+    private var listener:((timeType:EventTypeEntity) -> Unit?)?=null
+
+    fun setSelectListener(listener:((timeType:EventTypeEntity) -> Unit?)?){
+        this.listener=listener
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -44,6 +51,13 @@ class TimeEventSelectDialogFragment : BottomSheetDialogFragment() {
         }
         rvView.setLayoutManager(LinearLayoutManager(requireContext()))
         rvView.adapter=mAdapter
+        mAdapter.setOnItemClickListener(){
+            a,_,p ->
+            mAdapter.getItem(p)?.let {
+                this.listener?.invoke(it)
+            }
+            FragmentUtils.hide(this)
+        }
 
     }
 

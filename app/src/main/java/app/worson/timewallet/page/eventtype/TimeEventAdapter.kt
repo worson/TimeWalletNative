@@ -11,6 +11,10 @@ class TimeEventAdapter(data: MutableList<EventTypeEntity>) :
     DraggableModule {
 
     override fun convert(holder: BaseViewHolder, item: EventTypeEntity) {
-        holder.setText(R.id.text,item.desc)
+        holder.setText(R.id.title,item.name)
+        holder.setText(R.id.subTitle,item.desc)
+        holder.setBackgroundColor(R.id.vgRoot,item.color)
     }
+
+
 }

@@ -10,9 +10,11 @@ import androidx.lifecycle.ViewModelProviders
 import app.worson.timewallet.R
 import app.worson.timewallet.page.eventtype.TimeEventSelectDialogFragment
 import com.blankj.utilcode.util.FragmentUtils
+import com.worson.lib.log.L
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
+    val  TAG = "HomeFragment"
 
     private lateinit var homeViewModel: HomeViewModel
 
@@ -35,6 +37,9 @@ class HomeFragment : Fragment() {
             val fragment= TimeEventSelectDialogFragment.newInstance()
             FragmentUtils.add(requireActivity().supportFragmentManager,fragment,R.id.fragment_containner)
             FragmentUtils.show(fragment)
+            fragment.setSelectListener {
+                L.i(TAG, "setSelectListener: ${it}")
+            }
         }
     }
 
