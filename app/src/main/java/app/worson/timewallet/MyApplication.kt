@@ -3,7 +3,6 @@ package app.worson.timewallet
 import android.app.Application
 import android.util.Log
 import app.worson.timewallet.db.TimeWalletDb
-import app.worson.timewallet.db.entity.EventTypeEntity
 import com.worson.lib.log.L
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch

@@ -5,18 +5,19 @@ import androidx.room.PrimaryKey
 import androidx.annotation.Keep
 
 /**
- * 说明:事件类型
+ * 说明:子事件类型
  * @author wangshengxing  07.24 2020
  */
 @Entity
 @Keep
-data class EventTypeEntity(
+data class SubTimeEventEntity(
     @PrimaryKey(autoGenerate = true)
-    val id: Int=0,
-    val uid: String="0",
+    val id: Int,
+    val parent_id:Int,
+    val uid: String,
     val name: String,
     val desc: String,
     val order: Int,
-    val color: Int
+    val color: String
 ) {
 }

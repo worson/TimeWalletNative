@@ -5,8 +5,8 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 import app.worson.timewallet.db.dao.EventTypeEntityDao
-import app.worson.timewallet.db.entity.EventTypeEntity
-import app.worson.timewallet.db.entity.SubEventTypeEntity
+import app.worson.timewallet.db.entity.TimeEventEntity
+import app.worson.timewallet.db.entity.SubTimeEventEntity
 import app.worson.timewallet.db.entity.TaskEntity
 import app.worson.timewallet.db.config.TimeWalletDbInit
 import app.worson.timewallet.utils.GlobalContext
@@ -15,7 +15,7 @@ import com.worson.lib.log.L
 /**
  */
 @Database(
-    entities = [EventTypeEntity::class, SubEventTypeEntity::class, TaskEntity::class],
+    entities = [TimeEventEntity::class, SubTimeEventEntity::class, TaskEntity::class],
     version = 1,
     exportSchema = true
 )

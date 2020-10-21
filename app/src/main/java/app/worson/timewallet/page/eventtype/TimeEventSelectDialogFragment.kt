@@ -2,16 +2,14 @@ package app.worson.timewallet.page.eventtype
 
 import android.os.Bundle
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import app.worson.timewallet.R
-import app.worson.timewallet.db.entity.EventTypeEntity
+import app.worson.timewallet.db.entity.TimeEventEntity
 import app.worson.timewallet.view.rvhelper.DefaultItemDiff
 import com.blankj.utilcode.util.FragmentUtils
 import com.google.android.material.bottomsheet.BottomSheetBehavior
@@ -31,9 +29,9 @@ class TimeEventSelectDialogFragment : BottomSheetDialogFragment() {
     private val mTimeEventViewModel by activityViewModels<TimeEventViewModel>()
     private val mAdapter:TimeEventAdapter=TimeEventAdapter(mutableListOf())
 
-    private var listener:((timeType:EventTypeEntity) -> Unit?)?=null
+    private var listener:((timeType:TimeEventEntity) -> Unit?)?=null
 
-    fun setSelectListener(listener:((timeType:EventTypeEntity) -> Unit?)?){
+    fun setSelectListener(listener:((timeType:TimeEventEntity) -> Unit?)?){
         this.listener=listener
     }
 

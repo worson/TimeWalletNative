@@ -2,10 +2,10 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "25928b936e42545388405b43a84099a4",
+    "identityHash": "41686dbddd485ae62a08e2d3818b4748",
     "entities": [
       {
-        "tableName": "EventTypeEntity",
+        "tableName": "TimeEventEntity",
         "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `uid` TEXT NOT NULL, `name` TEXT NOT NULL, `desc` TEXT NOT NULL, `order` INTEGER NOT NULL, `color` INTEGER NOT NULL)",
         "fields": [
           {
@@ -55,7 +55,7 @@
         "foreignKeys": []
       },
       {
-        "tableName": "SubEventTypeEntity",
+        "tableName": "SubTimeEventEntity",
         "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `parent_id` INTEGER NOT NULL, `uid` TEXT NOT NULL, `name` TEXT NOT NULL, `desc` TEXT NOT NULL, `order` INTEGER NOT NULL, `color` TEXT NOT NULL)",
         "fields": [
           {
@@ -158,7 +158,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '25928b936e42545388405b43a84099a4')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '41686dbddd485ae62a08e2d3818b4748')"
     ]
   }
 }

@@ -3,18 +3,15 @@ package app.worson.timewallet.page.eventtype
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import app.worson.timewallet.comm.Event
-import app.worson.timewallet.db.entity.TaskEntity
 import androidx.lifecycle.liveData
 import androidx.lifecycle.viewModelScope
-import app.worson.timewallet.db.TimeWalletDb
-import app.worson.timewallet.db.entity.EventTypeEntity
+import app.worson.timewallet.db.entity.TimeEventEntity
 import app.worson.timewallet.module.storage.AccountSettings
 import app.worson.timewallet.module.storage.TimeWalletRepository
 import com.worson.lib.log.L
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 /**
  * 说明:
@@ -49,7 +46,7 @@ class TimeEventViewModel : ViewModel(){
         }
     }
 
-    private fun notifyList(list:MutableList<EventTypeEntity>){
+    private fun notifyList(list:MutableList<TimeEventEntity>){
         viewState=viewState.copy(timeEvents=Event(list))
         mLiveData.postValue(viewState)
     }
@@ -63,7 +60,7 @@ class TimeEventViewModel : ViewModel(){
 }
 
 data class TimeEventViewState(
-    val timeEvents: Event<MutableList<EventTypeEntity>>? = null,
+    val timeEvents: Event<MutableList<TimeEventEntity>>? = null,
     val menuState: Event<Int>? = null,
 ){
 
