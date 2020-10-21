@@ -16,7 +16,6 @@
             android:id="@+id/bottomLayout"
             android:layout_width="match_parent"
             android:layout_height="262dp"
-            android:background="@color/warningColor"
             android:orientation="vertical"
             app:behavior_hideable="true"
             app:behavior_peekHeight="262dp"

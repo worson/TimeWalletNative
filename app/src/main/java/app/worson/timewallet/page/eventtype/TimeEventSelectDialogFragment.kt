@@ -12,6 +12,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import app.worson.timewallet.R
 import app.worson.timewallet.db.entity.EventTypeEntity
+import app.worson.timewallet.view.rvhelper.DefaultItemDiff
 import com.blankj.utilcode.util.FragmentUtils
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.worson.lib.log.L
@@ -45,12 +46,13 @@ class TimeEventSelectDialogFragment : BottomSheetDialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         bottomSheetBehavior = BottomSheetBehavior.from(bottomLayout)
-
+        mTimeEventViewModel.freshTimeEvents()
         mTimeEventViewModel.liveData.observe(this){
             observeViewState(it)
         }
         rvView.setLayoutManager(LinearLayoutManager(requireContext()))
         rvView.adapter=mAdapter
+        mAdapter.setDiffCallback(DefaultItemDiff())
         mAdapter.setOnItemClickListener(){
             a,_,p ->
             mAdapter.getItem(p)?.let {
@@ -64,7 +66,8 @@ class TimeEventSelectDialogFragment : BottomSheetDialogFragment() {
     private fun observeViewState(viewState: TimeEventViewState?) {
         L.d(TAG) { "observeViewState: ${viewState}" }
         viewState?.timeEvents?.handleIfNotHandled {
-            mAdapter.setList(it)
+            mAdapter.setDiffNewData(it)
+//            mAdapter.setList(it)
         }
 
     }

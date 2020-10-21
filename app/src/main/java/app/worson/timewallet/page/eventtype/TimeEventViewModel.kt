@@ -36,10 +36,22 @@ class TimeEventViewModel : ViewModel(){
             L.i(TAG,"init")
             TimeWalletRepository.eventDao.queryEventsFlow(AccountSettings.uid)
                 .collect {
-                    viewState=viewState.copy(timeEvents=Event(it))
-                    mLiveData.postValue(viewState)
+                    notifyList(it)
                 }
         }
+    }
+
+    fun freshTimeEvents(){
+        viewModelScope.launch(Dispatchers.IO) {
+            TimeWalletRepository.eventDao.queryEvents(AccountSettings.uid)?.let {
+                notifyList(it)
+            }
+        }
+    }
+
+    private fun notifyList(list:MutableList<EventTypeEntity>){
+        viewState=viewState.copy(timeEvents=Event(list))
+        mLiveData.postValue(viewState)
     }
 
     companion object {
@@ -51,7 +63,7 @@ class TimeEventViewModel : ViewModel(){
 }
 
 data class TimeEventViewState(
-    val timeEvents: Event<List<EventTypeEntity>>? = null,
+    val timeEvents: Event<MutableList<EventTypeEntity>>? = null,
     val menuState: Event<Int>? = null,
 ){
 

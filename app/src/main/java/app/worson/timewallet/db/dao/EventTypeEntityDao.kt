@@ -18,13 +18,13 @@ interface EventTypeEntityDao {
     suspend fun deleteEvent(uid: String, id: String)
 
     @Query("SELECT * FROM EventTypeEntity WHERE uid = :uid")
-    fun queryEventsFlow(uid: String): Flow<List<EventTypeEntity>>
+    fun queryEventsFlow(uid: String): Flow<MutableList<EventTypeEntity>>
 
     @Query("SELECT * FROM EventTypeEntity WHERE uid = :uid")
     fun queryLiveEvents(uid: String): LiveData<List<EventTypeEntity>>
 
     @Query("SELECT * FROM EventTypeEntity WHERE uid = :uid")
-    suspend fun queryEvents(uid: String): List<EventTypeEntity>
+    suspend fun queryEvents(uid: String): MutableList<EventTypeEntity>
 
     @Query("SELECT * FROM EventTypeEntity WHERE uid = :uid AND id = :id")
     suspend fun queryById(uid: String, id: String): EventTypeEntity?
