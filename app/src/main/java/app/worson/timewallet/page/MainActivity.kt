@@ -8,9 +8,13 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import app.worson.timewallet.R
+import app.worson.timewallet.page.timetask.TimeTaskFragment
 import app.worson.timewallet.utils.invisible
+import com.blankj.utilcode.util.FragmentUtils
 
 class MainActivity : AppCompatActivity() {
+
+    lateinit var taskTimeTaskFragment: TimeTaskFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +30,9 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
+        taskTimeTaskFragment=TimeTaskFragment()
+        FragmentUtils.add(supportFragmentManager,taskTimeTaskFragment,R.id.task_containner)
+        FragmentUtils.show(taskTimeTaskFragment)
 //        navView.invisible()
     }
 }

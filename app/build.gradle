@@ -82,6 +82,7 @@ dependencies {
     kapt libs.arch_room_compiler
 
     implementation libs.utilcode
+    implementation libs.material_design
 
     implementation 'com.haibin:calendarview:3.6.9'
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
