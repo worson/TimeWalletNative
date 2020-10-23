@@ -9,13 +9,15 @@ import app.worson.timewallet.db.entity.TimeEventEntity
 import app.worson.timewallet.db.entity.SubTimeEventEntity
 import app.worson.timewallet.db.entity.TaskEntity
 import app.worson.timewallet.db.config.TimeWalletDbInit
+import app.worson.timewallet.db.dao.TimeRecordEntityDao
+import app.worson.timewallet.db.entity.TimeRecordEntity
 import app.worson.timewallet.utils.GlobalContext
 import com.worson.lib.log.L
 
 /**
  */
 @Database(
-    entities = [TimeEventEntity::class, SubTimeEventEntity::class, TaskEntity::class],
+    entities = [TimeEventEntity::class, SubTimeEventEntity::class, TaskEntity::class, TimeRecordEntity::class],
     version = 1,
     exportSchema = true
 )
@@ -23,6 +25,7 @@ import com.worson.lib.log.L
 abstract class TimeWalletDb : RoomDatabase(){
 
     abstract fun getEventEntityDao(): EventTypeEntityDao
+    abstract fun getTimeRecordEntityDao(): TimeRecordEntityDao
 
     companion object {
         val  TAG = "TimeWalletDb"

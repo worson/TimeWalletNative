@@ -2,6 +2,7 @@ package app.worson.timewallet.db.config
 
 import androidx.sqlite.db.SupportSQLiteDatabase
 import app.worson.timewallet.db.TimeWalletDb
+import app.worson.timewallet.module.const.UserConst
 import app.worson.timewallet.utils.GlobalContext
 import com.blankj.utilcode.util.GsonUtils
 import com.worson.lib.log.L
@@ -29,7 +30,7 @@ object TimeWalletDbInit {
             if (version==0) {
                 val dao=valletDb.getEventEntityDao()
                 defaultData.default_events?.forEach {
-                    dao.addEvent(it.copy(uid = ""))
+                    dao.addEvent(it.copy(uid = UserConst.DEFAULT_UID))
                 }
 
             }

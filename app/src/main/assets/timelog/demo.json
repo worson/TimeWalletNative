@@ -1,0 +1,3791 @@
+{
+  "a": [
+    {
+      "day": "2020-10-13",
+      "dayTimestamp": 18548,
+      "distractCount": 0,
+      "endTime": 1602604799000,
+      "estimatedTime": 0,
+      "id": 1,
+      "startTime": 1602561599500,
+      "thing": "聊天聊天",
+      "typeId": 6
+    },
+    {
+      "day": "2020-10-14",
+      "dayTimestamp": 18549,
+      "distractCount": 0,
+      "endTime": 1602652006734,
+      "estimatedTime": 0,
+      "id": 2,
+      "startTime": 1602649056313,
+      "thing": "",
+      "typeId": 5
+    },
+    {
+      "day": "2020-10-14",
+      "dayTimestamp": 18549,
+      "distractCount": 0,
+      "endTime": 1602652121205,
+      "estimatedTime": 0,
+      "id": 3,
+      "startTime": 1602652006734,
+      "thing": "午休",
+      "typeId": 8
+    },
+    {
+      "day": "2020-10-13",
+      "dayTimestamp": 18548,
+      "distractCount": 0,
+      "endTime": 1602561599500,
+      "estimatedTime": 0,
+      "id": 4,
+      "startTime": 1602518400000,
+      "thing": "聊天聊天",
+      "typeId": 6
+    },
+    {
+      "day": "2020-10-14",
+      "dayTimestamp": 18549,
+      "distractCount": 0,
+      "endTime": 1602652663760,
+      "estimatedTime": 0,
+      "id": 5,
+      "startTime": 1602652623246,
+      "thing": "玩手机",
+      "typeId": 6
+    },
+    {
+      "day": "2020-10-14",
+      "dayTimestamp": 18549,
+      "distractCount": 0,
+      "endTime": 1602664934545,
+      "estimatedTime": 0,
+      "id": 6,
+      "startTime": 1602656139387,
+      "thing": "tab页调研\n",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-14",
+      "dayTimestamp": 18549,
+      "distractCount": 0,
+      "endTime": 1602671653434,
+      "estimatedTime": 0,
+      "id": 7,
+      "startTime": 1602664961028,
+      "thing": "搭建框架\n",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-14",
+      "dayTimestamp": 18549,
+      "distractCount": 0,
+      "endTime": 1602656139387,
+      "estimatedTime": 0,
+      "id": 8,
+      "startTime": 1602652663760,
+      "thing": "",
+      "typeId": 8
+    },
+    {
+      "day": "2020-10-14",
+      "dayTimestamp": 18549,
+      "distractCount": 0,
+      "endTime": 1602672937270,
+      "estimatedTime": 0,
+      "id": 9,
+      "startTime": 1602671895163,
+      "thing": "",
+      "typeId": 5
+    },
+    {
+      "day": "2020-10-14",
+      "dayTimestamp": 18549,
+      "distractCount": 0,
+      "endTime": 1602674286619,
+      "estimatedTime": 0,
+      "id": 10,
+      "startTime": 1602672949624,
+      "thing": "散步\n",
+      "typeId": 2
+    },
+    {
+      "day": "2020-10-14",
+      "dayTimestamp": 18549,
+      "distractCount": 0,
+      "endTime": 1602676085435,
+      "estimatedTime": 0,
+      "id": 11,
+      "startTime": 1602674382798,
+      "thing": "可存储笔记",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-14",
+      "dayTimestamp": 18549,
+      "distractCount": 0,
+      "endTime": 1602679903305,
+      "estimatedTime": 0,
+      "id": 12,
+      "startTime": 1602676088074,
+      "thing": "回家",
+      "typeId": 4
+    },
+    {
+      "day": "2020-10-14",
+      "dayTimestamp": 18549,
+      "distractCount": 0,
+      "endTime": 1602680848563,
+      "estimatedTime": 0,
+      "id": 13,
+      "startTime": 1602679903305,
+      "thing": "看b站。",
+      "typeId": 6
+    },
+    {
+      "day": "2020-10-14",
+      "dayTimestamp": 18549,
+      "distractCount": 0,
+      "endTime": 1602682706350,
+      "estimatedTime": 0,
+      "id": 14,
+      "startTime": 1602680905042,
+      "thing": "",
+      "typeId": 1
+    },
+    {
+      "day": "2020-10-14",
+      "dayTimestamp": 18549,
+      "distractCount": 0,
+      "endTime": 1602687682481,
+      "estimatedTime": 0,
+      "id": 15,
+      "startTime": 1602683746385,
+      "thing": "游戏",
+      "typeId": 6
+    },
+    {
+      "day": "2020-10-14",
+      "dayTimestamp": 18549,
+      "distractCount": 0,
+      "endTime": 1602688810023,
+      "estimatedTime": 0,
+      "id": 16,
+      "startTime": 1602687733911,
+      "thing": "",
+      "typeId": 7
+    },
+    {
+      "day": "2020-10-14",
+      "dayTimestamp": 18549,
+      "distractCount": 0,
+      "endTime": 1602691197106,
+      "estimatedTime": 0,
+      "id": 17,
+      "startTime": 1602689472616,
+      "thing": "游戏",
+      "typeId": 6
+    },
+    {
+      "day": "2020-10-15",
+      "dayTimestamp": 18550,
+      "distractCount": 0,
+      "endTime": 1602717175075,
+      "estimatedTime": 0,
+      "id": 18,
+      "startTime": 1602691202557,
+      "thing": "",
+      "typeId": 8
+    },
+    {
+      "day": "2020-10-15",
+      "dayTimestamp": 18550,
+      "distractCount": 0,
+      "endTime": 1602717823083,
+      "estimatedTime": 0,
+      "id": 19,
+      "startTime": 1602717183892,
+      "thing": "",
+      "typeId": 7
+    },
+    {
+      "day": "2020-10-14",
+      "dayTimestamp": 18549,
+      "distractCount": 0,
+      "endTime": 1602628403367,
+      "estimatedTime": 0,
+      "id": 20,
+      "startTime": 1602604800000,
+      "thing": "",
+      "typeId": 8
+    },
+    {
+      "day": "2020-10-14",
+      "dayTimestamp": 18549,
+      "distractCount": 0,
+      "endTime": 1602634304208,
+      "estimatedTime": 0,
+      "id": 21,
+      "startTime": 1602628403367,
+      "thing": "",
+      "typeId": 8
+    },
+    {
+      "day": "2020-10-14",
+      "dayTimestamp": 18549,
+      "distractCount": 0,
+      "endTime": 1602637254629,
+      "estimatedTime": 0,
+      "id": 22,
+      "startTime": 1602634304208,
+      "thing": "",
+      "typeId": 7
+    },
+    {
+      "day": "2020-10-14",
+      "dayTimestamp": 18549,
+      "distractCount": 0,
+      "endTime": 1602640205050,
+      "estimatedTime": 0,
+      "id": 23,
+      "startTime": 1602637254629,
+      "thing": "",
+      "typeId": 4
+    },
+    {
+      "day": "2020-10-14",
+      "dayTimestamp": 18549,
+      "distractCount": 0,
+      "endTime": 1602646105892,
+      "estimatedTime": 0,
+      "id": 24,
+      "startTime": 1602640205050,
+      "thing": "",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-14",
+      "dayTimestamp": 18549,
+      "distractCount": 0,
+      "endTime": 1602649056313,
+      "estimatedTime": 0,
+      "id": 25,
+      "startTime": 1602646105892,
+      "thing": "",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-15",
+      "dayTimestamp": 18550,
+      "distractCount": 0,
+      "endTime": 1602718508646,
+      "estimatedTime": 0,
+      "id": 26,
+      "startTime": 1602717829337,
+      "thing": "整理昨天的时间",
+      "typeId": 1
+    },
+    {
+      "day": "2020-10-15",
+      "dayTimestamp": 18550,
+      "distractCount": 0,
+      "endTime": 1602720157922,
+      "estimatedTime": 0,
+      "id": 27,
+      "startTime": 1602718516337,
+      "thing": "做计划",
+      "typeId": 1
+    },
+    {
+      "day": "2020-10-15",
+      "dayTimestamp": 18550,
+      "distractCount": 0,
+      "endTime": 1602722452244,
+      "estimatedTime": 0,
+      "id": 28,
+      "startTime": 1602720182555,
+      "thing": "早餐",
+      "typeId": 5
+    },
+    {
+      "day": "2020-10-15",
+      "dayTimestamp": 18550,
+      "distractCount": 0,
+      "endTime": 1602724620061,
+      "estimatedTime": 0,
+      "id": 29,
+      "startTime": 1602722455059,
+      "thing": "上班",
+      "typeId": 4
+    },
+    {
+      "day": "2020-10-15",
+      "dayTimestamp": 18550,
+      "distractCount": 0,
+      "endTime": 1602726228429,
+      "estimatedTime": 0,
+      "id": 30,
+      "startTime": 1602724621998,
+      "thing": "《认知红利》",
+      "typeId": 1
+    },
+    {
+      "day": "2020-10-15",
+      "dayTimestamp": 18550,
+      "distractCount": 0,
+      "endTime": 1602726693022,
+      "estimatedTime": 0,
+      "id": 31,
+      "startTime": 1602726535679,
+      "thing": "抽了一支烟",
+      "typeId": 10
+    },
+    {
+      "day": "2020-10-15",
+      "dayTimestamp": 18550,
+      "distractCount": 0,
+      "endTime": 1602728165614,
+      "estimatedTime": 0,
+      "id": 32,
+      "startTime": 1602727342392,
+      "thing": "",
+      "typeId": 1
+    },
+    {
+      "day": "2020-10-15",
+      "dayTimestamp": 18550,
+      "distractCount": 0,
+      "endTime": 1602729202054,
+      "estimatedTime": 0,
+      "id": 33,
+      "startTime": 1602728170886,
+      "thing": "早会",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-15",
+      "dayTimestamp": 18550,
+      "distractCount": 0,
+      "endTime": 1602733130421,
+      "estimatedTime": 0,
+      "id": 34,
+      "startTime": 1602730468590,
+      "thing": "看代码",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-15",
+      "dayTimestamp": 18550,
+      "distractCount": 0,
+      "endTime": 1602733177745,
+      "estimatedTime": 0,
+      "id": 35,
+      "startTime": 1602733136255,
+      "thing": "抽烟",
+      "typeId": 10
+    },
+    {
+      "day": "2020-10-15",
+      "dayTimestamp": 18550,
+      "distractCount": 0,
+      "endTime": 1602736435487,
+      "estimatedTime": 0,
+      "id": 36,
+      "startTime": 1602733182987,
+      "thing": "显示笔记标签",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-15",
+      "dayTimestamp": 18550,
+      "distractCount": 0,
+      "endTime": 1602738359507,
+      "estimatedTime": 0,
+      "id": 37,
+      "startTime": 1602736442292,
+      "thing": "",
+      "typeId": 5
+    },
+    {
+      "day": "2020-10-15",
+      "dayTimestamp": 18550,
+      "distractCount": 0,
+      "endTime": 1602739233050,
+      "estimatedTime": 0,
+      "id": 38,
+      "startTime": 1602738401026,
+      "thing": "",
+      "typeId": 6
+    },
+    {
+      "day": "2020-10-15",
+      "dayTimestamp": 18550,
+      "distractCount": 0,
+      "endTime": 1602741629226,
+      "estimatedTime": 0,
+      "id": 39,
+      "startTime": 1602739489914,
+      "thing": "",
+      "typeId": 8
+    },
+    {
+      "day": "2020-10-15",
+      "dayTimestamp": 18550,
+      "distractCount": 0,
+      "endTime": 1602746393212,
+      "estimatedTime": 0,
+      "id": 40,
+      "startTime": 1602742296404,
+      "thing": "可显示笔记标识",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-15",
+      "dayTimestamp": 18550,
+      "distractCount": 0,
+      "endTime": 1602750957782,
+      "estimatedTime": 0,
+      "id": 41,
+      "startTime": 1602747206730,
+      "thing": "笔记在详情页显示",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-15",
+      "dayTimestamp": 18550,
+      "distractCount": 0,
+      "endTime": 1602751457837,
+      "estimatedTime": 0,
+      "id": 42,
+      "startTime": 1602751082950,
+      "thing": "抽烟",
+      "typeId": 10
+    },
+    {
+      "day": "2020-10-15",
+      "dayTimestamp": 18550,
+      "distractCount": 0,
+      "endTime": 1602752120159,
+      "estimatedTime": 0,
+      "id": 43,
+      "startTime": 1602751466649,
+      "thing": "厕所",
+      "typeId": 9
+    },
+    {
+      "day": "2020-10-15",
+      "dayTimestamp": 18550,
+      "distractCount": 0,
+      "endTime": 1602756119661,
+      "estimatedTime": 0,
+      "id": 44,
+      "startTime": 1602752125353,
+      "thing": "可显示tab",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-15",
+      "dayTimestamp": 18550,
+      "distractCount": 0,
+      "endTime": 1602758301018,
+      "estimatedTime": 0,
+      "id": 45,
+      "startTime": 1602756829097,
+      "thing": "",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-15",
+      "dayTimestamp": 18550,
+      "distractCount": 0,
+      "endTime": 1602759295125,
+      "estimatedTime": 0,
+      "id": 46,
+      "startTime": 1602758302294,
+      "thing": "",
+      "typeId": 5
+    },
+    {
+      "day": "2020-10-15",
+      "dayTimestamp": 18550,
+      "distractCount": 0,
+      "endTime": 1602761132989,
+      "estimatedTime": 0,
+      "id": 47,
+      "startTime": 1602759296884,
+      "thing": "散步",
+      "typeId": 2
+    },
+    {
+      "day": "2020-10-15",
+      "dayTimestamp": 18550,
+      "distractCount": 0,
+      "endTime": 1602762516064,
+      "estimatedTime": 0,
+      "id": 48,
+      "startTime": 1602761140299,
+      "thing": "",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-15",
+      "dayTimestamp": 18550,
+      "distractCount": 0,
+      "endTime": 1602769901795,
+      "estimatedTime": 0,
+      "id": 49,
+      "startTime": 1602763568567,
+      "thing": "",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-15",
+      "dayTimestamp": 18550,
+      "distractCount": 0,
+      "endTime": 1602770105032,
+      "estimatedTime": 0,
+      "id": 50,
+      "startTime": 1602769917719,
+      "thing": "抽了一只烟",
+      "typeId": 10
+    },
+    {
+      "day": "2020-10-15",
+      "dayTimestamp": 18550,
+      "distractCount": 0,
+      "endTime": 1602771825631,
+      "estimatedTime": 0,
+      "id": 51,
+      "startTime": 1602770105760,
+      "thing": "开会",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-15",
+      "dayTimestamp": 18550,
+      "distractCount": 0,
+      "endTime": 1602773376917,
+      "estimatedTime": 0,
+      "id": 52,
+      "startTime": 1602771833708,
+      "thing": "",
+      "typeId": 4
+    },
+    {
+      "day": "2020-10-15",
+      "dayTimestamp": 18550,
+      "distractCount": 0,
+      "endTime": 1602775101148,
+      "estimatedTime": 0,
+      "id": 53,
+      "startTime": 1602773386937,
+      "thing": "",
+      "typeId": 9
+    },
+    {
+      "day": "2020-10-15",
+      "dayTimestamp": 18550,
+      "distractCount": 0,
+      "endTime": 1602777599722,
+      "estimatedTime": 0,
+      "id": 54,
+      "startTime": 1602775136722,
+      "thing": "",
+      "typeId": 1
+    },
+    {
+      "day": "2020-10-16",
+      "dayTimestamp": 18551,
+      "distractCount": 0,
+      "endTime": 1602777623830,
+      "estimatedTime": 0,
+      "id": 55,
+      "startTime": 1602777599830,
+      "thing": "",
+      "typeId": 1
+    },
+    {
+      "day": "2020-10-16",
+      "dayTimestamp": 18551,
+      "distractCount": 0,
+      "endTime": 1602780168327,
+      "estimatedTime": 0,
+      "id": 56,
+      "startTime": 1602778220820,
+      "thing": "",
+      "typeId": 6
+    },
+    {
+      "day": "2020-10-16",
+      "dayTimestamp": 18551,
+      "distractCount": 0,
+      "endTime": 1602801015772,
+      "estimatedTime": 0,
+      "id": 57,
+      "startTime": 1602780169615,
+      "thing": "",
+      "typeId": 8
+    },
+    {
+      "day": "2020-10-16",
+      "dayTimestamp": 18551,
+      "distractCount": 0,
+      "endTime": 1602806820241,
+      "estimatedTime": 0,
+      "id": 58,
+      "startTime": 1602805983425,
+      "thing": "",
+      "typeId": 7
+    },
+    {
+      "day": "2020-10-16",
+      "dayTimestamp": 18551,
+      "distractCount": 0,
+      "endTime": 1602807611233,
+      "estimatedTime": 0,
+      "id": 59,
+      "startTime": 1602806822987,
+      "thing": "",
+      "typeId": 5
+    },
+    {
+      "day": "2020-10-16",
+      "dayTimestamp": 18551,
+      "distractCount": 0,
+      "endTime": 1602808996046,
+      "estimatedTime": 0,
+      "id": 60,
+      "startTime": 1602807637393,
+      "thing": "",
+      "typeId": 1
+    },
+    {
+      "day": "2020-10-16",
+      "dayTimestamp": 18551,
+      "distractCount": 0,
+      "endTime": 1602809236458,
+      "estimatedTime": 0,
+      "id": 61,
+      "startTime": 1602808997146,
+      "thing": "",
+      "typeId": 6
+    },
+    {
+      "day": "2020-10-16",
+      "dayTimestamp": 18551,
+      "distractCount": 0,
+      "endTime": 1602811346805,
+      "estimatedTime": 0,
+      "id": 62,
+      "startTime": 1602809237364,
+      "thing": "",
+      "typeId": 4
+    },
+    {
+      "day": "2020-10-16",
+      "dayTimestamp": 18551,
+      "distractCount": 0,
+      "endTime": 1602812594827,
+      "estimatedTime": 0,
+      "id": 63,
+      "startTime": 1602811360205,
+      "thing": "",
+      "typeId": 1
+    },
+    {
+      "day": "2020-10-16",
+      "dayTimestamp": 18551,
+      "distractCount": 0,
+      "endTime": 1602813370518,
+      "estimatedTime": 0,
+      "id": 64,
+      "startTime": 1602812609104,
+      "thing": "",
+      "typeId": 4
+    },
+    {
+      "day": "2020-10-16",
+      "dayTimestamp": 18551,
+      "distractCount": 0,
+      "endTime": 1602805983425,
+      "estimatedTime": 0,
+      "id": 65,
+      "startTime": 1602801015772,
+      "thing": "",
+      "typeId": 8
+    },
+    {
+      "day": "2020-10-16",
+      "dayTimestamp": 18551,
+      "distractCount": 0,
+      "endTime": 1602815798012,
+      "estimatedTime": 0,
+      "id": 66,
+      "startTime": 1602813385812,
+      "thing": "",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-16",
+      "dayTimestamp": 18551,
+      "distractCount": 0,
+      "endTime": 1602817912615,
+      "estimatedTime": 0,
+      "id": 67,
+      "startTime": 1602816360257,
+      "thing": "",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-16",
+      "dayTimestamp": 18551,
+      "distractCount": 0,
+      "endTime": 1602818682744,
+      "estimatedTime": 0,
+      "id": 68,
+      "startTime": 1602818681538,
+      "thing": "",
+      "typeId": 1
+    },
+    {
+      "day": "2020-10-16",
+      "dayTimestamp": 18551,
+      "distractCount": 0,
+      "endTime": 1602821119075,
+      "estimatedTime": 0,
+      "id": 69,
+      "startTime": 1602818687137,
+      "thing": "",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-16",
+      "dayTimestamp": 18551,
+      "distractCount": 0,
+      "endTime": 1602823791530,
+      "estimatedTime": 0,
+      "id": 70,
+      "startTime": 1602821127058,
+      "thing": "开会",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-16",
+      "dayTimestamp": 18551,
+      "distractCount": 0,
+      "endTime": 1602824656009,
+      "estimatedTime": 0,
+      "id": 71,
+      "startTime": 1602823798727,
+      "thing": "",
+      "typeId": 5
+    },
+    {
+      "day": "2020-10-16",
+      "dayTimestamp": 18551,
+      "distractCount": 0,
+      "endTime": 1602826078946,
+      "estimatedTime": 0,
+      "id": 72,
+      "startTime": 1602824659830,
+      "thing": "",
+      "typeId": 1
+    },
+    {
+      "day": "2020-10-16",
+      "dayTimestamp": 18551,
+      "distractCount": 0,
+      "endTime": 1602828021359,
+      "estimatedTime": 0,
+      "id": 73,
+      "startTime": 1602826083811,
+      "thing": "",
+      "typeId": 8
+    },
+    {
+      "day": "2020-10-16",
+      "dayTimestamp": 18551,
+      "distractCount": 0,
+      "endTime": 1602830020746,
+      "estimatedTime": 0,
+      "id": 74,
+      "startTime": 1602829063929,
+      "thing": "",
+      "typeId": 1
+    },
+    {
+      "day": "2020-10-16",
+      "dayTimestamp": 18551,
+      "distractCount": 0,
+      "endTime": 1602830448521,
+      "estimatedTime": 0,
+      "id": 75,
+      "startTime": 1602830060477,
+      "thing": "",
+      "typeId": 9
+    },
+    {
+      "day": "2020-10-16",
+      "dayTimestamp": 18551,
+      "distractCount": 0,
+      "endTime": 1602831114464,
+      "estimatedTime": 0,
+      "id": 76,
+      "startTime": 1602830450870,
+      "thing": "",
+      "typeId": 1
+    },
+    {
+      "day": "2020-10-16",
+      "dayTimestamp": 18551,
+      "distractCount": 0,
+      "endTime": 1602834979351,
+      "estimatedTime": 0,
+      "id": 77,
+      "startTime": 1602831119584,
+      "thing": "",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-16",
+      "dayTimestamp": 18551,
+      "distractCount": 0,
+      "endTime": 1602839601352,
+      "estimatedTime": 0,
+      "id": 78,
+      "startTime": 1602834999631,
+      "thing": "",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-16",
+      "dayTimestamp": 18551,
+      "distractCount": 0,
+      "endTime": 1602841557345,
+      "estimatedTime": 0,
+      "id": 79,
+      "startTime": 1602839611080,
+      "thing": "",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-16",
+      "dayTimestamp": 18551,
+      "distractCount": 0,
+      "endTime": 1602851717993,
+      "estimatedTime": 0,
+      "id": 80,
+      "startTime": 1602846011558,
+      "thing": "",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-16",
+      "dayTimestamp": 18551,
+      "distractCount": 0,
+      "endTime": 1602855990678,
+      "estimatedTime": 0,
+      "id": 81,
+      "startTime": 1602851720945,
+      "thing": "",
+      "typeId": 4
+    },
+    {
+      "day": "2020-10-16",
+      "dayTimestamp": 18551,
+      "distractCount": 0,
+      "endTime": 1602860301652,
+      "estimatedTime": 0,
+      "id": 82,
+      "startTime": 1602855997408,
+      "thing": "",
+      "typeId": 6
+    },
+    {
+      "day": "2020-10-16",
+      "dayTimestamp": 18551,
+      "distractCount": 0,
+      "endTime": 1602863552575,
+      "estimatedTime": 0,
+      "id": 83,
+      "startTime": 1602860570852,
+      "thing": "",
+      "typeId": 6
+    },
+    {
+      "day": "2020-10-17",
+      "dayTimestamp": 18552,
+      "distractCount": 0,
+      "endTime": 1602865320154,
+      "estimatedTime": 0,
+      "id": 84,
+      "startTime": 1602864339573,
+      "thing": "",
+      "typeId": 7
+    },
+    {
+      "day": "2020-10-17",
+      "dayTimestamp": 18552,
+      "distractCount": 0,
+      "endTime": 1602867113983,
+      "estimatedTime": 0,
+      "id": 85,
+      "startTime": 1602865852553,
+      "thing": "",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-17",
+      "dayTimestamp": 18552,
+      "distractCount": 0,
+      "endTime": 1602892958357,
+      "estimatedTime": 0,
+      "id": 86,
+      "startTime": 1602867134544,
+      "thing": "",
+      "typeId": 8
+    },
+    {
+      "day": "2020-10-17",
+      "dayTimestamp": 18552,
+      "distractCount": 0,
+      "endTime": 1602894738185,
+      "estimatedTime": 0,
+      "id": 87,
+      "startTime": 1602894513833,
+      "thing": "",
+      "typeId": 7
+    },
+    {
+      "day": "2020-10-17",
+      "dayTimestamp": 18552,
+      "distractCount": 0,
+      "endTime": 1602897040887,
+      "estimatedTime": 0,
+      "id": 88,
+      "startTime": 1602894751444,
+      "thing": "",
+      "typeId": 1
+    },
+    {
+      "day": "2020-10-17",
+      "dayTimestamp": 18552,
+      "distractCount": 0,
+      "endTime": 1602897794863,
+      "estimatedTime": 0,
+      "id": 89,
+      "startTime": 1602897051351,
+      "thing": "对比iOS上的应用",
+      "typeId": 1
+    },
+    {
+      "day": "2020-10-17",
+      "dayTimestamp": 18552,
+      "distractCount": 0,
+      "endTime": 1602904476379,
+      "estimatedTime": 0,
+      "id": 90,
+      "startTime": 1602897805110,
+      "thing": "",
+      "typeId": 1
+    },
+    {
+      "day": "2020-10-17",
+      "dayTimestamp": 18552,
+      "distractCount": 0,
+      "endTime": 1602906139463,
+      "estimatedTime": 0,
+      "id": 91,
+      "startTime": 1602904718708,
+      "thing": "",
+      "typeId": 6
+    },
+    {
+      "day": "2020-10-17",
+      "dayTimestamp": 18552,
+      "distractCount": 0,
+      "endTime": 1602911785918,
+      "estimatedTime": 0,
+      "id": 92,
+      "startTime": 1602906141607,
+      "thing": "",
+      "typeId": 5
+    },
+    {
+      "day": "2020-10-17",
+      "dayTimestamp": 18552,
+      "distractCount": 0,
+      "endTime": 1602913618879,
+      "estimatedTime": 0,
+      "id": 93,
+      "startTime": 1602911790696,
+      "thing": "",
+      "typeId": 9
+    },
+    {
+      "day": "2020-10-17",
+      "dayTimestamp": 18552,
+      "distractCount": 0,
+      "endTime": 1602916015989,
+      "estimatedTime": 0,
+      "id": 94,
+      "startTime": 1602913999675,
+      "thing": "",
+      "typeId": 6
+    },
+    {
+      "day": "2020-10-17",
+      "dayTimestamp": 18552,
+      "distractCount": 0,
+      "endTime": 1602918038854,
+      "estimatedTime": 0,
+      "id": 95,
+      "startTime": 1602916020615,
+      "thing": "",
+      "typeId": 9
+    },
+    {
+      "day": "2020-10-17",
+      "dayTimestamp": 18552,
+      "distractCount": 0,
+      "endTime": 1602921966389,
+      "estimatedTime": 0,
+      "id": 96,
+      "startTime": 1602920561636,
+      "thing": "",
+      "typeId": 1
+    },
+    {
+      "day": "2020-10-17",
+      "dayTimestamp": 18552,
+      "distractCount": 0,
+      "endTime": 1602925447116,
+      "estimatedTime": 0,
+      "id": 97,
+      "startTime": 1602921972737,
+      "thing": "",
+      "typeId": 6
+    },
+    {
+      "day": "2020-10-17",
+      "dayTimestamp": 18552,
+      "distractCount": 0,
+      "endTime": 1602930021672,
+      "estimatedTime": 0,
+      "id": 98,
+      "startTime": 1602925921474,
+      "thing": "",
+      "typeId": 6
+    },
+    {
+      "day": "2020-10-17",
+      "dayTimestamp": 18552,
+      "distractCount": 0,
+      "endTime": 1602930577582,
+      "estimatedTime": 0,
+      "id": 99,
+      "startTime": 1602930024197,
+      "thing": "",
+      "typeId": 5
+    },
+    {
+      "day": "2020-10-17",
+      "dayTimestamp": 18552,
+      "distractCount": 0,
+      "endTime": 1602945329676,
+      "estimatedTime": 0,
+      "id": 100,
+      "startTime": 1602936034061,
+      "thing": "",
+      "typeId": 6
+    },
+    {
+      "day": "2020-10-17",
+      "dayTimestamp": 18552,
+      "distractCount": 0,
+      "endTime": 1602945929595,
+      "estimatedTime": 0,
+      "id": 101,
+      "startTime": 1602945340490,
+      "thing": "",
+      "typeId": 9
+    },
+    {
+      "day": "2020-10-17",
+      "dayTimestamp": 18552,
+      "distractCount": 0,
+      "endTime": 1602894513833,
+      "estimatedTime": 0,
+      "id": 102,
+      "startTime": 1602892958357,
+      "thing": "",
+      "typeId": 8
+    },
+    {
+      "day": "2020-10-17",
+      "dayTimestamp": 18552,
+      "distractCount": 0,
+      "endTime": 1602947127002,
+      "estimatedTime": 0,
+      "id": 103,
+      "startTime": 1602945929595,
+      "thing": "",
+      "typeId": 7
+    },
+    {
+      "day": "2020-10-17",
+      "dayTimestamp": 18552,
+      "distractCount": 0,
+      "endTime": 1602936034061,
+      "estimatedTime": 0,
+      "id": 104,
+      "startTime": 1602930578446,
+      "thing": "",
+      "typeId": 6
+    },
+    {
+      "day": "2020-10-17",
+      "dayTimestamp": 18552,
+      "distractCount": 0,
+      "endTime": 1602948701739,
+      "estimatedTime": 0,
+      "id": 105,
+      "startTime": 1602947127002,
+      "thing": "",
+      "typeId": 1
+    },
+    {
+      "day": "2020-10-17",
+      "dayTimestamp": 18552,
+      "distractCount": 0,
+      "endTime": 1602950303239,
+      "estimatedTime": 0,
+      "id": 106,
+      "startTime": 1602948717633,
+      "thing": "",
+      "typeId": 6
+    },
+    {
+      "day": "2020-10-17",
+      "dayTimestamp": 18552,
+      "distractCount": 0,
+      "endTime": 1602950309349,
+      "estimatedTime": 0,
+      "id": 107,
+      "startTime": 1602950308625,
+      "thing": "",
+      "typeId": 1
+    },
+    {
+      "day": "2020-10-17",
+      "dayTimestamp": 18552,
+      "distractCount": 0,
+      "endTime": 1602950311803,
+      "estimatedTime": 0,
+      "id": 108,
+      "startTime": 1602950310923,
+      "thing": "",
+      "typeId": 1
+    },
+    {
+      "day": "2020-10-17",
+      "dayTimestamp": 18552,
+      "distractCount": 0,
+      "endTime": 1602950313638,
+      "estimatedTime": 0,
+      "id": 109,
+      "startTime": 1602950312791,
+      "thing": "",
+      "typeId": 1
+    },
+    {
+      "day": "2020-10-17",
+      "dayTimestamp": 18552,
+      "distractCount": 0,
+      "endTime": 1602950399358,
+      "estimatedTime": 0,
+      "id": 110,
+      "startTime": 1602950314358,
+      "thing": "",
+      "typeId": 8
+    },
+    {
+      "day": "2020-10-18",
+      "dayTimestamp": 18553,
+      "distractCount": 0,
+      "endTime": 1602973975583,
+      "estimatedTime": 0,
+      "id": 111,
+      "startTime": 1602950399583,
+      "thing": "",
+      "typeId": 8
+    },
+    {
+      "day": "2020-10-18",
+      "dayTimestamp": 18553,
+      "distractCount": 0,
+      "endTime": 1602974980639,
+      "estimatedTime": 0,
+      "id": 112,
+      "startTime": 1602973989278,
+      "thing": "",
+      "typeId": 7
+    },
+    {
+      "day": "2020-10-18",
+      "dayTimestamp": 18553,
+      "distractCount": 0,
+      "endTime": 1602980107488,
+      "estimatedTime": 0,
+      "id": 113,
+      "startTime": 1602977978780,
+      "thing": "体检",
+      "typeId": 9
+    },
+    {
+      "day": "2020-10-18",
+      "dayTimestamp": 18553,
+      "distractCount": 0,
+      "endTime": 1602977978780,
+      "estimatedTime": 0,
+      "id": 114,
+      "startTime": 1602975010073,
+      "thing": "",
+      "typeId": 4
+    },
+    {
+      "day": "2020-10-18",
+      "dayTimestamp": 18553,
+      "distractCount": 0,
+      "endTime": 1602985798589,
+      "estimatedTime": 0,
+      "id": 115,
+      "startTime": 1602980109097,
+      "thing": "体检",
+      "typeId": 9
+    },
+    {
+      "day": "2020-10-18",
+      "dayTimestamp": 18553,
+      "distractCount": 0,
+      "endTime": 1602988447188,
+      "estimatedTime": 0,
+      "id": 116,
+      "startTime": 1602985803569,
+      "thing": "",
+      "typeId": 4
+    },
+    {
+      "day": "2020-10-18",
+      "dayTimestamp": 18553,
+      "distractCount": 0,
+      "endTime": 1602995280866,
+      "estimatedTime": 0,
+      "id": 117,
+      "startTime": 1602990933599,
+      "thing": "分析产品需求",
+      "typeId": 1
+    },
+    {
+      "day": "2020-10-18",
+      "dayTimestamp": 18553,
+      "distractCount": 0,
+      "endTime": 1602997471831,
+      "estimatedTime": 0,
+      "id": 118,
+      "startTime": 1602995286040,
+      "thing": "",
+      "typeId": 5
+    },
+    {
+      "day": "2020-10-18",
+      "dayTimestamp": 18553,
+      "distractCount": 0,
+      "endTime": 1603000070786,
+      "estimatedTime": 0,
+      "id": 119,
+      "startTime": 1602997490246,
+      "thing": "游戏",
+      "typeId": 6
+    },
+    {
+      "day": "2020-10-18",
+      "dayTimestamp": 18553,
+      "distractCount": 0,
+      "endTime": 1603008547009,
+      "estimatedTime": 0,
+      "id": 120,
+      "startTime": 1603003092956,
+      "thing": "",
+      "typeId": 8
+    },
+    {
+      "day": "2020-10-18",
+      "dayTimestamp": 18553,
+      "distractCount": 0,
+      "endTime": 1603003092956,
+      "estimatedTime": 0,
+      "id": 121,
+      "startTime": 1603000070786,
+      "thing": "看电视",
+      "typeId": 6
+    },
+    {
+      "day": "2020-10-18",
+      "dayTimestamp": 18553,
+      "distractCount": 0,
+      "endTime": 1603010384728,
+      "estimatedTime": 0,
+      "id": 122,
+      "startTime": 1603008976737,
+      "thing": "",
+      "typeId": 9
+    },
+    {
+      "day": "2020-10-18",
+      "dayTimestamp": 18553,
+      "distractCount": 0,
+      "endTime": 1603022122006,
+      "estimatedTime": 0,
+      "id": 123,
+      "startTime": 1603010474626,
+      "thing": "",
+      "typeId": 11
+    },
+    {
+      "day": "2020-10-18",
+      "dayTimestamp": 18553,
+      "distractCount": 0,
+      "endTime": 1603027006857,
+      "estimatedTime": 0,
+      "id": 124,
+      "startTime": 1603022123729,
+      "thing": "",
+      "typeId": 11
+    },
+    {
+      "day": "2020-10-18",
+      "dayTimestamp": 18553,
+      "distractCount": 0,
+      "endTime": 1603035722951,
+      "estimatedTime": 0,
+      "id": 125,
+      "startTime": 1603027012434,
+      "thing": "",
+      "typeId": 1
+    },
+    {
+      "day": "2020-10-18",
+      "dayTimestamp": 18553,
+      "distractCount": 0,
+      "endTime": 1603036799852,
+      "estimatedTime": 0,
+      "id": 126,
+      "startTime": 1603035729852,
+      "thing": "",
+      "typeId": 7
+    },
+    {
+      "day": "2020-10-19",
+      "dayTimestamp": 18554,
+      "distractCount": 0,
+      "endTime": 1603036957098,
+      "estimatedTime": 0,
+      "id": 127,
+      "startTime": 1603036799098,
+      "thing": "",
+      "typeId": 7
+    },
+    {
+      "day": "2020-10-19",
+      "dayTimestamp": 18554,
+      "distractCount": 0,
+      "endTime": 1603061458588,
+      "estimatedTime": 0,
+      "id": 128,
+      "startTime": 1603037228817,
+      "thing": "",
+      "typeId": 8
+    },
+    {
+      "day": "2020-10-19",
+      "dayTimestamp": 18554,
+      "distractCount": 0,
+      "endTime": 1603065879174,
+      "estimatedTime": 0,
+      "id": 129,
+      "startTime": 1603061736786,
+      "thing": "",
+      "typeId": 1
+    },
+    {
+      "day": "2020-10-19",
+      "dayTimestamp": 18554,
+      "distractCount": 0,
+      "endTime": 1603066630628,
+      "estimatedTime": 0,
+      "id": 130,
+      "startTime": 1603065886596,
+      "thing": "",
+      "typeId": 5
+    },
+    {
+      "day": "2020-10-19",
+      "dayTimestamp": 18554,
+      "distractCount": 0,
+      "endTime": 1603067762225,
+      "estimatedTime": 0,
+      "id": 131,
+      "startTime": 1603067546995,
+      "thing": "",
+      "typeId": 5
+    },
+    {
+      "day": "2020-10-19",
+      "dayTimestamp": 18554,
+      "distractCount": 0,
+      "endTime": 1603071706407,
+      "estimatedTime": 0,
+      "id": 132,
+      "startTime": 1603067763651,
+      "thing": "",
+      "typeId": 4
+    },
+    {
+      "day": "2020-10-19",
+      "dayTimestamp": 18554,
+      "distractCount": 0,
+      "endTime": 1603074515674,
+      "estimatedTime": 0,
+      "id": 133,
+      "startTime": 1603073284290,
+      "thing": "",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-19",
+      "dayTimestamp": 18554,
+      "distractCount": 0,
+      "endTime": 1603073284290,
+      "estimatedTime": 0,
+      "id": 134,
+      "startTime": 1603072052906,
+      "thing": "",
+      "typeId": 1
+    },
+    {
+      "day": "2020-10-19",
+      "dayTimestamp": 18554,
+      "distractCount": 0,
+      "endTime": 1603077260760,
+      "estimatedTime": 0,
+      "id": 135,
+      "startTime": 1603074519149,
+      "thing": "",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-19",
+      "dayTimestamp": 18554,
+      "distractCount": 0,
+      "endTime": 1603082185262,
+      "estimatedTime": 0,
+      "id": 136,
+      "startTime": 1603077464058,
+      "thing": "",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-19",
+      "dayTimestamp": 18554,
+      "distractCount": 0,
+      "endTime": 1603083483116,
+      "estimatedTime": 0,
+      "id": 137,
+      "startTime": 1603082194568,
+      "thing": "",
+      "typeId": 5
+    },
+    {
+      "day": "2020-10-19",
+      "dayTimestamp": 18554,
+      "distractCount": 0,
+      "endTime": 1603087150809,
+      "estimatedTime": 0,
+      "id": 138,
+      "startTime": 1603083490782,
+      "thing": "",
+      "typeId": 8
+    },
+    {
+      "day": "2020-10-19",
+      "dayTimestamp": 18554,
+      "distractCount": 0,
+      "endTime": 1603087616940,
+      "estimatedTime": 0,
+      "id": 139,
+      "startTime": 1603087207512,
+      "thing": "",
+      "typeId": 6
+    },
+    {
+      "day": "2020-10-19",
+      "dayTimestamp": 18554,
+      "distractCount": 0,
+      "endTime": 1603091628964,
+      "estimatedTime": 0,
+      "id": 140,
+      "startTime": 1603087626778,
+      "thing": "",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-19",
+      "dayTimestamp": 18554,
+      "distractCount": 0,
+      "endTime": 1603093743367,
+      "estimatedTime": 0,
+      "id": 141,
+      "startTime": 1603091628964,
+      "thing": "",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-19",
+      "dayTimestamp": 18554,
+      "distractCount": 0,
+      "endTime": 1603098230979,
+      "estimatedTime": 0,
+      "id": 142,
+      "startTime": 1603093743367,
+      "thing": "智能笔记",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-19",
+      "dayTimestamp": 18554,
+      "distractCount": 0,
+      "endTime": 1603103894386,
+      "estimatedTime": 0,
+      "id": 143,
+      "startTime": 1603099047616,
+      "thing": "",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-19",
+      "dayTimestamp": 18554,
+      "distractCount": 0,
+      "endTime": 1603106865031,
+      "estimatedTime": 0,
+      "id": 144,
+      "startTime": 1603104574735,
+      "thing": "",
+      "typeId": 2
+    },
+    {
+      "day": "2020-10-19",
+      "dayTimestamp": 18554,
+      "distractCount": 0,
+      "endTime": 1603115328483,
+      "estimatedTime": 0,
+      "id": 145,
+      "startTime": 1603106896377,
+      "thing": "",
+      "typeId": 1
+    },
+    {
+      "day": "2020-10-19",
+      "dayTimestamp": 18554,
+      "distractCount": 0,
+      "endTime": 1603116955797,
+      "estimatedTime": 0,
+      "id": 146,
+      "startTime": 1603115356647,
+      "thing": "",
+      "typeId": 4
+    },
+    {
+      "day": "2020-10-19",
+      "dayTimestamp": 18554,
+      "distractCount": 0,
+      "endTime": 1603117583104,
+      "estimatedTime": 0,
+      "id": 147,
+      "startTime": 1603117028932,
+      "thing": "",
+      "typeId": 11
+    },
+    {
+      "day": "2020-10-19",
+      "dayTimestamp": 18554,
+      "distractCount": 0,
+      "endTime": 1603119580427,
+      "estimatedTime": 0,
+      "id": 148,
+      "startTime": 1603117592850,
+      "thing": "",
+      "typeId": 7
+    },
+    {
+      "day": "2020-10-19",
+      "dayTimestamp": 18554,
+      "distractCount": 0,
+      "endTime": 1603122568187,
+      "estimatedTime": 0,
+      "id": 149,
+      "startTime": 1603119584057,
+      "thing": "",
+      "typeId": 1
+    },
+    {
+      "day": "2020-10-19",
+      "dayTimestamp": 18554,
+      "distractCount": 0,
+      "endTime": 1603123199049,
+      "estimatedTime": 0,
+      "id": 150,
+      "startTime": 1603122570049,
+      "thing": "",
+      "typeId": 11
+    },
+    {
+      "day": "2020-10-20",
+      "dayTimestamp": 18555,
+      "distractCount": 0,
+      "endTime": 1603124564809,
+      "estimatedTime": 0,
+      "id": 151,
+      "startTime": 1603123199809,
+      "thing": "",
+      "typeId": 11
+    },
+    {
+      "day": "2020-10-20",
+      "dayTimestamp": 18555,
+      "distractCount": 0,
+      "endTime": 1603149947504,
+      "estimatedTime": 0,
+      "id": 152,
+      "startTime": 1603124570939,
+      "thing": "",
+      "typeId": 8
+    },
+    {
+      "day": "2020-10-20",
+      "dayTimestamp": 18555,
+      "distractCount": 0,
+      "endTime": 1603151686079,
+      "estimatedTime": 0,
+      "id": 153,
+      "startTime": 1603150415387,
+      "thing": "",
+      "typeId": 7
+    },
+    {
+      "day": "2020-10-20",
+      "dayTimestamp": 18555,
+      "distractCount": 0,
+      "endTime": 1603152112792,
+      "estimatedTime": 0,
+      "id": 154,
+      "startTime": 1603151706739,
+      "thing": "",
+      "typeId": 5
+    },
+    {
+      "day": "2020-10-20",
+      "dayTimestamp": 18555,
+      "distractCount": 0,
+      "endTime": 1603153980629,
+      "estimatedTime": 0,
+      "id": 155,
+      "startTime": 1603152127336,
+      "thing": "",
+      "typeId": 1
+    },
+    {
+      "day": "2020-10-20",
+      "dayTimestamp": 18555,
+      "distractCount": 0,
+      "endTime": 1603158459506,
+      "estimatedTime": 0,
+      "id": 156,
+      "startTime": 1603154575235,
+      "thing": "",
+      "typeId": 4
+    },
+    {
+      "day": "2020-10-20",
+      "dayTimestamp": 18555,
+      "distractCount": 0,
+      "endTime": 1603160124626,
+      "estimatedTime": 0,
+      "id": 157,
+      "startTime": 1603158709433,
+      "thing": "",
+      "typeId": 1
+    },
+    {
+      "day": "2020-10-20",
+      "dayTimestamp": 18555,
+      "distractCount": 0,
+      "endTime": 1603161116483,
+      "estimatedTime": 0,
+      "id": 158,
+      "startTime": 1603160132502,
+      "thing": "早会",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-20",
+      "dayTimestamp": 18555,
+      "distractCount": 0,
+      "endTime": 1603163164243,
+      "estimatedTime": 0,
+      "id": 159,
+      "startTime": 1603161120440,
+      "thing": "",
+      "typeId": 1
+    },
+    {
+      "day": "2020-10-20",
+      "dayTimestamp": 18555,
+      "distractCount": 0,
+      "endTime": 1603168131421,
+      "estimatedTime": 0,
+      "id": 160,
+      "startTime": 1603163164243,
+      "thing": "",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-20",
+      "dayTimestamp": 18555,
+      "distractCount": 0,
+      "endTime": 1603169582837,
+      "estimatedTime": 0,
+      "id": 161,
+      "startTime": 1603168131421,
+      "thing": "",
+      "typeId": 5
+    },
+    {
+      "day": "2020-10-20",
+      "dayTimestamp": 18555,
+      "distractCount": 0,
+      "endTime": 1603170926391,
+      "estimatedTime": 0,
+      "id": 162,
+      "startTime": 1603169585714,
+      "thing": "",
+      "typeId": 2
+    },
+    {
+      "day": "2020-10-20",
+      "dayTimestamp": 18555,
+      "distractCount": 0,
+      "endTime": 1603174260214,
+      "estimatedTime": 0,
+      "id": 163,
+      "startTime": 1603173584825,
+      "thing": "",
+      "typeId": 7
+    },
+    {
+      "day": "2020-10-20",
+      "dayTimestamp": 18555,
+      "distractCount": 0,
+      "endTime": 1603175599259,
+      "estimatedTime": 0,
+      "id": 164,
+      "startTime": 1603174263066,
+      "thing": "",
+      "typeId": 6
+    },
+    {
+      "day": "2020-10-20",
+      "dayTimestamp": 18555,
+      "distractCount": 0,
+      "endTime": 1603177276456,
+      "estimatedTime": 0,
+      "id": 165,
+      "startTime": 1603175602255,
+      "thing": "",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-20",
+      "dayTimestamp": 18555,
+      "distractCount": 0,
+      "endTime": 1603182401750,
+      "estimatedTime": 0,
+      "id": 166,
+      "startTime": 1603177309063,
+      "thing": "",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-20",
+      "dayTimestamp": 18555,
+      "distractCount": 0,
+      "endTime": 1603187315979,
+      "estimatedTime": 0,
+      "id": 167,
+      "startTime": 1603182403026,
+      "thing": "",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-20",
+      "dayTimestamp": 18555,
+      "distractCount": 0,
+      "endTime": 1603189469032,
+      "estimatedTime": 0,
+      "id": 168,
+      "startTime": 1603187315979,
+      "thing": "",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-20",
+      "dayTimestamp": 18555,
+      "distractCount": 0,
+      "endTime": 1603190998293,
+      "estimatedTime": 0,
+      "id": 169,
+      "startTime": 1603189469032,
+      "thing": "",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-20",
+      "dayTimestamp": 18555,
+      "distractCount": 0,
+      "endTime": 1603195310020,
+      "estimatedTime": 0,
+      "id": 170,
+      "startTime": 1603193157191,
+      "thing": "",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-20",
+      "dayTimestamp": 18555,
+      "distractCount": 0,
+      "endTime": 1603193157191,
+      "estimatedTime": 0,
+      "id": 171,
+      "startTime": 1603191004363,
+      "thing": "",
+      "typeId": 2
+    },
+    {
+      "day": "2020-10-20",
+      "dayTimestamp": 18555,
+      "distractCount": 0,
+      "endTime": 1603201794237,
+      "estimatedTime": 0,
+      "id": 172,
+      "startTime": 1603195311135,
+      "thing": "",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-20",
+      "dayTimestamp": 18555,
+      "distractCount": 0,
+      "endTime": 1603203928397,
+      "estimatedTime": 0,
+      "id": 173,
+      "startTime": 1603201808957,
+      "thing": "",
+      "typeId": 4
+    },
+    {
+      "day": "2020-10-20",
+      "dayTimestamp": 18555,
+      "distractCount": 0,
+      "endTime": 1603205261224,
+      "estimatedTime": 0,
+      "id": 174,
+      "startTime": 1603204379960,
+      "thing": "",
+      "typeId": 7
+    },
+    {
+      "day": "2020-10-20",
+      "dayTimestamp": 18555,
+      "distractCount": 0,
+      "endTime": 1603209599437,
+      "estimatedTime": 0,
+      "id": 175,
+      "startTime": 1603205263437,
+      "thing": "",
+      "typeId": 1
+    },
+    {
+      "day": "2020-10-21",
+      "dayTimestamp": 18556,
+      "distractCount": 0,
+      "endTime": 1603210653012,
+      "estimatedTime": 0,
+      "id": 176,
+      "startTime": 1603209599012,
+      "thing": "",
+      "typeId": 1
+    },
+    {
+      "day": "2020-10-21",
+      "dayTimestamp": 18556,
+      "distractCount": 0,
+      "endTime": 1603234486066,
+      "estimatedTime": 0,
+      "id": 177,
+      "startTime": 1603210662344,
+      "thing": "",
+      "typeId": 8
+    },
+    {
+      "day": "2020-10-21",
+      "dayTimestamp": 18556,
+      "distractCount": 0,
+      "endTime": 1603235445543,
+      "estimatedTime": 0,
+      "id": 178,
+      "startTime": 1603234493703,
+      "thing": "",
+      "typeId": 7
+    },
+    {
+      "day": "2020-10-21",
+      "dayTimestamp": 18556,
+      "distractCount": 0,
+      "endTime": 1603239553099,
+      "estimatedTime": 0,
+      "id": 179,
+      "startTime": 1603235450198,
+      "thing": "",
+      "typeId": 1
+    },
+    {
+      "day": "2020-10-21",
+      "dayTimestamp": 18556,
+      "distractCount": 0,
+      "endTime": 1603241823511,
+      "estimatedTime": 0,
+      "id": 180,
+      "startTime": 1603239554576,
+      "thing": "",
+      "typeId": 5
+    },
+    {
+      "day": "2020-10-21",
+      "dayTimestamp": 18556,
+      "distractCount": 0,
+      "endTime": 1603243453629,
+      "estimatedTime": 0,
+      "id": 181,
+      "startTime": 1603241827537,
+      "thing": "",
+      "typeId": 4
+    },
+    {
+      "day": "2020-10-21",
+      "dayTimestamp": 18556,
+      "distractCount": 0,
+      "endTime": 1603245410657,
+      "estimatedTime": 0,
+      "id": 182,
+      "startTime": 1603243455132,
+      "thing": "",
+      "typeId": 1
+    },
+    {
+      "day": "2020-10-21",
+      "dayTimestamp": 18556,
+      "distractCount": 0,
+      "endTime": 1603246588858,
+      "estimatedTime": 0,
+      "id": 183,
+      "startTime": 1603246586412,
+      "thing": "",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-21",
+      "dayTimestamp": 18556,
+      "distractCount": 0,
+      "endTime": 1603246586412,
+      "estimatedTime": 0,
+      "id": 185,
+      "startTime": 1603245410657,
+      "thing": "",
+      "typeId": 1
+    },
+    {
+      "day": "2020-10-21",
+      "dayTimestamp": 18556,
+      "distractCount": 0,
+      "endTime": 1603247219614,
+      "estimatedTime": 0,
+      "id": 186,
+      "startTime": 1603246588858,
+      "thing": "早会",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-21",
+      "dayTimestamp": 18556,
+      "distractCount": 0,
+      "endTime": 1603248057685,
+      "estimatedTime": 0,
+      "id": 187,
+      "startTime": 1603247219614,
+      "thing": "",
+      "typeId": 1
+    },
+    {
+      "day": "2020-10-21",
+      "dayTimestamp": 18556,
+      "distractCount": 0,
+      "endTime": 1603251296862,
+      "estimatedTime": 0,
+      "id": 188,
+      "startTime": 1603248058754,
+      "thing": "",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-21",
+      "dayTimestamp": 18556,
+      "distractCount": 0,
+      "endTime": 1603254440900,
+      "estimatedTime": 0,
+      "id": 189,
+      "startTime": 1603251299374,
+      "thing": "",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-21",
+      "dayTimestamp": 18556,
+      "distractCount": 0,
+      "endTime": 1603256574639,
+      "estimatedTime": 0,
+      "id": 190,
+      "startTime": 1603254449494,
+      "thing": "",
+      "typeId": 5
+    },
+    {
+      "day": "2020-10-21",
+      "dayTimestamp": 18556,
+      "distractCount": 0,
+      "endTime": 1603257963247,
+      "estimatedTime": 0,
+      "id": 191,
+      "startTime": 1603256578000,
+      "thing": "",
+      "typeId": 2
+    },
+    {
+      "day": "2020-10-21",
+      "dayTimestamp": 18556,
+      "distractCount": 0,
+      "endTime": 1603260227654,
+      "estimatedTime": 0,
+      "id": 192,
+      "startTime": 1603257972344,
+      "thing": "",
+      "typeId": 8
+    },
+    {
+      "day": "2020-10-21",
+      "dayTimestamp": 18556,
+      "distractCount": 0,
+      "endTime": 1603264412137,
+      "estimatedTime": 0,
+      "id": 193,
+      "startTime": 1603260240135,
+      "thing": "",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-21",
+      "dayTimestamp": 18556,
+      "distractCount": 0,
+      "endTime": 1603266134265,
+      "estimatedTime": 0,
+      "id": 194,
+      "startTime": 1603264412137,
+      "thing": "",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-21",
+      "dayTimestamp": 18556,
+      "distractCount": 0,
+      "endTime": 1603271615256,
+      "estimatedTime": 0,
+      "id": 195,
+      "startTime": 1603266134265,
+      "thing": "",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-21",
+      "dayTimestamp": 18556,
+      "distractCount": 0,
+      "endTime": 1603276237191,
+      "estimatedTime": 0,
+      "id": 196,
+      "startTime": 1603271616580,
+      "thing": "",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-21",
+      "dayTimestamp": 18556,
+      "distractCount": 0,
+      "endTime": 1603280673061,
+      "estimatedTime": 0,
+      "id": 197,
+      "startTime": 1603276307123,
+      "thing": "",
+      "typeId": 2
+    },
+    {
+      "day": "2020-10-21",
+      "dayTimestamp": 18556,
+      "distractCount": 0,
+      "endTime": 1603282499128,
+      "estimatedTime": 0,
+      "id": 198,
+      "startTime": 1603280675134,
+      "thing": "开会",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-21",
+      "dayTimestamp": 18556,
+      "distractCount": 0,
+      "endTime": 1603286855962,
+      "estimatedTime": 0,
+      "id": 199,
+      "startTime": 1603282504366,
+      "thing": "",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-21",
+      "dayTimestamp": 18556,
+      "distractCount": 0,
+      "endTime": 1603288870406,
+      "estimatedTime": 0,
+      "id": 200,
+      "startTime": 1603286857787,
+      "thing": "",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-21",
+      "dayTimestamp": 18556,
+      "distractCount": 0,
+      "endTime": 1603289775415,
+      "estimatedTime": 0,
+      "id": 201,
+      "startTime": 1603288884406,
+      "thing": "",
+      "typeId": 4
+    },
+    {
+      "day": "2020-10-21",
+      "dayTimestamp": 18556,
+      "distractCount": 0,
+      "endTime": 1603291690772,
+      "estimatedTime": 0,
+      "id": 202,
+      "startTime": 1603289819687,
+      "thing": "",
+      "typeId": 6
+    },
+    {
+      "day": "2020-10-21",
+      "dayTimestamp": 18556,
+      "distractCount": 0,
+      "endTime": 1603292684834,
+      "estimatedTime": 0,
+      "id": 203,
+      "startTime": 1603291691884,
+      "thing": "",
+      "typeId": 7
+    },
+    {
+      "day": "2020-10-21",
+      "dayTimestamp": 18556,
+      "distractCount": 0,
+      "endTime": 1603295852289,
+      "estimatedTime": 0,
+      "id": 204,
+      "startTime": 1603293342574,
+      "thing": "",
+      "typeId": 1
+    },
+    {
+      "day": "2020-10-21",
+      "dayTimestamp": 18556,
+      "distractCount": 0,
+      "endTime": 1603295999170,
+      "estimatedTime": 0,
+      "id": 205,
+      "startTime": 1603295856170,
+      "thing": "",
+      "typeId": 6
+    },
+    {
+      "day": "2020-10-22",
+      "dayTimestamp": 18557,
+      "distractCount": 0,
+      "endTime": 1603298137090,
+      "estimatedTime": 0,
+      "id": 206,
+      "startTime": 1603295999090,
+      "thing": "",
+      "typeId": 6
+    },
+    {
+      "day": "2020-10-22",
+      "dayTimestamp": 18557,
+      "distractCount": 0,
+      "endTime": 1603321925398,
+      "estimatedTime": 0,
+      "id": 207,
+      "startTime": 1603298138366,
+      "thing": "",
+      "typeId": 8
+    },
+    {
+      "day": "2020-10-22",
+      "dayTimestamp": 18557,
+      "distractCount": 0,
+      "endTime": 1603323146152,
+      "estimatedTime": 0,
+      "id": 208,
+      "startTime": 1603321927294,
+      "thing": "",
+      "typeId": 7
+    },
+    {
+      "day": "2020-10-22",
+      "dayTimestamp": 18557,
+      "distractCount": 0,
+      "endTime": 1603325260272,
+      "estimatedTime": 0,
+      "id": 209,
+      "startTime": 1603323187654,
+      "thing": "",
+      "typeId": 1
+    },
+    {
+      "day": "2020-10-22",
+      "dayTimestamp": 18557,
+      "distractCount": 0,
+      "endTime": 1603326649966,
+      "estimatedTime": 0,
+      "id": 210,
+      "startTime": 1603325263923,
+      "thing": "",
+      "typeId": 5
+    },
+    {
+      "day": "2020-10-22",
+      "dayTimestamp": 18557,
+      "distractCount": 0,
+      "endTime": 1603327629341,
+      "estimatedTime": 0,
+      "id": 211,
+      "startTime": 1603326656246,
+      "thing": "",
+      "typeId": 11
+    },
+    {
+      "day": "2020-10-22",
+      "dayTimestamp": 18557,
+      "distractCount": 0,
+      "endTime": 1603331506220,
+      "estimatedTime": 0,
+      "id": 212,
+      "startTime": 1603327631522,
+      "thing": "",
+      "typeId": 4
+    },
+    {
+      "day": "2020-10-22",
+      "dayTimestamp": 18557,
+      "distractCount": 0,
+      "endTime": 1603333998074,
+      "estimatedTime": 0,
+      "id": 213,
+      "startTime": 1603331508195,
+      "thing": "",
+      "typeId": 1
+    },
+    {
+      "day": "2020-10-22",
+      "dayTimestamp": 18557,
+      "distractCount": 0,
+      "endTime": 1603336893792,
+      "estimatedTime": 0,
+      "id": 214,
+      "startTime": 1603333998074,
+      "thing": "",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-22",
+      "dayTimestamp": 18557,
+      "distractCount": 0,
+      "endTime": 1603344529771,
+      "estimatedTime": 0,
+      "id": 215,
+      "startTime": 1603336893792,
+      "thing": "",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-22",
+      "dayTimestamp": 18557,
+      "distractCount": 0,
+      "endTime": 1603346588751,
+      "estimatedTime": 0,
+      "id": 216,
+      "startTime": 1603344541085,
+      "thing": "",
+      "typeId": 8
+    },
+    {
+      "day": "2020-10-22",
+      "dayTimestamp": 18557,
+      "distractCount": 0,
+      "endTime": 1603350751465,
+      "estimatedTime": 0,
+      "id": 217,
+      "startTime": 1603346682141,
+      "thing": "",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-22",
+      "dayTimestamp": 18557,
+      "distractCount": 0,
+      "endTime": 1603356207668,
+      "estimatedTime": 0,
+      "id": 218,
+      "startTime": 1603350754841,
+      "thing": "",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-22",
+      "dayTimestamp": 18557,
+      "distractCount": 0,
+      "endTime": 1603362837814,
+      "estimatedTime": 0,
+      "id": 219,
+      "startTime": 1603356210425,
+      "thing": "",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-22",
+      "dayTimestamp": 18557,
+      "distractCount": 0,
+      "endTime": 1603370122466,
+      "estimatedTime": 0,
+      "id": 220,
+      "startTime": 1603366493973,
+      "thing": "",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-22",
+      "dayTimestamp": 18557,
+      "distractCount": 0,
+      "endTime": 1603366493973,
+      "estimatedTime": 0,
+      "id": 221,
+      "startTime": 1603362865480,
+      "thing": "",
+      "typeId": 2
+    },
+    {
+      "day": "2020-10-22",
+      "dayTimestamp": 18557,
+      "distractCount": 0,
+      "endTime": 1603374586102,
+      "estimatedTime": 0,
+      "id": 222,
+      "startTime": 1603370123707,
+      "thing": "",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-22",
+      "dayTimestamp": 18557,
+      "distractCount": 0,
+      "endTime": 1603376380451,
+      "estimatedTime": 0,
+      "id": 223,
+      "startTime": 1603374606560,
+      "thing": "",
+      "typeId": 4
+    },
+    {
+      "day": "2020-10-22",
+      "dayTimestamp": 18557,
+      "distractCount": 0,
+      "endTime": 1603377872011,
+      "estimatedTime": 0,
+      "id": 224,
+      "startTime": 1603376383033,
+      "thing": "",
+      "typeId": 6
+    },
+    {
+      "day": "2020-10-22",
+      "dayTimestamp": 18557,
+      "distractCount": 0,
+      "endTime": 1603378875709,
+      "estimatedTime": 0,
+      "id": 225,
+      "startTime": 1603377884005,
+      "thing": "",
+      "typeId": 7
+    },
+    {
+      "day": "2020-10-22",
+      "dayTimestamp": 18557,
+      "distractCount": 0,
+      "endTime": 1603382399460,
+      "estimatedTime": 0,
+      "id": 226,
+      "startTime": 1603378878460,
+      "thing": "",
+      "typeId": 1
+    },
+    {
+      "day": "2020-10-23",
+      "dayTimestamp": 18558,
+      "distractCount": 0,
+      "endTime": 1603382839917,
+      "estimatedTime": 0,
+      "id": 227,
+      "startTime": 1603382399916,
+      "thing": "",
+      "typeId": 1
+    },
+    {
+      "day": "2020-10-23",
+      "dayTimestamp": 18558,
+      "distractCount": 0,
+      "endTime": 1603383474007,
+      "estimatedTime": 0,
+      "id": 228,
+      "startTime": 1603382842779,
+      "thing": "",
+      "typeId": 6
+    },
+    {
+      "day": "2020-10-23",
+      "dayTimestamp": 18558,
+      "distractCount": 0,
+      "endTime": 1603407025296,
+      "estimatedTime": 0,
+      "id": 229,
+      "startTime": 1603383478927,
+      "thing": "",
+      "typeId": 8
+    },
+    {
+      "day": "2020-10-23",
+      "dayTimestamp": 18558,
+      "distractCount": 0,
+      "endTime": 1603408413957,
+      "estimatedTime": 0,
+      "id": 230,
+      "startTime": 1603407790271,
+      "thing": "",
+      "typeId": 7
+    },
+    {
+      "day": "2020-10-23",
+      "dayTimestamp": 18558,
+      "distractCount": 0,
+      "endTime": 1603412212403,
+      "estimatedTime": 0,
+      "id": 231,
+      "startTime": 1603408415857,
+      "thing": "",
+      "typeId": 1
+    },
+    {
+      "day": "2020-10-23",
+      "dayTimestamp": 18558,
+      "distractCount": 0,
+      "endTime": 1603413558875,
+      "estimatedTime": 0,
+      "id": 232,
+      "startTime": 1603412214585,
+      "thing": "",
+      "typeId": 1
+    },
+    {
+      "day": "2020-10-23",
+      "dayTimestamp": 18558,
+      "distractCount": 0,
+      "endTime": 1603416305890,
+      "estimatedTime": 0,
+      "id": 233,
+      "startTime": 1603413662100,
+      "thing": "",
+      "typeId": 4
+    },
+    {
+      "day": "2020-10-23",
+      "dayTimestamp": 18558,
+      "distractCount": 0,
+      "endTime": 1603419315176,
+      "estimatedTime": 0,
+      "id": 234,
+      "startTime": 1603416308115,
+      "thing": "",
+      "typeId": 1
+    },
+    {
+      "day": "2020-10-23",
+      "dayTimestamp": 18558,
+      "distractCount": 0,
+      "endTime": 1603421250610,
+      "estimatedTime": 0,
+      "id": 235,
+      "startTime": 1603419322741,
+      "thing": "",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-23",
+      "dayTimestamp": 18558,
+      "distractCount": 0,
+      "endTime": 1603429298789,
+      "estimatedTime": 0,
+      "id": 236,
+      "startTime": 1603427435987,
+      "thing": "",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-23",
+      "dayTimestamp": 18558,
+      "distractCount": 0,
+      "endTime": 1603427435987,
+      "estimatedTime": 0,
+      "id": 237,
+      "startTime": 1603421253186,
+      "thing": "",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-23",
+      "dayTimestamp": 18558,
+      "distractCount": 0,
+      "endTime": 1603430285014,
+      "estimatedTime": 0,
+      "id": 238,
+      "startTime": 1603429303644,
+      "thing": "",
+      "typeId": 2
+    },
+    {
+      "day": "2020-10-23",
+      "dayTimestamp": 18558,
+      "distractCount": 0,
+      "endTime": 1603432887455,
+      "estimatedTime": 0,
+      "id": 239,
+      "startTime": 1603430287919,
+      "thing": "",
+      "typeId": 8
+    },
+    {
+      "day": "2020-10-23",
+      "dayTimestamp": 18558,
+      "distractCount": 0,
+      "endTime": 1603439125409,
+      "estimatedTime": 0,
+      "id": 240,
+      "startTime": 1603433383387,
+      "thing": "",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-23",
+      "dayTimestamp": 18558,
+      "distractCount": 0,
+      "endTime": 1603444996196,
+      "estimatedTime": 0,
+      "id": 241,
+      "startTime": 1603439126581,
+      "thing": "",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-23",
+      "dayTimestamp": 18558,
+      "distractCount": 0,
+      "endTime": 1603446196539,
+      "estimatedTime": 0,
+      "id": 242,
+      "startTime": 1603445036817,
+      "thing": "",
+      "typeId": 7
+    },
+    {
+      "day": "2020-10-23",
+      "dayTimestamp": 18558,
+      "distractCount": 0,
+      "endTime": 1603449933479,
+      "estimatedTime": 0,
+      "id": 243,
+      "startTime": 1603446197556,
+      "thing": "",
+      "typeId": 3
+    },
+    {
+      "day": "2020-10-23",
+      "dayTimestamp": 18558,
+      "distractCount": 0,
+      "endTime": 1603458922046,
+      "estimatedTime": 0,
+      "id": 244,
+      "startTime": 1603456817638,
+      "thing": "",
+      "typeId": 4
+    },
+    {
+      "day": "2020-10-23",
+      "dayTimestamp": 18558,
+      "distractCount": 0,
+      "endTime": 1603456817638,
+      "estimatedTime": 0,
+      "id": 245,
+      "startTime": 1603450753230,
+      "thing": "",
+      "typeId": 4
+    },
+    {
+      "day": "2020-10-23",
+      "dayTimestamp": 18558,
+      "distractCount": 0,
+      "endTime": 1603460481731,
+      "estimatedTime": 0,
+      "id": 246,
+      "startTime": 1603459066964,
+      "thing": "",
+      "typeId": 6
+    }
+  ],
+  "b": [
+    {
+      "color": -12207748,
+      "desc": "花费在学习的时间",
+      "id": 1,
+      "imgIndex": 0,
+      "name": "学习",
+      "order": 1
+    },
+    {
+      "color": -15858,
+      "desc": "健身跑步身体棒",
+      "id": 2,
+      "imgIndex": 0,
+      "name": "运动",
+      "order": 2
+    },
+    {
+      "color": -8667158,
+      "desc": "一切为工作而消耗的时间",
+      "id": 3,
+      "imgIndex": 0,
+      "name": "工作",
+      "order": 3
+    },
+    {
+      "color": -6184026,
+      "desc": "奔波在路上",
+      "id": 4,
+      "imgIndex": 0,
+      "name": "路上",
+      "order": 4
+    },
+    {
+      "color": -350379,
+      "desc": "一日三餐",
+      "id": 5,
+      "imgIndex": 0,
+      "name": "吃饭",
+      "order": 5
+    },
+    {
+      "color": -953428,
+      "desc": "刷手机玩游戏逛街",
+      "id": 6,
+      "imgIndex": 0,
+      "name": "娱乐",
+      "order": 6
+    },
+    {
+      "color": -11487295,
+      "desc": "洗澡刷牙呢",
+      "id": 7,
+      "imgIndex": 0,
+      "name": "洗漱",
+      "order": 7
+    },
+    {
+      "color": -15653297,
+      "desc": "睡觉觉",
+      "id": 8,
+      "imgIndex": 0,
+      "name": "睡觉",
+      "order": 8
+    },
+    {
+      "color": -7386312,
+      "desc": "归并不到以上项的事情",
+      "id": 9,
+      "imgIndex": 0,
+      "name": "杂项",
+      "order": 9
+    },
+    {
+      "color": -755424,
+      "desc": "做了一些不好的事情",
+      "id": 10,
+      "imgIndex": 0,
+      "name": "抽烟喝酒",
+      "order": 1
+    },
+    {
+      "color": -6924246,
+      "desc": "家里还是有些活",
+      "id": 11,
+      "imgIndex": 0,
+      "name": "家务",
+      "order": 1
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 12,
+      "imgIndex": 0,
+      "name": "",
+      "order": 12
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 13,
+      "imgIndex": 0,
+      "name": "",
+      "order": 13
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 14,
+      "imgIndex": 0,
+      "name": "",
+      "order": 14
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 15,
+      "imgIndex": 0,
+      "name": "",
+      "order": 15
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 16,
+      "imgIndex": 0,
+      "name": "",
+      "order": 16
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 17,
+      "imgIndex": 0,
+      "name": "",
+      "order": 17
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 18,
+      "imgIndex": 0,
+      "name": "",
+      "order": 18
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 19,
+      "imgIndex": 0,
+      "name": "",
+      "order": 19
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 20,
+      "imgIndex": 0,
+      "name": "",
+      "order": 20
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 21,
+      "imgIndex": 0,
+      "name": "",
+      "order": 21
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 22,
+      "imgIndex": 0,
+      "name": "",
+      "order": 22
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 23,
+      "imgIndex": 0,
+      "name": "",
+      "order": 23
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 24,
+      "imgIndex": 0,
+      "name": "",
+      "order": 24
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 25,
+      "imgIndex": 0,
+      "name": "",
+      "order": 25
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 26,
+      "imgIndex": 0,
+      "name": "",
+      "order": 26
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 27,
+      "imgIndex": 0,
+      "name": "",
+      "order": 27
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 28,
+      "imgIndex": 0,
+      "name": "",
+      "order": 28
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 29,
+      "imgIndex": 0,
+      "name": "",
+      "order": 29
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 30,
+      "imgIndex": 0,
+      "name": "",
+      "order": 30
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 31,
+      "imgIndex": 0,
+      "name": "",
+      "order": 31
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 32,
+      "imgIndex": 0,
+      "name": "",
+      "order": 32
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 33,
+      "imgIndex": 0,
+      "name": "",
+      "order": 33
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 34,
+      "imgIndex": 0,
+      "name": "",
+      "order": 34
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 35,
+      "imgIndex": 0,
+      "name": "",
+      "order": 35
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 36,
+      "imgIndex": 0,
+      "name": "",
+      "order": 36
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 37,
+      "imgIndex": 0,
+      "name": "",
+      "order": 37
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 38,
+      "imgIndex": 0,
+      "name": "",
+      "order": 38
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 39,
+      "imgIndex": 0,
+      "name": "",
+      "order": 39
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 40,
+      "imgIndex": 0,
+      "name": "",
+      "order": 40
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 41,
+      "imgIndex": 0,
+      "name": "",
+      "order": 41
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 42,
+      "imgIndex": 0,
+      "name": "",
+      "order": 42
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 43,
+      "imgIndex": 0,
+      "name": "",
+      "order": 43
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 44,
+      "imgIndex": 0,
+      "name": "",
+      "order": 44
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 45,
+      "imgIndex": 0,
+      "name": "",
+      "order": 45
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 46,
+      "imgIndex": 0,
+      "name": "",
+      "order": 46
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 47,
+      "imgIndex": 0,
+      "name": "",
+      "order": 47
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 48,
+      "imgIndex": 0,
+      "name": "",
+      "order": 48
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 49,
+      "imgIndex": 0,
+      "name": "",
+      "order": 49
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 50,
+      "imgIndex": 0,
+      "name": "",
+      "order": 50
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 51,
+      "imgIndex": 0,
+      "name": "",
+      "order": 51
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 52,
+      "imgIndex": 0,
+      "name": "",
+      "order": 52
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 53,
+      "imgIndex": 0,
+      "name": "",
+      "order": 53
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 54,
+      "imgIndex": 0,
+      "name": "",
+      "order": 54
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 55,
+      "imgIndex": 0,
+      "name": "",
+      "order": 55
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 56,
+      "imgIndex": 0,
+      "name": "",
+      "order": 56
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 57,
+      "imgIndex": 0,
+      "name": "",
+      "order": 57
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 58,
+      "imgIndex": 0,
+      "name": "",
+      "order": 58
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 59,
+      "imgIndex": 0,
+      "name": "",
+      "order": 59
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 60,
+      "imgIndex": 0,
+      "name": "",
+      "order": 60
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 61,
+      "imgIndex": 0,
+      "name": "",
+      "order": 61
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 62,
+      "imgIndex": 0,
+      "name": "",
+      "order": 62
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 63,
+      "imgIndex": 0,
+      "name": "",
+      "order": 63
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 64,
+      "imgIndex": 0,
+      "name": "",
+      "order": 64
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 65,
+      "imgIndex": 0,
+      "name": "",
+      "order": 65
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 66,
+      "imgIndex": 0,
+      "name": "",
+      "order": 66
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 67,
+      "imgIndex": 0,
+      "name": "",
+      "order": 67
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 68,
+      "imgIndex": 0,
+      "name": "",
+      "order": 68
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 69,
+      "imgIndex": 0,
+      "name": "",
+      "order": 69
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 70,
+      "imgIndex": 0,
+      "name": "",
+      "order": 70
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 71,
+      "imgIndex": 0,
+      "name": "",
+      "order": 71
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 72,
+      "imgIndex": 0,
+      "name": "",
+      "order": 72
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 73,
+      "imgIndex": 0,
+      "name": "",
+      "order": 73
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 74,
+      "imgIndex": 0,
+      "name": "",
+      "order": 74
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 75,
+      "imgIndex": 0,
+      "name": "",
+      "order": 75
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 76,
+      "imgIndex": 0,
+      "name": "",
+      "order": 76
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 77,
+      "imgIndex": 0,
+      "name": "",
+      "order": 77
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 78,
+      "imgIndex": 0,
+      "name": "",
+      "order": 78
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 79,
+      "imgIndex": 0,
+      "name": "",
+      "order": 79
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 80,
+      "imgIndex": 0,
+      "name": "",
+      "order": 80
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 81,
+      "imgIndex": 0,
+      "name": "",
+      "order": 81
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 82,
+      "imgIndex": 0,
+      "name": "",
+      "order": 82
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 83,
+      "imgIndex": 0,
+      "name": "",
+      "order": 83
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 84,
+      "imgIndex": 0,
+      "name": "",
+      "order": 84
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 85,
+      "imgIndex": 0,
+      "name": "",
+      "order": 85
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 86,
+      "imgIndex": 0,
+      "name": "",
+      "order": 86
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 87,
+      "imgIndex": 0,
+      "name": "",
+      "order": 87
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 88,
+      "imgIndex": 0,
+      "name": "",
+      "order": 88
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 89,
+      "imgIndex": 0,
+      "name": "",
+      "order": 89
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 90,
+      "imgIndex": 0,
+      "name": "",
+      "order": 90
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 91,
+      "imgIndex": 0,
+      "name": "",
+      "order": 91
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 92,
+      "imgIndex": 0,
+      "name": "",
+      "order": 92
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 93,
+      "imgIndex": 0,
+      "name": "",
+      "order": 93
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 94,
+      "imgIndex": 0,
+      "name": "",
+      "order": 94
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 95,
+      "imgIndex": 0,
+      "name": "",
+      "order": 95
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 96,
+      "imgIndex": 0,
+      "name": "",
+      "order": 96
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 97,
+      "imgIndex": 0,
+      "name": "",
+      "order": 97
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 98,
+      "imgIndex": 0,
+      "name": "",
+      "order": 98
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 99,
+      "imgIndex": 0,
+      "name": "",
+      "order": 99
+    },
+    {
+      "color": 0,
+      "desc": "",
+      "id": 100,
+      "imgIndex": 0,
+      "name": "",
+      "order": 100
+    }
+  ],
+  "c": [
+    {
+      "createTime": 0,
+      "deadline": 0,
+      "endType": 0,
+      "endValue": 0,
+      "id": 14,
+      "notifyTime": 0,
+      "order": 0,
+      "remindTime": 0,
+      "significance": 2,
+      "task": "洗牙",
+      "visibility": 0
+    },
+    {
+      "createTime": 0,
+      "deadline": 0,
+      "endType": 0,
+      "endValue": 0,
+      "id": 17,
+      "notifyTime": 0,
+      "order": 0,
+      "remindTime": 1602723626901,
+      "repeatRemindId": 7,
+      "significance": 2,
+      "task": "一篇博客",
+      "visibility": 0
+    }
+  ],
+  "d": [
+    {
+      "dayStamp": 18549,
+      "eveningLog": "第一次记录，整体玩游戏的时间有点多",
+      "morningLog": "睡觉",
+      "type": 0
+    }
+  ],
+  "e": [
+    {
+      "content": "工作危机",
+      "finishTime": 1602652155265,
+      "finishTimeStamp": 18549,
+      "id": 1,
+      "remindDayStamp": 0,
+      "remindTime": 0,
+      "significance": 1,
+      "taskId": 1
+    },
+    {
+      "content": "急迫的问题",
+      "finishTime": 1602652156163,
+      "finishTimeStamp": 18549,
+      "id": 2,
+      "remindDayStamp": 0,
+      "remindTime": 0,
+      "significance": 1,
+      "taskId": 2
+    },
+    {
+      "content": "有期限压力的计划",
+      "finishTime": 1602652157155,
+      "finishTimeStamp": 18549,
+      "id": 3,
+      "remindDayStamp": 0,
+      "remindTime": 0,
+      "significance": 1,
+      "taskId": 3
+    },
+    {
+      "content": "发掘新机会",
+      "finishTime": 1602652165419,
+      "finishTimeStamp": 18549,
+      "id": 4,
+      "remindDayStamp": 0,
+      "remindTime": 0,
+      "significance": 2,
+      "taskId": 4
+    },
+    {
+      "content": "规划职业前程",
+      "finishTime": 1602652166349,
+      "finishTimeStamp": 18549,
+      "id": 5,
+      "remindDayStamp": 0,
+      "remindTime": 0,
+      "significance": 2,
+      "taskId": 5
+    },
+    {
+      "content": "防范于未然",
+      "finishTime": 1602652167342,
+      "finishTimeStamp": 18549,
+      "id": 6,
+      "remindDayStamp": 0,
+      "remindTime": 0,
+      "significance": 2,
+      "taskId": 6
+    },
+    {
+      "content": "可做可不做的杂事",
+      "finishTime": 1602652168847,
+      "finishTimeStamp": 18549,
+      "id": 7,
+      "remindDayStamp": 0,
+      "remindTime": 0,
+      "significance": 4,
+      "taskId": 10
+    },
+    {
+      "content": "不必要的应酬",
+      "finishTime": 1602652169784,
+      "finishTimeStamp": 18549,
+      "id": 8,
+      "remindDayStamp": 0,
+      "remindTime": 0,
+      "significance": 4,
+      "taskId": 11
+    },
+    {
+      "content": "上网聊天玩游戏",
+      "finishTime": 1602652170758,
+      "finishTimeStamp": 18549,
+      "id": 9,
+      "remindDayStamp": 0,
+      "remindTime": 0,
+      "significance": 4,
+      "taskId": 12
+    },
+    {
+      "content": "不速之客的到访",
+      "finishTime": 1602652171809,
+      "finishTimeStamp": 18549,
+      "id": 10,
+      "remindDayStamp": 0,
+      "remindTime": 0,
+      "significance": 3,
+      "taskId": 7
+    },
+    {
+      "content": "临时安排的工作",
+      "finishTime": 1602652173133,
+      "finishTimeStamp": 18549,
+      "id": 11,
+      "remindDayStamp": 0,
+      "remindTime": 0,
+      "significance": 3,
+      "taskId": 8
+    },
+    {
+      "content": "不必要的社交软件消息回复",
+      "finishTime": 1602652174198,
+      "finishTimeStamp": 18549,
+      "id": 12,
+      "remindDayStamp": 0,
+      "remindTime": 0,
+      "significance": 3,
+      "taskId": 9
+    },
+    {
+      "content": "重要的事情",
+      "finishTime": 1602719021596,
+      "finishTimeStamp": 18550,
+      "id": 13,
+      "remindDayStamp": 18549,
+      "remindTime": 1602689354177,
+      "significance": 1,
+      "taskId": 13
+    },
+    {
+      "content": "一篇博客",
+      "finishTime": 1602948184177,
+      "finishTimeStamp": 18552,
+      "id": 15,
+      "remindDayStamp": 18552,
+      "remindTime": 1602723626901,
+      "significance": 2,
+      "taskId": 17
+    },
+    {
+      "content": "体检",
+      "finishTime": 1603037554241,
+      "finishTimeStamp": 18554,
+      "id": 16,
+      "remindDayStamp": 0,
+      "remindTime": 0,
+      "significance": 2,
+      "taskId": 15
+    },
+    {
+      "content": "一篇博客",
+      "finishTime": 1603108856210,
+      "finishTimeStamp": 18554,
+      "id": 17,
+      "remindDayStamp": 18554,
+      "remindTime": 1602723626901,
+      "significance": 2,
+      "taskId": 17
+    }
+  ],
+  "f": [
+    {
+      "frequency": 1,
+      "id": 1,
+      "rule": "",
+      "showHint": false,
+      "special_rule": "",
+      "title": "每天",
+      "unit": 1
+    },
+    {
+      "frequency": 1,
+      "id": 2,
+      "rule": "",
+      "showHint": false,
+      "special_rule": "3",
+      "title": "周一至周五",
+      "unit": 1
+    },
+    {
+      "frequency": 1,
+      "id": 3,
+      "rule": "4",
+      "showHint": true,
+      "special_rule": "",
+      "title": "每周",
+      "unit": 2
+    },
+    {
+      "frequency": 1,
+      "id": 4,
+      "rule": "1,2,3,14,15,30,31",
+      "showHint": true,
+      "special_rule": "",
+      "title": "每月",
+      "unit": 3
+    },
+    {
+      "frequency": 1,
+      "id": 5,
+      "rule": "2,4",
+      "showHint": true,
+      "special_rule": "",
+      "title": "每月",
+      "unit": 4
+    },
+    {
+      "frequency": 1,
+      "id": 6,
+      "rule": "24,1,2,5,7,10,11",
+      "showHint": true,
+      "special_rule": "",
+      "title": "每年",
+      "unit": 5
+    },
+    {
+      "frequency": 2,
+      "id": 7,
+      "rule": "",
+      "showHint": true,
+      "special_rule": "",
+      "title": "自定义重复",
+      "unit": 1
+    }
+  ],
+  "g": [
+    {
+      "a": "estimate_time",
+      "b": "0"
+    },
+    {
+      "a": "reminded_time",
+      "b": ""
+    },
+    {
+      "a": "language",
+      "b": "china"
+    },
+    {
+      "a": "current_task",
+      "b": "2020-10-23#tl#18558#tl#1603461467538#tl#0#tl##tl#0#tl#1#tl#0"
+    },
+    {
+      "a": "has_nrar",
+      "b": "false"
+    },
+    {
+      "a": "birthday",
+      "b": ""
+    }
+  ]
+}
