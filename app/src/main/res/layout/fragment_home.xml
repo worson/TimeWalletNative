@@ -85,19 +85,14 @@
         </androidx.core.widget.NestedScrollView>
     </com.haibin.calendarview.CalendarLayout>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+    <Button
         android:id="@+id/btTask"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@color/colorAccent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginHorizontal="80dp"
         android:layout_marginVertical="80dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        android:text="任务"
         app:layout_constraintEnd_toEndOf="parent" />
-
-    <!--<FrameLayout
-        android:id="@+id/fragment_containner"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

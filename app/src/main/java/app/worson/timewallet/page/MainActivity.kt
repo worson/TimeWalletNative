@@ -32,7 +32,17 @@ class MainActivity : AppCompatActivity() {
 
         taskTimeTaskFragment=TimeTaskFragment()
         FragmentUtils.add(supportFragmentManager,taskTimeTaskFragment,R.id.task_containner)
-        FragmentUtils.show(taskTimeTaskFragment)
+        showHideTimeTaskFragment(false)
+
 //        navView.invisible()
+    }
+
+    private fun showHideTimeTaskFragment(isShow: Boolean) {
+        if (isShow){
+            FragmentUtils.show(taskTimeTaskFragment)
+        }else{
+            FragmentUtils.hide(taskTimeTaskFragment)
+        }
+
     }
 }

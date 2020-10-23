@@ -47,6 +47,12 @@
         android:text="开始"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_text_pupup_window2"
+        android:text="删除"/>
+
 
 
 </LinearLayout>
