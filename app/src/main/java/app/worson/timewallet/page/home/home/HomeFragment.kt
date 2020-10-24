@@ -25,6 +25,7 @@ import app.worson.timewallet.module.viewex.differDays
 import app.worson.timewallet.page.eventtype.TimeEventSelectDialogFragment
 import app.worson.timewallet.page.eventtype.TimeEventViewModel
 import app.worson.timewallet.page.eventtype.TimeEventViewState
+import app.worson.timewallet.page.home.MainViewModel
 import app.worson.timewallet.view.rvhelper.DefaultItemDiff
 import com.blankj.utilcode.util.FragmentUtils
 import com.chad.library.adapter.base.BaseQuickAdapter
@@ -45,6 +46,7 @@ class HomeFragment : Fragment() {
 
     private val mTimeRecordViewModel by activityViewModels<TimeRecordViewModel>()
     private val mTimeEventViewModel by activityViewModels<TimeEventViewModel>()
+    private val mMainViewModel by activityViewModels<MainViewModel>()
 
     private var mTimeEventMap:MutableMap<Int,TimeEventEntity> = mutableMapOf()
     private val mAdapter: TimeRecordAdapter = TimeRecordAdapter(mutableListOf())
@@ -71,13 +73,13 @@ class HomeFragment : Fragment() {
 //            showTimeEventSelect()
             L.i(TAG, "notifyDataSetChanged: ")
 //            mAdapter.notifyDataSetChanged()
-            mAdapter.timeEventMap=mTimeEventMap
-
+//            mAdapter.timeEventMap=mTimeEventMap
+            mMainViewModel.showTimeTask(true)
         }
         initTimeRecordList()
         initTimeEvents()
         initCanlender()
-//        initTest()
+        initTest()
     }
 
     private fun initTest() {
@@ -186,7 +188,7 @@ class HomeFragment : Fragment() {
             .setTitle("修改内容")
             .setView(R.layout.dialog_edit_text)
             .setPositiveButton(
-                "确定",
+                "修改",
                 DialogInterface.OnClickListener { dialog, which ->
                     val input =
                         (dialog as AlertDialog).findViewById<TextView>(

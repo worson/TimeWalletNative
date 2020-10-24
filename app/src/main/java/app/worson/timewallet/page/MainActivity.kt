@@ -3,16 +3,23 @@ package app.worson.timewallet.page
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.observe
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import app.worson.timewallet.R
+import app.worson.timewallet.page.home.MainViewModel
+import app.worson.timewallet.page.home.MainViewState
+import app.worson.timewallet.page.home.dashboard.DashboardViewModel
 import app.worson.timewallet.page.timetask.TimeTaskFragment
-import app.worson.timewallet.utils.invisible
 import com.blankj.utilcode.util.FragmentUtils
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var mainViewModel:MainViewModel
 
     lateinit var taskTimeTaskFragment: TimeTaskFragment
 
@@ -29,9 +36,24 @@ class MainActivity : AppCompatActivity() {
         ))
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
-//        initTimeTask()
+        initTimeTask()
+        initViewModel()
 //        navView.invisible()
     }
+
+    private fun initViewModel() {
+        mainViewModel=ViewModelProvider(this).get(MainViewModel::class.java)
+        mainViewModel.liveData.observe(this) {
+            observeMainViewState(it)
+        }
+    }
+
+    private fun observeMainViewState(viewState: MainViewState) {
+        viewState.showTimeTask?.handleIfNotHandled {
+            showHideTimeTaskFragment(it)
+        }
+    }
+
 
     private fun initTimeTask() {
         taskTimeTaskFragment=TimeTaskFragment()

@@ -83,7 +83,9 @@ class TimeRecordAdapter(data: MutableList<TimeRecordItem>) :
 
         holder.setText(R.id.title,eventName)
         holder.setText(R.id.subTitle, content)
-//        holder.setBackgroundColor(R.id.vgRoot,item.color)
+        eventEntity?.let {
+            holder.setBackgroundColor(R.id.vgRoot,it.color)
+        }
     }
 
 

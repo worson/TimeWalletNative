@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_dark"
+    tools:context=".page.timetask.TimeTaskFragment">
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Default" />
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:text="Disable" />
+
+    <com.google.android.material.button.MaterialButton
+        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="UnelevatedButton" />
+
+    <com.google.android.material.button.MaterialButton
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OutlinedButton" />
+
+    <com.google.android.material.button.MaterialButton
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextButton" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="开始"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_text_pupup_window2"
+        android:text="删除"/>
+
+
+
+</LinearLayout>
