@@ -32,11 +32,11 @@ class TimeTaskFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        BarUtils.setStatusBarVisibility(requireActivity(),false)
+//        BarUtils.setStatusBarVisibility(requireActivity(),false)
     }
 
     override fun onPause() {
         super.onPause()
-        BarUtils.setStatusBarVisibility(requireActivity(),true)
+//        BarUtils.setStatusBarVisibility(requireActivity(),true)
     }
 }

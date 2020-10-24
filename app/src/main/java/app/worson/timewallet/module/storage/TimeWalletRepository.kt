@@ -11,5 +11,10 @@ object TimeWalletRepository {
         TimeWalletDb.instance.getEventEntityDao()
     }
 
+    val recordDao by  lazy{
+        TimeWalletDb.instance.getTimeRecordEntityDao()
+    }
+
+
 
 }

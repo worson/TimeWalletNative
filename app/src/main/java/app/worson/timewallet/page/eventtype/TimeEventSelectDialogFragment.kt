@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.observe
 import androidx.recyclerview.widget.LinearLayoutManager
 import app.worson.timewallet.R
 import app.worson.timewallet.db.entity.TimeEventEntity
@@ -44,6 +45,7 @@ class TimeEventSelectDialogFragment : BottomSheetDialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         bottomSheetBehavior = BottomSheetBehavior.from(bottomLayout)
+
         mTimeEventViewModel.freshTimeEvents()
         mTimeEventViewModel.liveData.observe(this){
             observeViewState(it)

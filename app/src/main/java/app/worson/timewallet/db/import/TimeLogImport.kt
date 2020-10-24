@@ -60,7 +60,6 @@ class TimeLogImport {
         timeRecords.forEach {
             dao.addEvent(it.toTimeRecordEntity())
         }
-        L.i(TAG, "importTimeRecord: end, db size ${dao.queryEvents(UserConst.DEFAULT_UID).size}")
     }
 
     companion object{

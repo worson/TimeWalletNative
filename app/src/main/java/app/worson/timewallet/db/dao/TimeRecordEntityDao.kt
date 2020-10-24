@@ -17,14 +17,11 @@ interface TimeRecordEntityDao {
     @Query("DELETE FROM TimeRecordEntity WHERE uid = :uid AND id = :id")
     suspend fun deleteEvent(uid: String, id: String)
 
-    @Query("SELECT * FROM TimeRecordEntity WHERE uid = :uid")
-    fun queryEventsFlow(uid: String): Flow<MutableList<TimeRecordEntity>>
+    @Query("SELECT * FROM TimeRecordEntity WHERE uid = :uid AND day = :day")
+    fun queryEventsFlow(uid: String,day:String): Flow<MutableList<TimeRecordEntity>>
 
-    @Query("SELECT * FROM TimeRecordEntity WHERE uid = :uid")
-    fun queryLiveEvents(uid: String): LiveData<List<TimeRecordEntity>>
-
-    @Query("SELECT * FROM TimeRecordEntity WHERE uid = :uid")
-    suspend fun queryEvents(uid: String): MutableList<TimeRecordEntity>
+    @Query("SELECT * FROM TimeRecordEntity WHERE uid = :uid AND day = :day")
+    fun queryEvents(uid: String,day:String): MutableList<TimeRecordEntity>
 
     @Query("SELECT * FROM TimeRecordEntity WHERE uid = :uid AND id = :id")
     suspend fun queryById(uid: String, id: String): TimeRecordEntity?

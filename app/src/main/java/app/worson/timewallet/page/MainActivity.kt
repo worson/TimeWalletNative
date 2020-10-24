@@ -29,12 +29,15 @@ class MainActivity : AppCompatActivity() {
         ))
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+//        initTimeTask()
+//        navView.invisible()
+    }
 
+    private fun initTimeTask() {
         taskTimeTaskFragment=TimeTaskFragment()
         FragmentUtils.add(supportFragmentManager,taskTimeTaskFragment,R.id.task_containner)
         showHideTimeTaskFragment(false)
 
-//        navView.invisible()
     }
 
     private fun showHideTimeTaskFragment(isShow: Boolean) {
