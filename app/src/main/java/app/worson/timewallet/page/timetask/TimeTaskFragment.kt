@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.activity.addCallback
 import androidx.fragment.app.activityViewModels
 import app.worson.timewallet.R
+import app.worson.timewallet.page.home.MainViewModel
 import com.blankj.utilcode.util.BarUtils
 import com.blankj.utilcode.util.FragmentUtils
 import com.blankj.utilcode.util.GsonUtils
@@ -17,6 +18,7 @@ import com.worson.lib.log.L
 class TimeTaskFragment : Fragment() {
 
     private val viewModel by activityViewModels<TimeTaskViewModel>()
+    private val mMainViewModel by activityViewModels<MainViewModel>()
 
     companion object {
         val  TAG = "TimeTaskFragment"
@@ -52,6 +54,6 @@ class TimeTaskFragment : Fragment() {
     override fun onHiddenChanged(hidden: Boolean) {
         super.onHiddenChanged(hidden)
         L.i(TAG, "onHiddenChanged: hidden=${hidden}")
-        BarUtils.setStatusBarVisibility(requireActivity(),hidden)
+        mMainViewModel.fullScreen(!hidden)
     }
 }

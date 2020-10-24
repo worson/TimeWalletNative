@@ -134,6 +134,7 @@ class HomeFragment : Fragment() {
             L.i(TAG, "observeTimeEventViewState: timeEvents changed")
             it.forEach {
                 mTimeEventMap.put(it.id,it)
+                mAdapter.notifyDataSetChanged()
             }
         }
     }

@@ -28,6 +28,10 @@ class MainViewModel : ViewModel(){
         notifyViewState(viewState.copy(showTimeTask = Event(isShow)))
     }
 
+    fun fullScreen(yes:Boolean){
+        notifyViewState(viewState.copy(fullScreen = Event(yes)))
+    }
+
     private fun notifyViewState(viewState:MainViewState){
         this.viewState=viewState
         mLiveData.postValue(viewState)
@@ -43,6 +47,7 @@ class MainViewModel : ViewModel(){
 
 data class MainViewState(
     val showTimeTask: Event<Boolean>? = null,
+    val fullScreen: Event<Boolean>? = null,
 ){
 
 }
