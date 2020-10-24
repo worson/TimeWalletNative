@@ -12,16 +12,21 @@ import androidx.lifecycle.observe
 import androidx.recyclerview.widget.LinearLayoutManager
 import app.worson.timewallet.R
 import app.worson.timewallet.db.entity.TimeRecordEntity
-import app.worson.timewallet.page.eventtype.TimeEventAdapter
+import app.worson.timewallet.module.viewex.calendar
+import app.worson.timewallet.module.viewex.currentCalendar
+import app.worson.timewallet.module.viewex.dayFormatString
+import app.worson.timewallet.module.viewex.differDays
 import app.worson.timewallet.page.eventtype.TimeEventSelectDialogFragment
+import app.worson.timewallet.page.eventtype.TimeEventViewModel
 import app.worson.timewallet.page.eventtype.TimeEventViewState
-import app.worson.timewallet.page.timetask.TimeTaskViewModel
 import app.worson.timewallet.view.rvhelper.DefaultItemDiff
 import com.blankj.utilcode.util.FragmentUtils
+import com.haibin.calendarview.Calendar
+import com.haibin.calendarview.CalendarView
 import com.worson.lib.log.L
-import kotlinx.android.synthetic.main.fragment_event_list_select_dialog.*
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_home.rvView
+import kotlin.collections.ArrayList
 
 class HomeFragment : Fragment() {
     val  TAG = "HomeFragment"
@@ -29,9 +34,12 @@ class HomeFragment : Fragment() {
     private lateinit var homeViewModel: HomeViewModel
 
     private val mTimeRecordViewModel by activityViewModels<TimeRecordViewModel>()
+    private val mTimeEventViewModel by activityViewModels<TimeEventViewModel>()
+
     private val mAdapter: TimeRecordAdapter = TimeRecordAdapter(mutableListOf())
 
-    var currentDay="2020-10-14"
+//    var currentDifferDay=18549
+    var currentDifferDay=currentCalendar().differDays()
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -54,8 +62,34 @@ class HomeFragment : Fragment() {
             mAdapter.notifyDataSetChanged()
 
         }
-
         initTimeRecordList()
+        initTimeEvents()
+        initCanlender()
+    }
+
+    private fun initCanlender() {
+        L.i(TAG, "initCanlender: date ${calendarView.dayFormatString()}")
+        calendarView.setOnCalendarSelectListener(object : CalendarView.OnCalendarSelectListener{
+            override fun onCalendarSelect(calendar: Calendar, isClick: Boolean) {
+                currentDifferDay=calendar.differDays()
+                L.i(TAG, "onCalendarSelect: differDays ${currentDifferDay},date ${calendar}")
+                mTimeRecordViewModel.startObserveDayRecord(currentDifferDay)
+            }
+
+            override fun onCalendarOutOfRange(calendar: Calendar?) {
+            }
+        })
+    }
+
+    private fun initTimeEvents() {
+        mTimeEventViewModel.freshTimeEvents()
+        mTimeEventViewModel.liveData.observe(viewLifecycleOwner){
+            observeTimeEventViewState(it)
+        }
+    }
+
+    private fun observeTimeEventViewState(viewState: TimeEventViewState) {
+
     }
 
     private fun showTimeEventSelect() {
@@ -68,9 +102,8 @@ class HomeFragment : Fragment() {
     }
 
     private fun initTimeRecordList() {
-        mTimeRecordViewModel.freshTimeRecords(currentDay)
         mTimeRecordViewModel.liveData.observe(viewLifecycleOwner){
-            observeViewState(it)
+            observeTimeRecordsViewState(it)
         }
         mTimeRecordViewModel.recordsLive.observe(viewLifecycleOwner){
             observeTimeRecords(it ?: mutableListOf<TimeRecordEntity>())
@@ -79,20 +112,18 @@ class HomeFragment : Fragment() {
         rvView.adapter=mAdapter
         mAdapter.setDiffCallback(DefaultItemDiff())
 
-        mTimeRecordViewModel.startObserveDayRecord(currentDay)
+        mTimeRecordViewModel.startObserveDayRecord(currentDifferDay)
 
     }
 
     private fun observeTimeRecords(list: MutableList<TimeRecordEntity>) {
-        mAdapter.setDiffNewData(list)
+        mAdapter.setDiffNewData(ArrayList(list.map { it.toTimeRecordItem() }))
     }
 
 
-    private fun observeViewState(viewState: TimeRecordViewState?) {
+    private fun observeTimeRecordsViewState(viewState: TimeRecordViewState?) {
         L.d(TAG) { "observeViewState:" }
-        viewState?.timeEvents?.handleIfNotHandled {
-            mAdapter.setDiffNewData(it)
-        }
+
 
     }
 

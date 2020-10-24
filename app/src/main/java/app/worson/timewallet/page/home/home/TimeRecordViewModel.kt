@@ -10,6 +10,7 @@ import app.worson.timewallet.module.storage.AccountSettings
 import app.worson.timewallet.module.storage.TimeWalletRepository
 import com.worson.lib.log.L
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
@@ -26,6 +27,7 @@ class TimeRecordViewModel : ViewModel(){
     private val mLiveData = MutableLiveData<TimeRecordViewState>()
     val liveData = liveData { emitSource(mLiveData) }
 
+    private var recordsFlowTask:Job?=null
     private val mRecordsLive = MutableLiveData<MutableList<TimeRecordEntity>>()
     val recordsLive = liveData { emitSource(mRecordsLive) }
 
@@ -35,19 +37,26 @@ class TimeRecordViewModel : ViewModel(){
 
     }
 
-    fun startObserveDayRecord(day:String){
-        viewModelScope.launch(Dispatchers.IO) {
-            L.i(TAG,"startObserveDayRecord ${day}")
-            TimeWalletRepository.recordDao.queryEventsFlow(AccountSettings.uid,day)
+    fun startObserveDayRecord(defferDay:Int){
+        recordsFlowTask?.let {
+            if (it.isActive) {
+                it.cancel()
+            }
+            recordsFlowTask=null
+        }
+
+        recordsFlowTask=viewModelScope.launch(Dispatchers.IO) {
+            L.i(TAG,"startObserveDayRecord ${defferDay}")
+            TimeWalletRepository.recordDao.queryEventsFlow(AccountSettings.uid,defferDay)
                 .collect {
                     notifyList(it)
                 }
         }
     }
 
-    fun freshTimeRecords(day:String){
+    fun freshByDays(defferDay:Int){
         viewModelScope.launch(Dispatchers.IO) {
-            TimeWalletRepository.recordDao.queryEvents(AccountSettings.uid,day)?.let {
+            TimeWalletRepository.recordDao.queryEvents(AccountSettings.uid,defferDay)?.let {
                 notifyList(it)
             }
         }
