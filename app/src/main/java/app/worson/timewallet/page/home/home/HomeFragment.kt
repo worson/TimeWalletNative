@@ -1,9 +1,8 @@
 package app.worson.timewallet.page.home.home
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import androidx.appcompat.widget.PopupMenu
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
@@ -11,9 +10,8 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.lifecycle.observe
 import androidx.recyclerview.widget.LinearLayoutManager
 import app.worson.timewallet.R
+import app.worson.timewallet.db.entity.TimeEventEntity
 import app.worson.timewallet.db.entity.TimeRecordEntity
-import app.worson.timewallet.module.viewex.calendar
-import app.worson.timewallet.module.viewex.currentCalendar
 import app.worson.timewallet.module.viewex.dayFormatString
 import app.worson.timewallet.module.viewex.differDays
 import app.worson.timewallet.page.eventtype.TimeEventSelectDialogFragment
@@ -25,8 +23,7 @@ import com.haibin.calendarview.Calendar
 import com.haibin.calendarview.CalendarView
 import com.worson.lib.log.L
 import kotlinx.android.synthetic.main.fragment_home.*
-import kotlinx.android.synthetic.main.fragment_home.rvView
-import kotlin.collections.ArrayList
+
 
 class HomeFragment : Fragment() {
     val  TAG = "HomeFragment"
@@ -36,10 +33,11 @@ class HomeFragment : Fragment() {
     private val mTimeRecordViewModel by activityViewModels<TimeRecordViewModel>()
     private val mTimeEventViewModel by activityViewModels<TimeEventViewModel>()
 
+    private var mTimeEventMap:MutableMap<Int,TimeEventEntity> = mutableMapOf()
     private val mAdapter: TimeRecordAdapter = TimeRecordAdapter(mutableListOf())
 
-//    var currentDifferDay=18549
-    var currentDifferDay=currentCalendar().differDays()
+    var currentDifferDay=18549
+//    var currentDifferDay=currentCalendar().differDays()
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -59,12 +57,40 @@ class HomeFragment : Fragment() {
         btTask.setOnClickListener{
 //            showTimeEventSelect()
             L.i(TAG, "notifyDataSetChanged: ")
-            mAdapter.notifyDataSetChanged()
+//            mAdapter.notifyDataSetChanged()
+            mAdapter.timeEventMap=mTimeEventMap
 
         }
         initTimeRecordList()
         initTimeEvents()
         initCanlender()
+        initTest()
+    }
+
+    private fun initTest() {
+
+        mAdapter.setOnItemLongClickListener{
+                a,view,p ->
+            L.i(TimeRecordAdapter.TAG, "convert: setOnClickListener")
+            // 这里的view代表popupMenu需要依附的view
+            val popupMenu = PopupMenu(requireActivity(), view, Gravity.CENTER_HORIZONTAL)
+            // 获取布局文件
+            popupMenu.getMenuInflater().inflate(R.menu.menu_time_record_list_item, popupMenu.getMenu())
+            popupMenu.show()
+            // 通过上面这几行代码，就可以把控件显示出来了
+            /*popupMenu.setOnMenuItemClickListener(object : MenuItem.OnMenuItemClickListener {
+                override fun onMenuItemClick(item: MenuItem?): Boolean {
+                    true
+                }
+            })
+            popupMenu.setOnDismissListener(object : PopupMenu.OnDismissListener {
+                fun onDismiss(menu: PopupMenu?) {
+                    // 控件消失时的事件
+                }
+            })*/
+            true
+        }
+
     }
 
     private fun initCanlender() {
@@ -89,7 +115,12 @@ class HomeFragment : Fragment() {
     }
 
     private fun observeTimeEventViewState(viewState: TimeEventViewState) {
-
+        viewState.timeEvents?.handleIfNotHandled {
+            L.i(TAG, "observeTimeEventViewState: timeEvents changed")
+            it.forEach {
+                mTimeEventMap.put(it.id,it)
+            }
+        }
     }
 
     private fun showTimeEventSelect() {
@@ -102,16 +133,17 @@ class HomeFragment : Fragment() {
     }
 
     private fun initTimeRecordList() {
+        rvView.setLayoutManager(LinearLayoutManager(requireContext()))
+        rvView.adapter=mAdapter
+        mAdapter.setDiffCallback(DefaultItemDiff())
+        mAdapter.timeEventMap=mTimeEventMap
+
         mTimeRecordViewModel.liveData.observe(viewLifecycleOwner){
             observeTimeRecordsViewState(it)
         }
         mTimeRecordViewModel.recordsLive.observe(viewLifecycleOwner){
             observeTimeRecords(it ?: mutableListOf<TimeRecordEntity>())
         }
-        rvView.setLayoutManager(LinearLayoutManager(requireContext()))
-        rvView.adapter=mAdapter
-        mAdapter.setDiffCallback(DefaultItemDiff())
-
         mTimeRecordViewModel.startObserveDayRecord(currentDifferDay)
 
     }
