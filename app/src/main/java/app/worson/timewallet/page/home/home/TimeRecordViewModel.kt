@@ -32,6 +32,7 @@ class TimeRecordViewModel : ViewModel(){
     val recordsLive = liveData { emitSource(mRecordsLive) }
 
 
+    val recordDao by lazy { TimeWalletRepository.recordDao }
 
     init {
 
@@ -47,7 +48,7 @@ class TimeRecordViewModel : ViewModel(){
 
         recordsFlowTask=viewModelScope.launch(Dispatchers.IO) {
             L.i(TAG,"startObserveDayRecord ${defferDay}")
-            TimeWalletRepository.recordDao.queryEventsFlow(AccountSettings.uid,defferDay)
+            recordDao.queryEventsFlow(AccountSettings.uid,defferDay)
                 .collect {
                     notifyList(it)
                 }
@@ -56,11 +57,18 @@ class TimeRecordViewModel : ViewModel(){
 
     fun freshByDays(defferDay:Int){
         viewModelScope.launch(Dispatchers.IO) {
-            TimeWalletRepository.recordDao.queryEvents(AccountSettings.uid,defferDay)?.let {
+            recordDao.queryEvents(AccountSettings.uid,defferDay)?.let {
                 notifyList(it)
             }
         }
     }
+
+    fun modify(recordEntity: TimeRecordEntity){
+        viewModelScope.launch(Dispatchers.IO){
+            recordDao.addOrReplace(recordEntity)
+        }
+    }
+
 
     private fun notifyList(list:MutableList<TimeRecordEntity>){
         mRecordsLive.postValue(list)

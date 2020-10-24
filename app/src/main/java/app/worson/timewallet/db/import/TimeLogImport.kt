@@ -58,7 +58,7 @@ class TimeLogImport {
         L.i(TAG, "importTimeRecord: timeRecords size ${timeRecords.size}, first : ${timeRecords.firstOrNull()}")
         val dao=walletDb.getTimeRecordEntityDao()
         timeRecords.forEach {
-            dao.addEvent(it.toTimeRecordEntity())
+            dao.addOrReplace(it.toTimeRecordEntity())
         }
     }
 

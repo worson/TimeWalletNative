@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.Flow
 interface TimeRecordEntityDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun addEvent(event: TimeRecordEntity)
+    suspend fun addOrReplace(event: TimeRecordEntity)
 
     @Query("DELETE FROM TimeRecordEntity WHERE uid = :uid AND id = :id")
     suspend fun deleteEvent(uid: String, id: String)

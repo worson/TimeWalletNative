@@ -22,7 +22,9 @@ data class TimeRecordItem(val id: Int = 0,
                           val estimatedTime: Long,
                           val startTime: Long,
                           val thing: String?,
-                          val typeId: Int){
+                          val typeId: Int,
+                          val timeRecord:TimeRecordEntity
+){
 
 
 
@@ -41,13 +43,13 @@ data class TimeRecordItem(val id: Int = 0,
 }
 
 fun TimeRecordEntity.toTimeRecordItem():TimeRecordItem{
-    return TimeRecordItem(id, uid, day, dayTimestamp, distractCount, endTime, estimatedTime, startTime, thing, typeId)
+    return TimeRecordItem(id, uid, day, dayTimestamp, distractCount, endTime, estimatedTime, startTime, thing, typeId,this)
 }
 
 
 class TimeRecordAdapter(data: MutableList<TimeRecordItem>) :
-    BaseQuickAdapter<TimeRecordItem, BaseViewHolder>(R.layout.list_item_time_record, data),
-    DraggableModule {
+    BaseQuickAdapter<TimeRecordItem, BaseViewHolder>(R.layout.list_item_time_record, data)
+    {
 
     init {
 
@@ -81,9 +83,6 @@ class TimeRecordAdapter(data: MutableList<TimeRecordItem>) :
 
         holder.setText(R.id.title,eventName)
         holder.setText(R.id.subTitle, content)
-        holder.getView<View>(R.id.vgRoot).setOnClickListener {
-
-        }
 //        holder.setBackgroundColor(R.id.vgRoot,item.color)
     }
 

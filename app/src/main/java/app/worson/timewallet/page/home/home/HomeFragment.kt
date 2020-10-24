@@ -1,7 +1,15 @@
 package app.worson.timewallet.page.home.home
 
+import android.content.DialogInterface
 import android.os.Bundle
-import android.view.*
+import android.view.Gravity
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.TextView
+import android.widget.Toast
+import androidx.annotation.StringRes
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.PopupMenu
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -19,6 +27,11 @@ import app.worson.timewallet.page.eventtype.TimeEventViewModel
 import app.worson.timewallet.page.eventtype.TimeEventViewState
 import app.worson.timewallet.view.rvhelper.DefaultItemDiff
 import com.blankj.utilcode.util.FragmentUtils
+import com.chad.library.adapter.base.BaseQuickAdapter
+import com.chad.library.adapter.base.listener.OnItemChildClickListener
+import com.chad.library.adapter.base.listener.OnItemClickListener
+import com.google.android.material.button.MaterialButton
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.haibin.calendarview.Calendar
 import com.haibin.calendarview.CalendarView
 import com.worson.lib.log.L
@@ -64,7 +77,7 @@ class HomeFragment : Fragment() {
         initTimeRecordList()
         initTimeEvents()
         initCanlender()
-        initTest()
+//        initTest()
     }
 
     private fun initTest() {
@@ -138,6 +151,15 @@ class HomeFragment : Fragment() {
         mAdapter.setDiffCallback(DefaultItemDiff())
         mAdapter.timeEventMap=mTimeEventMap
 
+        //view
+        mAdapter.setOnItemClickListener(object : OnItemClickListener {
+            override fun onItemClick(adapter: BaseQuickAdapter<*, *>, view: View, position: Int) {
+                L.i(TAG, "onItemClick: ")
+                editTimeRecordThing(adapter.getItem(position) as TimeRecordItem)
+            }
+        })
+
+        //data
         mTimeRecordViewModel.liveData.observe(viewLifecycleOwner){
             observeTimeRecordsViewState(it)
         }
@@ -159,4 +181,25 @@ class HomeFragment : Fragment() {
 
     }
 
+    fun editTimeRecordThing(timeRecordItem: TimeRecordItem){
+        val alertDialogBuilder=MaterialAlertDialogBuilder(requireContext())
+            .setTitle("修改内容")
+            .setView(R.layout.dialog_edit_text)
+            .setPositiveButton(
+                "确定",
+                DialogInterface.OnClickListener { dialog, which ->
+                    val input =
+                        (dialog as AlertDialog).findViewById<TextView>(
+                            android.R.id.text1
+                        )
+                    input?.let {
+                        val text=it.text.toString()
+                        val item=timeRecordItem.timeRecord
+                        L.i(TAG, "editTimeRecordThing: modify ${item.id} , ${text}")
+                        mTimeRecordViewModel.modify(item.copy(thing = text ))
+                    }
+                })
+            .setNegativeButton("取消", null)
+        alertDialogBuilder.show()
+    }
 }
