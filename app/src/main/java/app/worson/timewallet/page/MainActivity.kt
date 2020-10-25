@@ -1,6 +1,8 @@
 package app.worson.timewallet.page
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
@@ -104,6 +106,22 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
+    /*override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        L.d(TAG, { "onCreateOptionsMenu: " })
+        getMenuInflater().inflate(R.menu.bottom_nav_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }*/
+
+    override fun onOptionsMenuClosed(menu: Menu?) {
+        L.d(TAG, { "onOptionsMenuClosed: " })
+        super.onOptionsMenuClosed(menu)
+    }
+
+    /*override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        L.d(TAG, { "onOptionsItemSelected: ${item.title}" })
+        return super.onOptionsItemSelected(item)
+    }*/
 
     companion object{
         val  TAG = "MainActivity"

@@ -1,4 +1,4 @@
-package app.worson.timewallet.utils
+package app.worson.timewallet.utils.view
 
 import android.graphics.Rect
 import android.graphics.drawable.Drawable
@@ -9,6 +9,7 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.core.content.ContextCompat
 import androidx.core.view.doOnLayout
+import app.worson.timewallet.utils.GlobalContext
 
 
 inline fun View.setOnSingleClickListener(

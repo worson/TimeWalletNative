@@ -1,10 +1,8 @@
 package app.worson.timewallet.test.page.edittext
 
 import android.os.Bundle
+import android.view.*
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.activity.addCallback
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.activityViewModels
@@ -62,8 +60,52 @@ class EditTextListFragment : TestFragment() {
 
     }
 
+    override fun onCreateContextMenu(
+        menu: ContextMenu,
+        v: View,
+        menuInfo: ContextMenu.ContextMenuInfo?
+    ) {
+        L.d(TAG) { "onCreateContextMenu: " }
+        super.onCreateContextMenu(menu, v, menuInfo)
+    }
 
+    override fun onContextItemSelected(item: MenuItem): Boolean {
+        L.d(TAG) { "onContextItemSelected: " }
+        return super.onContextItemSelected(item)
+    }
 
+    override fun onPrepareOptionsMenu(menu: Menu) {
+        L.d(TAG) { "onPrepareOptionsMenu: " }
+        super.onPrepareOptionsMenu(menu)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        L.d(TAG) { "onCreateOptionsMenu: " }
+        menu.clear()
+        inflater.inflate(R.menu.test_menu_edit_text_list,menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onDestroyOptionsMenu() {
+        L.d(TAG) { "onDestroyOptionsMenu: " }
+        super.onDestroyOptionsMenu()
+    }
+
+    override fun onOptionsMenuClosed(menu: Menu) {
+        L.d(TAG) { "onOptionsMenuClosed: " }
+        super.onOptionsMenuClosed(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        L.d(TAG) { "onOptionsItemSelected: ${item.title}" }
+        when(item.itemId){
+            R.id.edit_enable -> mAdapter.setEditable(true)
+            R.id.edit_disable -> mAdapter.setEditable(false)
+            else -> return super.onOptionsItemSelected(item)
+        }
+        return true
+
+    }
 
     companion object {
 

@@ -1,10 +1,8 @@
 package app.worson.timewallet.test.page
 
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.activity.addCallback
 import androidx.lifecycle.observe
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -74,6 +72,18 @@ class TestMainFragment : TestFragment() {
         FragmentUtils.findFragment(requireActivity().supportFragmentManager,tag)
             ?: FragmentUtils.add(requireActivity().supportFragmentManager,fragment,R.id.test_fragment_containner,tag)
         FragmentUtils.show(fragment)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        L.d(EditTextListFragment.TAG) { "onCreateOptionsMenu: " }
+        menu.clear()
+        inflater.inflate(R.menu.test_menu_main,menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onContextItemSelected(item: MenuItem): Boolean {
+        L.d(EditTextListFragment.TAG) { "onContextItemSelected: " }
+        return super.onContextItemSelected(item)
     }
 
     companion object {
