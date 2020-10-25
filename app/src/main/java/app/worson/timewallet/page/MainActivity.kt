@@ -15,6 +15,7 @@ import app.worson.timewallet.page.home.MainViewModel
 import app.worson.timewallet.page.home.MainViewState
 import app.worson.timewallet.page.home.dashboard.DashboardViewModel
 import app.worson.timewallet.page.timetask.TimeTaskFragment
+import app.worson.timewallet.test.page.TestMainFragment
 import com.blankj.utilcode.util.BarUtils
 import com.blankj.utilcode.util.FragmentUtils
 import com.worson.lib.log.L
@@ -40,9 +41,22 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
         initTimeTask()
         initViewModel()
+
 //        navView.invisible()
 
 
+    }
+
+    val mTestMainFragment by lazy {
+        TestMainFragment.newInstance()
+    }
+
+    private fun showTestFragments() {
+        val fragment=mTestMainFragment
+        val tag=fragment.javaClass.simpleName
+        FragmentUtils.findFragment(supportFragmentManager,tag)
+            ?: FragmentUtils.add(supportFragmentManager,fragment,R.id.task_containner,tag)
+        FragmentUtils.show(fragment)
     }
 
     private fun initViewModel() {
@@ -54,7 +68,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun observeMainViewState(viewState: MainViewState) {
         viewState.showTimeTask?.handleIfNotHandled {
-            showHideTimeTaskFragment(it)
+            showTestFragments()
+//            showHideTimeTaskFragment(it)
         }
         viewState.fullScreen?.handleIfNotHandled {
             showFullScreen(it)

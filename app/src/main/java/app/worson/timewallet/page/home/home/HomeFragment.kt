@@ -80,6 +80,7 @@ class HomeFragment : Fragment() {
         initTimeEvents()
         initCanlender()
         initTest()
+        mMainViewModel.showTimeTask(true)
     }
 
     private fun initTest() {
@@ -124,8 +125,11 @@ class HomeFragment : Fragment() {
 
     private fun initTimeEvents() {
         mTimeEventViewModel.freshTimeEvents()
-        mTimeEventViewModel.liveData.observe(viewLifecycleOwner){
-            observeTimeEventViewState(it)
+        mTimeEventViewModel.eventsLive.observe(viewLifecycleOwner){
+            it.forEach {
+                mTimeEventMap.put(it.id,it)
+                mAdapter.notifyDataSetChanged()
+            }
         }
     }
 

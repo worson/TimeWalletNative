@@ -23,8 +23,14 @@ class TimeEventViewModel : ViewModel(){
 
     var viewState:TimeEventViewState=TimeEventViewState()
         private set
+
     private val mLiveData = MutableLiveData<TimeEventViewState>()
     val liveData = liveData { emitSource(mLiveData) }
+
+    private val mEventsLive = MutableLiveData<MutableList<TimeEventEntity>>()
+    val eventsLive = liveData { emitSource(mEventsLive) }
+
+
 
 
 
@@ -47,8 +53,7 @@ class TimeEventViewModel : ViewModel(){
     }
 
     private fun notifyList(list:MutableList<TimeEventEntity>){
-        viewState=viewState.copy(timeEvents=Event(list))
-        mLiveData.postValue(viewState)
+        mEventsLive.postValue(list)
     }
 
     companion object {

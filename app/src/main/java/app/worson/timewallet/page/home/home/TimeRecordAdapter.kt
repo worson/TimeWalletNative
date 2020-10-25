@@ -63,7 +63,7 @@ class TimeRecordAdapter(data: MutableList<TimeRecordItem>) :
         }
 
     override fun convert(holder: BaseViewHolder, item: TimeRecordItem) {
-        L.d(TAG){"convert: ${item.id}"}
+//        L.d(TAG){"convert: ${item.id}"}
         val eventEntity=timeEventMap.get(item.typeId)
         val thing:String= if (item.thing.isNullOrBlank()){
             eventEntity?.desc ?: ""
