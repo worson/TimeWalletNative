@@ -3,11 +3,11 @@
 
   <item
     android:id="@+id/edit_enable"
-    android:title="可编译" />
+    android:title="可编辑" />
 
   <item
     android:id="@+id/edit_disable"
-    android:title="不可编译" />
+    android:title="不可编辑" />
 
 
 

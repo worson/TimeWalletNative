@@ -12,6 +12,7 @@ import app.worson.timewallet.test.page.base.TestFragment
 import app.worson.timewallet.test.page.edittext.EditTextListFragment
 import app.worson.timewallet.test.page.main.FragmentItem
 import app.worson.timewallet.test.page.main.TestMainListAdapter
+import app.worson.timewallet.test.page.notta.BindingListAdapterListFragment
 import app.worson.timewallet.view.rvhelper.DefaultItemDiff
 import com.blankj.utilcode.util.FragmentUtils
 import com.google.android.material.bottomsheet.BottomSheetBehavior
@@ -30,6 +31,11 @@ class TestMainFragment : TestFragment() {
         TestMainListAdapter(
             mutableListOf()
         )
+
+    private val mData = mutableListOf<FragmentItem>(
+        FragmentItem(EditTextListFragment.newInstance()),
+        FragmentItem(BindingListAdapterListFragment.newInstance()),
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,9 +67,7 @@ class TestMainFragment : TestFragment() {
 
         }
 
-        mAdapter.setDiffNewData(mutableListOf(
-            FragmentItem(EditTextListFragment.newInstance())
-        ))
+        mAdapter.setDiffNewData(mData)
 
     }
 

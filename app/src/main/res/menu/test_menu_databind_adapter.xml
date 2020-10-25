@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+  <item
+    android:id="@+id/edit_enable"
+    android:title="可编辑" />
+
+  <item
+    android:id="@+id/edit_disable"
+    android:title="不可编辑" />
+
+  <item
+      android:id="@+id/fresh_list"
+      android:title="刷新列表" />
+
+  <item
+      android:id="@+id/force_fresh_list"
+      android:title="强制刷新列表" />
+
+  <item
+      android:id="@+id/fresh_list_first"
+      android:title="更新第一条数据" />
+
+  <item
+      android:id="@+id/fresh_one_item"
+      android:title="强制更新某条数据" />
+
+  <item
+      android:id="@+id/diff_fresh_list_first"
+      android:title="差分更新数据" />
+
+
+
+</menu>
