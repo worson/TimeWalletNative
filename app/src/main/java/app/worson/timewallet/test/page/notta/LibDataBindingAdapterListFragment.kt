@@ -9,53 +9,47 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import app.worson.timewallet.R
 import app.worson.timewallet.databinding.TestItemSmartnoteBinding
 import app.worson.timewallet.test.page.base.TestFragment
+import com.chad.library.adapter.base.BaseQuickAdapter
+import com.chad.library.adapter.base.viewholder.BaseDataBindingHolder
 import com.worson.lib.appbasic.view.extend.disableEdit
 import com.worson.lib.appbasic.view.extend.enableEdit
-import com.worson.lib.appbasic.view.rvhelper.DataBindingListAdapter
-import com.worson.lib.appbasic.view.rvhelper.DataBindingViewHolder
 import com.worson.lib.log.L
 import kotlinx.android.synthetic.main.fragment_event_list_select_dialog.*
-import java.lang.Math.random
 
-data class SmartNoteItem (
-    val id: String,
-    val showTimeStamp: Boolean = true,
-    val timeStamp: String = "",
-    var original: String = "",
-    var isEdit: Boolean = false,
-)
-
-class BindingListAdapterListFragment : TestFragment() {
+class LibDataBindingAdapterListFragment : TestFragment() {
 
 
 
     class TestDataBindingListAdapter<T, DB : ViewDataBinding>(private val layoutId: Int,
-                                                              private val variableId: Int,
+                                                              private val variableId: Int=0,
                                                               diffCallback: DiffUtil.ItemCallback<T>,
                                                               private val onBind: ((DB, T, Int, List<Any>) -> Unit)? = null)
-        : DataBindingListAdapter<T, DB>
-        (layoutId,variableId,diffCallback,onBind){
+        : BaseQuickAdapter<T, BaseDataBindingHolder<DB>>(layoutId){
 
-        
-        override fun onBindViewHolder(
-            holder: DataBindingViewHolder<DB>,
-            position: Int,
-            payloads: MutableList<Any>
-        ) {
-            super.onBindViewHolder(holder, position, payloads)
-            L.d(TAG) { "onBindViewHolder: with payloads ${payloads}" }
+
+        init {
+            setDiffCallback(diffCallback)
         }
 
-        override fun onBindViewHolder(holder: DataBindingViewHolder<DB>, position: Int) {
-            super.onBindViewHolder(holder, position)
-            L.i(TAG, "onBindViewHolder: ")
+        fun submitList(list:MutableList<T>){
+            setDiffNewData(list)
+        }
+
+        override fun convert(holder: BaseDataBindingHolder<DB>, item: T) {
+            holder.dataBinding?.setVariable(variableId,item)
+            L.d(TAG) { "convert: item=${item}" }
+        }
+
+        override fun convert(holder: BaseDataBindingHolder<DB>, item: T, payloads: List<Any>) {
+            super.convert(holder, item, payloads)
+            L.d(TAG) { "convert: with payloads=${payloads},item=${item}" }
         }
     }
 
-    lateinit var mAdapter: TestDataBindingListAdapter<SmartNoteItem,TestItemSmartnoteBinding>
+    lateinit var mAdapter: TestDataBindingListAdapter<SmartNoteItem, TestItemSmartnoteBinding>
     var mData:MutableList<SmartNoteItem> = mutableListOf()
 
-    class SmartNoteItemDiff:DiffUtil.ItemCallback<SmartNoteItem>() {
+    class SmartNoteItemDiff: DiffUtil.ItemCallback<SmartNoteItem>() {
 
         val keyIsEdit = "keyIsEdit"
         val keyName = "keyName"
@@ -108,7 +102,10 @@ class BindingListAdapterListFragment : TestFragment() {
                 bundle.keySet().forEach {
                     if (it == diff.keyIsEdit){
                         val isEdit=bundle.getBoolean(diff.keyIsEdit)
-                        L.d(TAG, "bind:addTextChangedListener position=${position},isEdit=${isEdit}")
+                        L.d(
+                            TAG,
+                            "bind:addTextChangedListener position=${position},isEdit=${isEdit}"
+                        )
                         if (isEdit) { //mSmartNoteViewModel.mEditState
                             db.tvOriginal.enableEdit()
                         }else{
@@ -159,7 +156,7 @@ class BindingListAdapterListFragment : TestFragment() {
 
         mData?.apply {
             for (i in 0 .. 10){
-                add(SmartNoteItem(id=i.toString(),original = "${i}. 这是一条测试笔记"))
+                add(SmartNoteItem(id = i.toString(), original = "${i}. 这是一条测试笔记"))
             }
             mAdapter.submitList(this)
 
@@ -211,7 +208,7 @@ class BindingListAdapterListFragment : TestFragment() {
 
             R.id.fresh_list_first -> {
                 val first=mData.first()
-                first.original="第一条数据被更新:${random()}"
+                first.original="第一条数据被更新:${Math.random()}"
 //                mAdapter.notifyItemChanged(0)
                 mAdapter.submitList(mData.toMutableList())
             }
@@ -237,8 +234,8 @@ class BindingListAdapterListFragment : TestFragment() {
 
         private  val TAG = "BindingListAdapterListFragment"
 
-        fun newInstance(): BindingListAdapterListFragment =
-            BindingListAdapterListFragment().apply {
+        fun newInstance(): LibDataBindingAdapterListFragment =
+            LibDataBindingAdapterListFragment().apply {
                 arguments = Bundle().apply {
                 }
             }
