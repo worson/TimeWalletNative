@@ -2,14 +2,13 @@ package app.worson.timewallet.page.timetask
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import app.worson.timewallet.comm.Event
+import com.worson.lib.appbasic.architecture.comm.Event
 import androidx.lifecycle.liveData
 import androidx.lifecycle.viewModelScope
 import app.worson.timewallet.db.entity.TimeEventEntity
 import app.worson.timewallet.module.storage.AccountSettings
 import app.worson.timewallet.module.storage.TimeWalletRepository
 import com.worson.lib.log.L
-import kotlinx.android.synthetic.main.time_task_fragment.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -31,14 +30,20 @@ class TimeTaskViewModel : ViewModel(){
             TimeWalletRepository.eventDao.queryEvents(AccountSettings.uid).apply {
                 sortBy { it.id }
             }.firstOrNull()?.let {
-                notifyViewState(viewState.copy(timeEvent = Event(it)))
+                notifyViewState(viewState.copy(timeEvent = Event(
+                    it
+                )
+                ))
             }
         }
     }
 
     fun setTaskEvent(tasEventEntity: TimeEventEntity){
 
-        notifyViewState(viewState.copy(timeEvent = Event(tasEventEntity)))
+        notifyViewState(viewState.copy(timeEvent = Event(
+            tasEventEntity
+        )
+        ))
     }
 
     fun startTask(){

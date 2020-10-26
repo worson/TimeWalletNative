@@ -2,7 +2,7 @@ package app.worson.timewallet.page.home.home
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import app.worson.timewallet.comm.Event
+import com.worson.lib.appbasic.architecture.comm.Event
 import androidx.lifecycle.liveData
 import androidx.lifecycle.viewModelScope
 import app.worson.timewallet.db.entity.TimeRecordEntity

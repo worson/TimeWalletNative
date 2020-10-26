@@ -11,7 +11,7 @@ import app.worson.timewallet.db.entity.TaskEntity
 import app.worson.timewallet.db.config.TimeWalletDbInit
 import app.worson.timewallet.db.dao.TimeRecordEntityDao
 import app.worson.timewallet.db.entity.TimeRecordEntity
-import app.worson.timewallet.utils.GlobalContext
+import com.worson.lib.appbasic.application.GlobalContext
 import com.worson.lib.log.L
 
 /**

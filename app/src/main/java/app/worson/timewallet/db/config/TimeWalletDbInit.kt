@@ -3,7 +3,7 @@ package app.worson.timewallet.db.config
 import androidx.sqlite.db.SupportSQLiteDatabase
 import app.worson.timewallet.db.TimeWalletDb
 import app.worson.timewallet.module.const.UserConst
-import app.worson.timewallet.utils.GlobalContext
+import com.worson.lib.appbasic.application.GlobalContext
 import com.blankj.utilcode.util.GsonUtils
 import com.worson.lib.log.L
 import kotlinx.coroutines.Dispatchers

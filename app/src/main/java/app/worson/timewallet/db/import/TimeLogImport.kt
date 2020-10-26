@@ -4,7 +4,7 @@ import androidx.room.PrimaryKey
 import app.worson.timewallet.db.TimeWalletDb
 import app.worson.timewallet.db.entity.TimeRecordEntity
 import app.worson.timewallet.module.const.UserConst
-import app.worson.timewallet.utils.GlobalContext
+import com.worson.lib.appbasic.application.GlobalContext
 import com.blankj.utilcode.util.GsonUtils
 import com.google.gson.annotations.SerializedName
 import com.worson.lib.log.L

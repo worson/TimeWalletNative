@@ -1,32 +1,18 @@
 package app.worson.timewallet.test.page.notta
 
-import android.graphics.Point
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.view.*
-import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import androidx.activity.addCallback
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.ViewDataBinding
 import androidx.databinding.library.baseAdapters.BR
-import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.observe
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import app.worson.timewallet.R
 import app.worson.timewallet.databinding.TestItemSmartnoteBinding
-import app.worson.timewallet.db.entity.TimeEventEntity
-import app.worson.timewallet.page.eventtype.TimeEventViewModel
-import app.worson.timewallet.page.eventtype.TimeEventViewState
 import app.worson.timewallet.test.page.base.TestFragment
-import app.worson.timewallet.utils.view.disableEdit
-import app.worson.timewallet.utils.view.enableEdit
+import com.worson.lib.appbasic.view.extend.disableEdit
+import com.worson.lib.appbasic.view.extend.enableEdit
 import app.worson.timewallet.view.rvhelper.DataBindingListAdapter
 import app.worson.timewallet.view.rvhelper.DataBindingViewHolder
-import app.worson.timewallet.view.rvhelper.DefaultItemDiff
-import com.blankj.utilcode.util.FragmentUtils
-import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.worson.lib.log.L
 import kotlinx.android.synthetic.main.fragment_event_list_select_dialog.*
 

@@ -2,7 +2,7 @@ package app.worson.timewallet.page.home
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import app.worson.timewallet.comm.Event
+import com.worson.lib.appbasic.architecture.comm.Event
 import androidx.lifecycle.liveData
 
 /**
@@ -25,11 +25,17 @@ class MainViewModel : ViewModel(){
     }
 
     fun showTimeTask(isShow:Boolean){
-        notifyViewState(viewState.copy(showTimeTask = Event(isShow)))
+        notifyViewState(viewState.copy(showTimeTask = Event(
+            isShow
+        )
+        ))
     }
 
     fun fullScreen(yes:Boolean){
-        notifyViewState(viewState.copy(fullScreen = Event(yes)))
+        notifyViewState(viewState.copy(fullScreen = Event(
+            yes
+        )
+        ))
     }
 
     private fun notifyViewState(viewState:MainViewState){

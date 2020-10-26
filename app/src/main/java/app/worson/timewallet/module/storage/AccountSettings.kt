@@ -1,6 +1,6 @@
 package app.worson.timewallet.module.storage
 
-import app.worson.timewallet.utils.GlobalContext
+import com.worson.lib.appbasic.application.GlobalContext
 import app.worson.timewallet.utils.Pref
 
 

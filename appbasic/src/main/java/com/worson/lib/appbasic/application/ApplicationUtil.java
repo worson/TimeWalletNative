@@ -1,4 +1,4 @@
-package app.worson.timewallet.utils;
+package com.worson.lib.appbasic.application;
 
 import android.app.Application;
 

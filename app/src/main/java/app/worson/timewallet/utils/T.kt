@@ -12,6 +12,7 @@ import androidx.annotation.ColorRes
 import androidx.annotation.DrawableRes
 import androidx.core.content.ContextCompat
 import app.worson.timewallet.R
+import com.worson.lib.appbasic.application.GlobalContext
 import com.worson.lib.log.L
 import es.dmoral.toasty.Toasty
 
@@ -36,7 +37,7 @@ object T {
     @SuppressLint("ResourceAsColor")
     fun normal(
         msg: String,
-        context: Context=GlobalContext.instance,
+        context: Context= GlobalContext.instance,
         duration: Int = SHORT,
         @DrawableRes icon: Int = R.drawable.ic_launcher_foreground,
         @ColorRes backgroundColor: Int = R.color.toast_normal_bg,

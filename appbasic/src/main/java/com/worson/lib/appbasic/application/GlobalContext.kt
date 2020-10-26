@@ -1,4 +1,4 @@
-package app.worson.timewallet.utils
+package com.worson.lib.appbasic.application
 
 import android.app.Application
 
@@ -10,7 +10,8 @@ object GlobalContext {
     }
 
     @JvmStatic
-    fun get():Application=instance
+    fun get():Application=
+        instance
 
 
 }
