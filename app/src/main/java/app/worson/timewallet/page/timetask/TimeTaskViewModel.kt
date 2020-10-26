@@ -18,7 +18,7 @@ import kotlinx.coroutines.launch
  */
 class TimeTaskViewModel : ViewModel(){
 
-    val TAG = "TimeTaskViewModel"
+    private  val TAG = "TimeTaskViewModel"
 
     var viewState:TimeTaskViewState=TimeTaskViewState()
         private set
@@ -52,7 +52,7 @@ class TimeTaskViewModel : ViewModel(){
     }
 
     companion object {
-        private const val TAG = "TimeTaskViewModel"
+        private  val TAG = "TimeTaskViewModel"
     }
 
 

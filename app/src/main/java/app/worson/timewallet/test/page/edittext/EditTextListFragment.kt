@@ -109,7 +109,7 @@ class EditTextListFragment : TestFragment() {
 
     companion object {
 
-        val TAG = "TimeEventSelectDialogFragment"
+        private  val TAG = "TimeEventSelectDialogFragment"
 
         fun newInstance(): EditTextListFragment =
             EditTextListFragment().apply {

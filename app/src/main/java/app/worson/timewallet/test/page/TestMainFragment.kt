@@ -31,7 +31,7 @@ class TestMainFragment : TestFragment() {
         )
 
     private val mData = mutableListOf<FragmentItem>(
-        FragmentItem(EditTextListFragment.newInstance()),
+        FragmentItem(newInstance()),
         FragmentItem(BindingListAdapterListFragment.newInstance()),
         FragmentItem(TestFullScreenFragment.newInstance()),
         FragmentItem(TestViewEventDispatcherFragment.newInstance()),
@@ -79,14 +79,14 @@ class TestMainFragment : TestFragment() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        L.d(EditTextListFragment.TAG) { "onCreateOptionsMenu: " }
+        L.d(TAG) { "onCreateOptionsMenu: " }
         menu.clear()
         inflater.inflate(R.menu.test_menu_main,menu)
         super.onCreateOptionsMenu(menu, inflater)
     }
 
     override fun onContextItemSelected(item: MenuItem): Boolean {
-        L.d(EditTextListFragment.TAG) { "onContextItemSelected: " }
+        L.d(TAG) { "onContextItemSelected: " }
         return super.onContextItemSelected(item)
     }
 

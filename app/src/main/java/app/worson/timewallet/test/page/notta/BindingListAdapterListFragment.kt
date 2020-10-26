@@ -247,7 +247,7 @@ class BindingListAdapterListFragment : TestFragment() {
 
     companion object {
 
-        val TAG = "BindingListAdapterListFragment"
+        private  val TAG = "BindingListAdapterListFragment"
 
         fun newInstance(): BindingListAdapterListFragment =
             BindingListAdapterListFragment().apply {

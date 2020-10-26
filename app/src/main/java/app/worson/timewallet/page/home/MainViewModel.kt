@@ -10,7 +10,7 @@ import androidx.lifecycle.liveData
  */
 class MainViewModel : ViewModel(){
 
-    val TAG = "MainViewModel"
+    private  val TAG = "MainViewModel"
 
     var viewState:MainViewState=MainViewState()
         private set
@@ -38,7 +38,7 @@ class MainViewModel : ViewModel(){
     }
 
     companion object {
-        private const val TAG = "MainViewModel"
+        private  val TAG = "MainViewModel"
     }
 
 

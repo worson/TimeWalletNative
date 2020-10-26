@@ -73,7 +73,7 @@ class TestViewEventDispatcherFragment : TestFragment() {
 
     companion object {
 
-        val TAG = "TestViewEventDispatcherFragment"
+        private  val TAG = "TestViewEventDispatcherFragment"
 
         /**
          * Use this factory method to create a new instance of

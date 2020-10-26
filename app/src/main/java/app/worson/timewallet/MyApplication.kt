@@ -13,7 +13,7 @@ import kotlinx.coroutines.launch
  * @author wangshengxing  07.24 2020
  */
 class MyApplication: Application() {
-    val TAG = "MyApplication"
+    private val TAG = "MyApplication"
 
     override fun onCreate() {
         super.onCreate()

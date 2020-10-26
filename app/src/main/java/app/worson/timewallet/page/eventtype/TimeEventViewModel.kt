@@ -19,7 +19,7 @@ import kotlinx.coroutines.launch
  */
 class TimeEventViewModel : ViewModel(){
 
-    val TAG = "TimeEventViewModel"
+    private  val TAG = "TimeEventViewModel"
 
     var viewState:TimeEventViewState=TimeEventViewState()
         private set
@@ -57,7 +57,7 @@ class TimeEventViewModel : ViewModel(){
     }
 
     companion object {
-        private const val TAG = "TimeEventViewModel"
+        private  val TAG = "TimeEventViewModel"
     }
 
 

@@ -169,7 +169,7 @@ class TestFullScreenFragment : TestFragment() {
          */
         private const val UI_ANIMATION_DELAY = 300
 
-        val TAG = "ViewEventDispatcherFragment"
+        private  val TAG = "ViewEventDispatcherFragment"
 
         fun newInstance(): TestFullScreenFragment =
             TestFullScreenFragment().apply {
