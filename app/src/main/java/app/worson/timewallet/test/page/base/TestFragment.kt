@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.addCallback
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.LifecycleObserver
@@ -38,5 +39,11 @@ open class TestFragment : BaseFragment() {
             L.d(TAG) { "onActivityCreated: onBackPressed ${this.javaClass.simpleName}" }
             FragmentUtils.remove(this@TestFragment)
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        (requireActivity() as? AppCompatActivity)?.getSupportActionBar()?.title=this.javaClass.simpleName
+//        requireActivity().getSupportActionBar()?.title=this.javaClass.simpleName
     }
 }
