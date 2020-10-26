@@ -1,4 +1,4 @@
-package app.worson.timewallet.view.rvhelper
+package com.worson.lib.appbasic.view.rvhelper
 
 import androidx.recyclerview.widget.DiffUtil
 

@@ -11,7 +11,7 @@ import androidx.lifecycle.observe
 import androidx.recyclerview.widget.LinearLayoutManager
 import app.worson.timewallet.R
 import app.worson.timewallet.db.entity.TimeEventEntity
-import app.worson.timewallet.view.rvhelper.DefaultItemDiff
+import com.worson.lib.appbasic.view.rvhelper.DefaultItemDiff
 import com.blankj.utilcode.util.FragmentUtils
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.worson.lib.log.L

@@ -12,7 +12,7 @@ import app.worson.timewallet.test.page.edittext.EditTextListFragment
 import app.worson.timewallet.test.page.main.FragmentItem
 import app.worson.timewallet.test.page.main.TestMainListAdapter
 import app.worson.timewallet.test.page.notta.BindingListAdapterListFragment
-import app.worson.timewallet.view.rvhelper.DefaultItemDiff
+import com.worson.lib.appbasic.view.rvhelper.DefaultItemDiff
 import com.blankj.utilcode.util.FragmentUtils
 import com.worson.lib.log.L
 import kotlinx.android.synthetic.main.fragment_event_list_select_dialog.*

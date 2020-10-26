@@ -1,4 +1,4 @@
-package app.worson.timewallet.view.rvhelper
+package com.worson.lib.appbasic.view.rvhelper
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -43,8 +43,12 @@ class BindingListAdapter<T>(diffCallback: DiffUtil.ItemCallback<T>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BindingViewHolder {
         return when (viewType) {
-            ITEM_TYPE_HEADER -> BindingViewHolder(getHeaderLayout(parent.context))
-            ITEM_TYPE_FOOTER -> BindingViewHolder(getFooterLayout(parent.context))
+            ITEM_TYPE_HEADER -> BindingViewHolder(
+                getHeaderLayout(parent.context)
+            )
+            ITEM_TYPE_FOOTER -> BindingViewHolder(
+                getFooterLayout(parent.context)
+            )
             else -> {
                 BindingViewHolder(
                     LayoutInflater.from(parent.context).inflate(
@@ -85,7 +89,12 @@ class BindingListAdapter<T>(diffCallback: DiffUtil.ItemCallback<T>) :
     }
 
     override fun registerAdapterDataObserver(observer: RecyclerView.AdapterDataObserver) {
-        super.registerAdapterDataObserver(AdapterDataObserverProxy(observer, 1))
+        super.registerAdapterDataObserver(
+            AdapterDataObserverProxy(
+                observer,
+                1
+            )
+        )
     }
 
 
@@ -133,7 +142,12 @@ class BindingListAdapter<T>(diffCallback: DiffUtil.ItemCallback<T>) :
         action: (T) -> Boolean,
         bind: (ViewDataBinding, T, Int) -> Unit
     ) {
-        mItemTypes[mItemTypes.size] = Item(layoutId, action, bind)
+        mItemTypes[mItemTypes.size] =
+            Item(
+                layoutId,
+                action,
+                bind
+            )
     }
 
     data class Item<T>(

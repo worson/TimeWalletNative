@@ -11,8 +11,8 @@ import app.worson.timewallet.databinding.TestItemSmartnoteBinding
 import app.worson.timewallet.test.page.base.TestFragment
 import com.worson.lib.appbasic.view.extend.disableEdit
 import com.worson.lib.appbasic.view.extend.enableEdit
-import app.worson.timewallet.view.rvhelper.DataBindingListAdapter
-import app.worson.timewallet.view.rvhelper.DataBindingViewHolder
+import com.worson.lib.appbasic.view.rvhelper.DataBindingListAdapter
+import com.worson.lib.appbasic.view.rvhelper.DataBindingViewHolder
 import com.worson.lib.log.L
 import kotlinx.android.synthetic.main.fragment_event_list_select_dialog.*
 
@@ -32,7 +32,7 @@ class BindingListAdapterListFragment : TestFragment() {
                                                               private val variableId: Int,
                                                               diffCallback: DiffUtil.ItemCallback<T>,
                                                               private val onBind: ((DB, T, Int, List<Any>) -> Unit)? = null)
-        :DataBindingListAdapter<T, DB>
+        : DataBindingListAdapter<T, DB>
         (layoutId,variableId,diffCallback,onBind){
 
         

@@ -1,4 +1,4 @@
-package app.worson.timewallet.view.rvhelper
+package com.worson.lib.appbasic.view.rvhelper
 
 import android.view.LayoutInflater
 import android.view.View

@@ -1,4 +1,4 @@
-package app.worson.timewallet.view.rvhelper;
+package com.worson.lib.appbasic.view.rvhelper;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -12,6 +12,8 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.worson.lib.appbasic.view.rvhelper.BaseViewHolder;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Modifier;
