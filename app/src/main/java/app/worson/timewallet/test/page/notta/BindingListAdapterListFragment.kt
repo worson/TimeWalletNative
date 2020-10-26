@@ -183,18 +183,17 @@ class BindingListAdapterListFragment : TestFragment() {
 
 
 
+    override fun onDestroyOptionsMenu() {
+        L.d(TAG) { "onDestroyOptionsMenu: " }
+        super.onDestroyOptionsMenu()
+    }
+
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         L.d(TAG) { "onCreateOptionsMenu: " }
         menu.clear()
         inflater.inflate(R.menu.test_menu_databind_adapter,menu)
         super.onCreateOptionsMenu(menu, inflater)
     }
-
-    override fun onDestroyOptionsMenu() {
-        L.d(TAG) { "onDestroyOptionsMenu: " }
-        super.onDestroyOptionsMenu()
-    }
-
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         L.d(TAG) { "onOptionsItemSelected: ${item.title}" }

@@ -3,19 +3,17 @@ package app.worson.timewallet.test.page
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
-import androidx.activity.addCallback
-import androidx.lifecycle.observe
 import androidx.recyclerview.widget.LinearLayoutManager
 import app.worson.timewallet.R
-import app.worson.timewallet.page.timetask.TimeTaskFragment
 import app.worson.timewallet.test.page.base.TestFragment
+import app.worson.timewallet.test.page.basic.TestFullScreenFragment
+import app.worson.timewallet.test.page.basic.TestViewEventDispatcherFragment
 import app.worson.timewallet.test.page.edittext.EditTextListFragment
 import app.worson.timewallet.test.page.main.FragmentItem
 import app.worson.timewallet.test.page.main.TestMainListAdapter
 import app.worson.timewallet.test.page.notta.BindingListAdapterListFragment
 import app.worson.timewallet.view.rvhelper.DefaultItemDiff
 import com.blankj.utilcode.util.FragmentUtils
-import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.worson.lib.log.L
 import kotlinx.android.synthetic.main.fragment_event_list_select_dialog.*
 
@@ -35,6 +33,8 @@ class TestMainFragment : TestFragment() {
     private val mData = mutableListOf<FragmentItem>(
         FragmentItem(EditTextListFragment.newInstance()),
         FragmentItem(BindingListAdapterListFragment.newInstance()),
+        FragmentItem(TestFullScreenFragment.newInstance()),
+        FragmentItem(TestViewEventDispatcherFragment.newInstance()),
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {

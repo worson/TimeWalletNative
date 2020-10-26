@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+  <item
+    android:id="@+id/root_click_enable"
+    android:title="根布局禁用点击" />
+
+  <item
+    android:id="@+id/root_click_disable"
+    android:title="根布局可点击" />
+
+  <item
+      android:id="@+id/root_view_disable"
+      android:title="根布局禁用" />
+
+  <item
+      android:id="@+id/root_view_intercept"
+      android:title="根布局拦截" />
+
+
+
+</menu>

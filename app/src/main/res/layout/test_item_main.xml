@@ -15,7 +15,7 @@
         android:paddingTop="@dimen/list_item_spacing_half"
         android:paddingRight="@dimen/list_item_spacing"
         android:paddingBottom="@dimen/list_item_spacing_half"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionMode.Title"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:text="Hello"/>
