@@ -1,2 +1,3 @@
+include ':appbasic'
 include ':app'
 rootProject.name = "TimeWalletNative"

@@ -31,7 +31,7 @@ class TestMainFragment : TestFragment() {
         )
 
     private val mData = mutableListOf<FragmentItem>(
-        FragmentItem(newInstance()),
+        FragmentItem(EditTextListFragment.newInstance()),
         FragmentItem(BindingListAdapterListFragment.newInstance()),
         FragmentItem(TestFullScreenFragment.newInstance()),
         FragmentItem(TestViewEventDispatcherFragment.newInstance()),
