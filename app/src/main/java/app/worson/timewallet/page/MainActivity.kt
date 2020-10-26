@@ -118,6 +118,11 @@ class MainActivity : AppCompatActivity() {
         super.onOptionsMenuClosed(menu)
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        L.d(TAG) { "onBackPressed: " }
+    }
+
     /*override fun onOptionsItemSelected(item: MenuItem): Boolean {
         L.d(TAG, { "onOptionsItemSelected: ${item.title}" })
         return super.onOptionsItemSelected(item)

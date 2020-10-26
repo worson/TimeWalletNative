@@ -35,6 +35,7 @@ open class TestFragment : BaseFragment() {
         })*/
 
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
+            L.d(TAG) { "onActivityCreated: onBackPressed ${this.javaClass.simpleName}" }
             FragmentUtils.remove(this@TestFragment)
         }
     }
