@@ -9,7 +9,6 @@ import kotlinx.coroutines.launch
 
 
 /**
- * 说明:
  * @author wangshengxing  07.24 2020
  */
 class MyApplication: Application() {
@@ -22,7 +21,7 @@ class MyApplication: Application() {
         GlobalScope.launch {
             L.i(TAG, "onCreate:start ")
             /*TimeWalletDb.instance.getEventEntityDao().addEvent(EventTypeEntity(uid = "0",name = "工作",desc = "赚钱",order = 1,color = 33))*/
-            TimeWalletDb.instance.getEventEntityDao().queryById("0","3")
+//            TimeWalletDb.instance.getEventEntityDao().queryById("0","3")
         }
     }
 
