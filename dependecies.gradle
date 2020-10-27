@@ -8,19 +8,19 @@ ext {
 
     versions = [
             compileSdkVersion          : 29,
-            buildToolsVersion          : "29.0.3",
+            buildToolsVersion          : "29.0.2",
             minSdkVersion              : 21,
             targetSdkVersion           : 29,
 
-            kotlin_version             : '1.3.41',
+            kotlin_version             : '1.4.0',
             gradle_version             : '4.0.1',
-            ktx                        : '1.1.0',
-            appcompat                  : '1.2.0-beta01',
+            ktx                        : '1.3.1',
+            appcompat                  : '1.3.0-alpha01',
             databinding                : '3.5.0',
 
-            arch_room_version          : '2.2.0',
-            arch_comp_lifecycle        : '2.1.0',
-            arch_comp_paging           : '2.1.0',
+            arch_room_version          : '2.2.5',
+            arch_comp_lifecycle        : '2.2.0',
+            arch_comp_paging           : '2.1.2',
 
             rxjava                     : '2.2.4',
             rxkotlin                   : '2.2.0',
@@ -28,57 +28,65 @@ ext {
             rxbinding                  : '3.0.0-alpha2',
             autodispose                : '1.1.0',
 
-            viewpager2                 : '1.0.0-beta04',
-            material_design            : '1.0.0-rc01',
-            recyclerview               : '1.0.0',
+            viewpager2                 : '1.1.0-alpha01',
+            material_design            : '1.3.0-alpha02',
+            recyclerview               : '1.1.0',
             cardview                   : '1.0.0',
             annotations                : '1.0.0',
             constraint                 : '1.1.3',
-            retrofit                   : '2.6.1',
-            okhttp                     : '3.11.0',
-            glide                      : '4.10.0',
+            retrofit                   : '2.9.0',
+            okhttp                     : '4.8.1',
             bugly                      : '3.2.3',
-            protobuf                   : '3.0.1',
-            protobuf_plugin_version    : '0.8.9',
+            protobuf                   : '3.13.0',
+            protobuf_plugin_version    : '0.8.12',
             timber                     : '4.7.1',
-            navigation                 : '2.1.0',
-            fragment                   : '1.2.4',
+            navigation                 : '2.3.0',
+            fragment                   : '1.2.5',
             lifecycle                  : '2.2.0',
             livedata                   : '2.2.0',
 
             gms_service                : '4.3.3',
-            firebase_analytics         : '17.4.3',
-            firebase_firebase_messaging: '20.2.0',
-            firebase_perf              : '19.0.7',
+            firebase_analytics         : '17.5.0',
+            firebase_firebase_messaging: '20.2.4',
+            firebase_perf              : '19.0.8',
+            firebase_remote_config     : '19.2.0',
             firebase_appindexing       : '19.1.0',
             google_billing_version     : '3.0.0',
 
 
             banner                     : '2.6.1',
 
-            junit                      : '4.12',
+            junit                      : '4.13',
             android_junit              : '1.1.1',
             test_runner                : '1.2.0',
             espresso                   : '3.2.0',
 
-            lottie                     : '3.3.0',
+            lottie                     : '3.4.1',
             swipeToLoadLayout          : '1.0.4',
             multidex_version           : '2.0.1',
-            exoplayer                  : '2.11.3',
+            exoplayer                  : '2.12.0',
             arialyy                     : '3.8.5',
-            aws_sdk                     : '2.16.9',
+            aws_sdk                     : '2.17.1',
             toasty                      : '1.4.2',
             leakcanary                  : '2.2',
-            auth_microsoft              : '1.4.0',
-            auth_google                 : '18.0.0',
+            auth_microsoft              : '1.6.0',
+            auth_google                 : '18.1.0',
             branch_io                   : '5.+',
-            getui                       : '2.13.2.0',
-            packer                      : '2.0.1',
+            getui                       : '2.14.1.0',
+            walle                       : '1.1.7',
             photo_view                  : '2.1.3',
             image_compressor            : '3.0.0',
             easy_permissions            : '3.0.0',
             google_ads                  : '17.0.0',
             huawei_ads                  : '3.4.28.305',
+            segmented_button            : '3.1.9',
+            orchestrator                : '1.3.0',
+            robolectric                 : '4.4',
+            mockito                     : '3.5.7',
+            powermock                   : '2.0.7',
+            coil                        : '0.13.0',
+            popmenu                     : '1.1.0',
+            zip4j                       : '2.6.1'
     ]
 
     libs = [
@@ -131,15 +139,13 @@ ext {
 
             okhttp                      : "com.squareup.okhttp3:okhttp:${versions.okhttp}",
             okhttp_logging              : "com.squareup.okhttp3:logging-interceptor:${versions.okhttp}",
-
-            glide                       : "com.github.bumptech.glide:glide:${versions.glide}",
-            glide_compiler              : "com.github.bumptech.glide:compiler:${versions.glide}",
+            mock_web_server             : "com.squareup.okhttp3:mockwebserver:${versions.okhttp}",
 
             easy_permissions            : "pub.devrel:easypermissions:${versions.easy_permissions}",
 
             bugly                       : "com.tencent.bugly:crashreport:${versions.bugly}",
 
-            protobuf                    : "com.google.protobuf:protobuf-lite:${versions.protobuf}",
+            protobuf                    : "com.google.protobuf:protobuf-javalite:${versions.protobuf}",
             protobuf_plugin             : "com.google.protobuf:protobuf-gradle-plugin:${versions.protobuf_plugin_version}",
 
             timber                      : "com.jakewharton.timber:timber:${versions.timber}",
@@ -149,6 +155,7 @@ ext {
             firebase_analytics          : "com.google.firebase:firebase-analytics-ktx:${versions.firebase_analytics}",
             firebase_perf               : "com.google.firebase:firebase-perf:${versions.firebase_perf}",
             firebase_firebase_messaging : "com.google.firebase:firebase-messaging:${versions.firebase_firebase_messaging}",
+            firebase_remote_config      : "com.google.firebase:firebase-config-ktx:${versions.firebase_remote_config}",
             google_billing_ktx          : "com.android.billingclient:billing-ktx:${versions.google_billing_version}",
             wechat_billing              : "com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+",
 
@@ -163,7 +170,7 @@ ext {
             databinding                 : "com.android.databinding:compiler:${versions.databinding}",
             lottie                      : "com.airbnb.android:lottie:${versions.lottie}",
             indicatorseekbar            : "com.github.warkiz.widget:indicatorseekbar:2.1.2",
-            utilcode                    : "com.blankj:utilcode:1.23.2",
+            utilcode                    : "com.blankj:utilcode:1.29.0",
             google_services             : "com.google.gms:google-services:${versions.gms_service}",
             swipeToLoadLayout           : "com.github.Aspsine:SwipeToLoadLayout:${versions.swipeToLoadLayout}",
 
@@ -185,20 +192,26 @@ ext {
             auth_google                 : "com.google.android.gms:play-services-auth:${versions.auth_google}",
 
             getui                       : "com.getui:sdk:${versions.getui}",
-            app_packer                  : "com.mcxiaoke.packer-ng:plugin:${versions.packer}",
-            app_packer_helper           : "com.mcxiaoke.packer-ng:helper:${versions.packer}",
+
+            walle_plugin                : "com.meituan.android.walle:plugin:${versions.walle}",
+            walle_libary                : "com.meituan.android.walle:library:${versions.walle}",
 
             photo_view                  : "com.github.chrisbanes:PhotoView:${versions.photo_view}",
             image_compressor            : "id.zelory:compressor:${versions.image_compressor}",
 
             branch_io                   : "io.branch.sdk.android:library:${versions.branch_io}",
 
-            utilcode                    : "com.blankj:utilcode:1.29.0",
-
             firebase_appindexing        : "com.google.firebase:firebase-appindexing:${versions.firebase_appindexing}",
             google_ads                  : "com.google.android.gms:play-services-ads-identifier:${versions.google_ads}",
-            huawei_ads                  : "com.huawei.hms:ads-identifier:${versions.huawei_ads}"
+            huawei_ads                  : "com.huawei.hms:ads-identifier:${versions.huawei_ads}",
 
-
+            segmented_button            : "com.github.addisonelliott:SegmentedButton:${versions.segmented_button}",
+            orchestrator                : "androidx.test:orchestrator:${versions.orchestrator}",
+            robolectric                 : "org.robolectric:robolectric:${versions.robolectric}",
+            mockito                     : "org.mockito:mockito-core:${versions.mockito}",
+            powermock                   : "org.powermock:powermock-module-junit4:${versions.powermock}",
+            coil                        : "io.coil-kt:coil:${versions.coil}",
+            zip4j                       : "net.lingala.zip4j:zip4j:${versions.zip4j}",
+            popmenu                     : "me.kareluo.ui:popmenu:${versions.popmenu}"
     ]
 }
