@@ -1,28 +1,33 @@
 package app.worson.timewallet.page.timetask
 
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.worson.lib.appbasic.architecture.comm.Event
 import androidx.lifecycle.liveData
-import androidx.lifecycle.viewModelScope
+import app.worson.timewallet.comm.BaseViewModel
 import app.worson.timewallet.db.entity.TimeEventEntity
 import app.worson.timewallet.db.entity.TimeRecordEntity
-import app.worson.timewallet.module.const.UserConst
 import app.worson.timewallet.module.storage.AccountSettings
+import app.worson.timewallet.module.storage.TimeRecordSource
 import app.worson.timewallet.module.storage.TimeWalletRepository
+import com.blankj.utilcode.constant.TimeConstants
 import com.worson.lib.log.L
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.collect
 
 /**
  * @author worson  10.19 2020
  */
-class TimeTaskViewModel : ViewModel() {
+class TimeTaskViewModel : BaseViewModel() {
 
     private val TAG = "TimeTaskViewModel"
 
     var viewState: TimeTaskViewState = TimeTaskViewState()
         private set
+
+    var currentRecordObserveJob:Job?=null
+    var taskTimeCountJob:Job?=null
 
     val dao by lazy { TimeWalletRepository.recordDao }
     val uid by lazy { AccountSettings.uid }
@@ -32,10 +37,11 @@ class TimeTaskViewModel : ViewModel() {
 
 
     init {
-        viewModelScope.launch(Dispatchers.IO) {
+        launch(Dispatchers.IO) {
 
             dao.queryNotEnd(AccountSettings.uid).firstOrNull()?.let {
                 notifyViewState(viewState.copy(record = Event(it)))
+                startObserveCurrentRecord(it)
             }
 
             val record = getRecord()
@@ -57,11 +63,19 @@ class TimeTaskViewModel : ViewModel() {
                 )
             }
 
+            record?.apply {
+                if (estimatedTime>0){
+                    observeEstimateTime(this)
+                }
+            }
+
         }
     }
 
     fun setTaskEvent(tasEventEntity: TimeEventEntity) {
-
+        getRecord()?.let {
+            updateRecord(it.copy(typeId = tasEventEntity.id))
+        }
         notifyViewState(
             viewState.copy(
                 timeEvent = Event(
@@ -71,9 +85,77 @@ class TimeTaskViewModel : ViewModel() {
         )
     }
 
-    fun startTask() {
+    fun startTask(startTime:Long=System.currentTimeMillis(),typeId:Int=1) {
         L.i(TAG, "startTask: ")
-//        var record = TimeRecordEntity(0, uid , day, dayTimestamp, distractCount, endTime, estimatedTime, startTime, thing, typeId)
+        resetObserveEstimateTime()
+        launch() {
+            TimeRecordSource.startTimeRecord()?.let {
+                //block
+                L.i(TAG, "startTask: ${it}")
+                startObserveCurrentRecord(it)
+            }
+        }
+    }
+
+    fun stopTask() {
+        getRecord()?.apply {
+            updateRecord(this.copy(endTime = System.currentTimeMillis()))
+        }
+    }
+
+    fun setEstimatedTime(offsetTimeMs:Long){
+        getRecord()?.apply {
+            updateRecord(copy(estimatedTime = startTime+offsetTimeMs))
+            observeEstimateTime(this)
+        }
+    }
+
+    private fun resetObserveEstimateTime(){
+        taskTimeCountJob?.let {
+            taskTimeCountJob=null
+            it.cancel()
+        }
+    }
+
+    private fun observeEstimateTime(record: TimeRecordEntity) {
+        L.i(TAG, "observeEstimateTime: ${record} ")
+        if (record.estimatedTime<System.currentTimeMillis()){
+            L.w(TAG, "observeEstimateTime: error estimatedTime=${record.estimatedTime}")
+        }
+        resetObserveEstimateTime()
+        launch {
+            delay(TimeConstants.SEC*10L)
+            notifyViewState(
+                viewState.copy(
+                    leftTimeMs = Event(record.estimatedTime-System.currentTimeMillis())
+                )
+            )
+        }
+    }
+
+    private fun resetStartObserveCurrentRecord(){
+        currentRecordObserveJob?.let {
+            L.i(TAG, "startObserveCurrentRecord: cancel last task")
+            currentRecordObserveJob=null
+            it.cancel()
+        }
+    }
+
+    private fun startObserveCurrentRecord(it: TimeRecordEntity) {
+        L.i(TAG, "startObserveCurrentRecord: ${it}")
+        resetStartObserveCurrentRecord()
+        currentRecordObserveJob=launch(Dispatchers.IO) {
+            /*TimeRecordSource.dao.queryFlowById(uid,it.id).collect {
+                // FIXME: 2020/10/27 how to cancel task
+                notifyViewState(viewState.copy(record = Event(it)))
+            }*/
+        }
+    }
+
+    fun updateRecord(record:TimeRecordEntity){
+        launch(Dispatchers.IO) {
+            TimeRecordSource.dao.addOrReplace(record)
+        }
     }
 
     fun getRecord(): TimeRecordEntity? {
@@ -89,6 +171,8 @@ class TimeTaskViewModel : ViewModel() {
         mLiveData.postValue(viewState)
     }
 
+
+
     companion object {
         private val TAG = "TimeTaskViewModel"
     }
@@ -99,6 +183,7 @@ class TimeTaskViewModel : ViewModel() {
 data class TimeTaskViewState(
     val timeEvent: Event<TimeEventEntity>? = null,
     val record: Event<TimeRecordEntity>? = null,
+    val leftTimeMs: Event<Long>? = null,
 ) {
 
 }

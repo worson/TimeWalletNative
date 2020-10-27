@@ -65,6 +65,17 @@ class TimeTaskFragment : Fragment() {
         state.timeEvent?.handleIfNotHandled {
             tvTaskEvent.setText(it.name)
         }
+        state.record?.handleIfNotHandled {
+            etTaskThing.setText(it.thing)
+            if (it.endTime==0L){
+                btStart.text="结束"
+            }else{
+                btStart.text="开始"
+            }
+        }
+        state.leftTimeMs?.handleIfNotHandled {
+            planTime.setText(it.toString())
+        }
 
     }
 
@@ -72,7 +83,11 @@ class TimeTaskFragment : Fragment() {
     private fun initClick() {
         vgRoot.setOnClickListener {  }
         btStart.setOnClickListener {
-            mTaskViewModel.startTask()
+            val record=mTaskViewModel.getRecord()
+            record?.takeIf { it.endTime!=0L }?.let {
+                mTaskViewModel.stopTask()
+            } ?: mTaskViewModel.startTask()
+
         }
         tvTaskEvent.setOnClickListener {
             showTimeEventSelect()
@@ -87,7 +102,6 @@ class TimeTaskFragment : Fragment() {
         fragment.setSelectListener {
             L.i(TAG, "setSelectListener: ${it}")
             mTaskViewModel.setTaskEvent(it)
-
         }
     }
 

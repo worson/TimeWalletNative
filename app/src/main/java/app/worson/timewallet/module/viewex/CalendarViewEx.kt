@@ -1,18 +1,9 @@
 package app.worson.timewallet.module.viewex
 
+import app.worson.timewallet.utils.time.CallendarUtil.startCalendar
 import com.haibin.calendarview.Calendar
 import com.haibin.calendarview.CalendarView
 import java.util.*
-
-/**
- * @author worson  10.24 2020
- */
-
-val startCalendar=Calendar().apply {
-    year=1970
-    month=1
-    day=1
-}
 
 fun currentCalendar()=Calendar().apply {
     val date=Date()
