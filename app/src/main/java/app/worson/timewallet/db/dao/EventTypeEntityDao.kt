@@ -27,6 +27,6 @@ interface EventTypeEntityDao {
     suspend fun queryEvents(uid: String): MutableList<TimeEventEntity>
 
     @Query("SELECT * FROM TimeEventEntity WHERE uid = :uid AND id = :id")
-    suspend fun queryById(uid: String, id: String): TimeEventEntity?
+    suspend fun queryById(uid: String, id: Int): TimeEventEntity?
 
 }

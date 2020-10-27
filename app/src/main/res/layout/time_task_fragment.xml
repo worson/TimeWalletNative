@@ -79,11 +79,6 @@
         app:layout_constraintStart_toStartOf="parent"
        />
 
-    <FrameLayout
-        android:id="@+id/fragment_containner"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        app:layout_constraintBottom_toBottomOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

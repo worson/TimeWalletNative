@@ -82,10 +82,12 @@ class TimeTaskFragment : Fragment() {
     private fun showTimeEventSelect() {
         L.i(TAG, "showTimeEventSelect: ")
         val fragment= TimeEventSelectDialogFragment.newInstance()
-        FragmentUtils.add(requireFragmentManager(),fragment,R.id.fragment_containner)
+        FragmentUtils.add(requireActivity().supportFragmentManager,fragment,R.id.fragment_containner)
         FragmentUtils.show(fragment)
         fragment.setSelectListener {
             L.i(TAG, "setSelectListener: ${it}")
+            mTaskViewModel.setTaskEvent(it)
+
         }
     }
 
