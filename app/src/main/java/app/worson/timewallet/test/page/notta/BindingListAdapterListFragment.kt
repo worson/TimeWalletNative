@@ -62,14 +62,18 @@ class BindingListAdapterListFragment : TestFragment() {
         val keyTimeStamp = "keyTimeStamp"
 
         override fun areItemsTheSame(oldItem: SmartNoteItem, newItem: SmartNoteItem): Boolean {
-            return oldItem.id == newItem.id
+            return (oldItem.id == newItem.id).apply {
+//                L.d(TAG) { "areItemsTheSame:${newItem}, ${this}" }
+            }
         }
 
         override fun areContentsTheSame(
             oldItem: SmartNoteItem,
             newItem: SmartNoteItem
         ): Boolean {
-            return oldItem==newItem
+            return (oldItem==newItem).apply{
+//                L.d(TAG) { "areContentsTheSame: ${newItem},${oldItem},${this}" }
+            }
         }
 
         override fun getChangePayload(oldItem: SmartNoteItem, newItem: SmartNoteItem): Any? {
@@ -210,10 +214,13 @@ class BindingListAdapterListFragment : TestFragment() {
             }
 
             R.id.fresh_list_first -> {
-                val first=mData.first()
+                L.d(TAG) { "onOptionsItemSelected: fresh_list_first" }
+                val newList=mData.toMutableList()
+                val first=newList.first().copy()
                 first.original="第一条数据被更新:${random()}"
-//                mAdapter.notifyItemChanged(0)
-                mAdapter.submitList(mData.toMutableList())
+                newList.removeAt(0)
+                newList.add(0,first)
+                mAdapter.submitList(newList)
             }
 
             R.id.diff_fresh_list_first -> {
