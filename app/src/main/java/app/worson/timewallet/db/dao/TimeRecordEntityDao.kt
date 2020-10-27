@@ -29,8 +29,8 @@ interface TimeRecordEntityDao {
     @Query("SELECT * FROM TimeRecordEntity WHERE uid = :uid AND startTime = :startTime")
     suspend fun queryByStartTime(uid: String, startTime: Long): TimeRecordEntity?
 
-    /*@Query("SELECT * FROM TimeRecordEntity WHERE uid = :uid AND id = :id")
-    suspend fun queryFlowById(uid: String, id: Int): Flow<TimeRecordEntity>*/
+    @Query("SELECT * FROM TimeRecordEntity WHERE uid = :uid AND id = :id")
+    fun queryFlowById(uid: String,id:Int): Flow<TimeRecordEntity>
 
 
     @Query("SELECT * FROM TimeRecordEntity WHERE uid = :uid AND endTime = 0")

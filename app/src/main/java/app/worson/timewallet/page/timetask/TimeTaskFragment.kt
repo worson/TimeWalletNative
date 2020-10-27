@@ -1,27 +1,23 @@
 package app.worson.timewallet.page.timetask
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.addCallback
+import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.observe
-import androidx.lifecycle.viewModelScope
 import app.worson.timewallet.R
-import app.worson.timewallet.module.storage.AccountSettings
-import app.worson.timewallet.module.storage.TimeWalletRepository
 import app.worson.timewallet.page.eventtype.TimeEventSelectDialogFragment
 import app.worson.timewallet.page.home.MainViewModel
-import com.blankj.utilcode.util.BarUtils
+import app.worson.timewallet.utils.time.TimeFormatUtil
+import com.blankj.utilcode.constant.TimeConstants
 import com.blankj.utilcode.util.FragmentUtils
-import com.blankj.utilcode.util.GsonUtils
+import com.blankj.utilcode.util.TimeUtils
 import com.worson.lib.log.L
 import kotlinx.android.synthetic.main.time_task_fragment.*
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 class TimeTaskFragment : Fragment() {
 
@@ -62,19 +58,26 @@ class TimeTaskFragment : Fragment() {
     }
 
     private fun observeTaskViewState(state: TimeTaskViewState) {
+        L.d(TAG) { "observeTaskViewState: " }
         state.timeEvent?.handleIfNotHandled {
-            tvTaskEvent.setText(it.name)
+            L.d(TAG) { "observeTaskViewState: timeEvent ${it}" }
+            tvTaskEvent.setText("事件名字:"+it.descDisplay())
         }
         state.record?.handleIfNotHandled {
+            L.d(TAG) { "observeTaskViewState: record ${it}" }
             etTaskThing.setText(it.thing)
-            if (it.endTime==0L){
+            if (it.isTasking()){
                 btStart.text="结束"
             }else{
                 btStart.text="开始"
             }
+            val orgin=etTaskThing.text.toString()
+            if (it.thing!=orgin){
+                etTaskThing.setText(it.thing)
+            }
         }
         state.leftTimeMs?.handleIfNotHandled {
-            planTime.setText(it.toString())
+            planTime.setText(TimeFormatUtil.offsetTimeMs(it))
         }
 
     }
@@ -84,13 +87,29 @@ class TimeTaskFragment : Fragment() {
         vgRoot.setOnClickListener {  }
         btStart.setOnClickListener {
             val record=mTaskViewModel.getRecord()
-            record?.takeIf { it.endTime!=0L }?.let {
-                mTaskViewModel.stopTask()
+            record?.let {
+                if (it.isTasking()){
+                    mTaskViewModel.stopTask()
+                }else{
+                    mTaskViewModel.startTask()
+                }
             } ?: mTaskViewModel.startTask()
-
         }
         tvTaskEvent.setOnClickListener {
             showTimeEventSelect()
+        }
+        etTaskThing.addTextChangedListener {
+            val content=it.toString()
+            L.d(TAG) { "addTextChangedListener: ${content} " }
+            mTaskViewModel.getRecord()?.let {
+                if (content!=it.thing){
+                    mTaskViewModel.updateRecord(it.copy(thing = content ))
+                }
+            }
+        }
+
+        planTime.setOnClickListener {
+            mTaskViewModel.setEstimatedTime(TimeConstants.HOUR/2L)
         }
     }
 
@@ -103,17 +122,6 @@ class TimeTaskFragment : Fragment() {
             L.i(TAG, "setSelectListener: ${it}")
             mTaskViewModel.setTaskEvent(it)
         }
-    }
-
-    override fun onStart() {
-        super.onStart()
-        L.i(TAG, "onStart: ")
-
-    }
-
-    override fun onStop() {
-        super.onStop()
-        L.i(TAG, "onStop: ")
     }
 
     override fun onHiddenChanged(hidden: Boolean) {

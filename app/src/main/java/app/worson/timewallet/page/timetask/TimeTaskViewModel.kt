@@ -37,6 +37,7 @@ class TimeTaskViewModel : BaseViewModel() {
 
 
     init {
+        L.d(TAG) { "init: " }
         launch(Dispatchers.IO) {
 
             dao.queryNotEnd(AccountSettings.uid).firstOrNull()?.let {
@@ -87,7 +88,7 @@ class TimeTaskViewModel : BaseViewModel() {
 
     fun startTask(startTime:Long=System.currentTimeMillis(),typeId:Int=1) {
         L.i(TAG, "startTask: ")
-        resetObserveEstimateTime()
+        stopTask()
         launch() {
             TimeRecordSource.startTimeRecord()?.let {
                 //block
@@ -98,15 +99,24 @@ class TimeTaskViewModel : BaseViewModel() {
     }
 
     fun stopTask() {
+        resetObserveEstimateTime()
         getRecord()?.apply {
-            updateRecord(this.copy(endTime = System.currentTimeMillis()))
+            if (isTasking()){
+                L.d(TAG) { "stopTask: " }
+                updateRecord(this.copy(endTime = System.currentTimeMillis()))
+            }else{
+                L.d(TAG) { "stopTask: task has end" }
+            }
+
         }
+
     }
 
     fun setEstimatedTime(offsetTimeMs:Long){
         getRecord()?.apply {
-            updateRecord(copy(estimatedTime = startTime+offsetTimeMs))
-            observeEstimateTime(this)
+            val record=copy(estimatedTime = startTime+offsetTimeMs)
+            updateRecord(record)
+            observeEstimateTime(record)
         }
     }
 
@@ -121,10 +131,11 @@ class TimeTaskViewModel : BaseViewModel() {
         L.i(TAG, "observeEstimateTime: ${record} ")
         if (record.estimatedTime<System.currentTimeMillis()){
             L.w(TAG, "observeEstimateTime: error estimatedTime=${record.estimatedTime}")
+            return
         }
         resetObserveEstimateTime()
         launch {
-            delay(TimeConstants.SEC*10L)
+            delay(TimeConstants.SEC*1L)
             notifyViewState(
                 viewState.copy(
                     leftTimeMs = Event(record.estimatedTime-System.currentTimeMillis())
@@ -145,10 +156,10 @@ class TimeTaskViewModel : BaseViewModel() {
         L.i(TAG, "startObserveCurrentRecord: ${it}")
         resetStartObserveCurrentRecord()
         currentRecordObserveJob=launch(Dispatchers.IO) {
-            /*TimeRecordSource.dao.queryFlowById(uid,it.id).collect {
+            TimeRecordSource.dao.queryFlowById(uid,it.id).collect {
                 // FIXME: 2020/10/27 how to cancel task
                 notifyViewState(viewState.copy(record = Event(it)))
-            }*/
+            }
         }
     }
 

@@ -19,4 +19,10 @@ data class TimeEventEntity(
     val order: Int,
     val color: Int
 ) {
+    fun descDisplay():String{
+        if (name.isNullOrEmpty()) {
+            return desc
+        }
+        return name
+    }
 }

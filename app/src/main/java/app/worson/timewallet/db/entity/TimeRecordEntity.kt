@@ -23,4 +23,6 @@ data class TimeRecordEntity (
     val startTime: Long,
     val thing: String?,
     val typeId: Int,
-)
+){
+    fun isTasking()= endTime==0L
+}
