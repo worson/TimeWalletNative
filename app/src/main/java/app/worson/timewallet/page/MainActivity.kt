@@ -1,5 +1,7 @@
 package app.worson.timewallet.page
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -12,6 +14,7 @@ import app.worson.timewallet.R
 import app.worson.timewallet.module.page.BaseActivity
 import app.worson.timewallet.page.home.MainViewModel
 import app.worson.timewallet.page.home.MainViewState
+import app.worson.timewallet.page.service.TaskRecordServiceManager
 import app.worson.timewallet.page.timetask.TimeTaskFragment
 import app.worson.timewallet.test.page.TestMainFragment
 import com.blankj.utilcode.util.BarUtils
@@ -41,8 +44,6 @@ class MainActivity : BaseActivity() {
         initViewModel()
 
 //        navView.invisible()
-
-
     }
 
     val mTestMainFragment by lazy {
@@ -121,5 +122,14 @@ class MainActivity : BaseActivity() {
 
     companion object{
         val  TAG = "MainActivity"
+        const val KEY_SOURCE = "key_source"
+
+        const val VALUE_SOURCE_TASKRECORD = "value_source_taskrecord"
+
+        fun newTaskRecordIntent(context: Context): Intent {
+            val intent = Intent(context, MainActivity::class.java)
+            intent.putExtra(KEY_SOURCE, VALUE_SOURCE_TASKRECORD)
+            return intent
+        }
     }
 }
