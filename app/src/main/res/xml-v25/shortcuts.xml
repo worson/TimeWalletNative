@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:shortcutId="compose"
+        android:enabled="true"
+        android:icon="@mipmap/ic_clock_model_96px"
+        android:shortcutShortLabel="@string/shortcut_start_task">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="app.worson.timewallet"
+            android:targetClass="app.worson.timewallet.page.MainActivity" />
+        <!--<intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="app.worson.timewallet"
+            android:targetClass="app.worson.timewallet.ui.record.RecordActivity" />-->
+        <categories android:name="android.shortcut.timewallet" />
+    </shortcut>
+    <!-- Specify more shortcuts here. -->
+</shortcuts>
