@@ -18,6 +18,7 @@ import com.blankj.utilcode.constant.TimeConstants
 import com.blankj.utilcode.util.FragmentUtils
 import com.blankj.utilcode.util.TimeUtils
 import com.worson.lib.log.L
+import kotlinx.android.synthetic.main.test_fragment_fullscreen.*
 import kotlinx.android.synthetic.main.time_task_fragment.*
 
 class TimeTaskFragment : Fragment() {
@@ -40,10 +41,12 @@ class TimeTaskFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         mTaskViewModel.init()
+        fullscreen(true)
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
             L.i(TAG, "OnBackPressedCallback: ")
-//            FragmentUtils.hide(this@TimeTaskFragment)
+            fullscreen(false)
             FragmentUtils.remove(this@TimeTaskFragment)
+//            FragmentUtils.hide(this@TimeTaskFragment)
         }
         lifecycle.addObserver(object : LifecycleEventObserver {
             override fun onStateChanged(source: LifecycleOwner, event: Lifecycle.Event) {
@@ -136,10 +139,13 @@ class TimeTaskFragment : Fragment() {
     override fun onHiddenChanged(hidden: Boolean) {
         super.onHiddenChanged(hidden)
         L.i(TAG, "onHiddenChanged: hidden=${hidden}")
-        mMainViewModel.fullScreen(!hidden)
         if (!hidden){
             mTaskViewModel.refreshCotent()
         }
+    }
+
+    private fun fullscreen(fullSreen: Boolean) {
+        mMainViewModel.fullScreen(fullSreen)
     }
 
 
