@@ -2,29 +2,25 @@ package app.worson.timewallet.page
 
 import android.os.Bundle
 import android.view.Menu
-import android.view.MenuItem
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import androidx.lifecycle.observe
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import app.worson.timewallet.R
+import app.worson.timewallet.module.page.BaseActivity
 import app.worson.timewallet.page.home.MainViewModel
 import app.worson.timewallet.page.home.MainViewState
-import app.worson.timewallet.page.home.dashboard.DashboardViewModel
 import app.worson.timewallet.page.timetask.TimeTaskFragment
 import app.worson.timewallet.test.page.TestMainFragment
 import com.blankj.utilcode.util.BarUtils
 import com.blankj.utilcode.util.FragmentUtils
 import com.worson.lib.log.L
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
-    private lateinit var mainViewModel:MainViewModel
+    private lateinit var mMainViewModel:MainViewModel
 
     lateinit var taskTimeTaskFragment: TimeTaskFragment
 
@@ -62,8 +58,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initViewModel() {
-        mainViewModel=ViewModelProvider(this).get(MainViewModel::class.java)
-        mainViewModel.liveData.observe(this) {
+        mMainViewModel=viewModel(MainViewModel::class.java)
+        mMainViewModel.liveData.observe(this) {
             observeMainViewState(it)
         }
     }
@@ -93,18 +89,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun initTimeTask() {
         taskTimeTaskFragment=TimeTaskFragment()
-        FragmentUtils.add(supportFragmentManager,taskTimeTaskFragment,R.id.task_containner)
+        checkAddFragment(taskTimeTaskFragment,R.id.task_containner)
         showHideTimeTaskFragment(false)
 
     }
 
     private fun showHideTimeTaskFragment(isShow: Boolean) {
-        if (isShow){
-            FragmentUtils.show(taskTimeTaskFragment)
-        }else{
-            FragmentUtils.hide(taskTimeTaskFragment)
-        }
-
+        showHideFragment(taskTimeTaskFragment,isShow,R.id.task_containner)
     }
 
     /*override fun onCreateOptionsMenu(menu: Menu): Boolean {

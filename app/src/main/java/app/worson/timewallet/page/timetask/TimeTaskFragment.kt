@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.activity.addCallback
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.observe
+import androidx.lifecycle.*
 import app.worson.timewallet.R
 import app.worson.timewallet.page.eventtype.TimeEventSelectDialogFragment
 import app.worson.timewallet.page.home.MainViewModel
@@ -39,10 +39,17 @@ class TimeTaskFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        mTaskViewModel.init()
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
             L.i(TAG, "OnBackPressedCallback: ")
-            FragmentUtils.hide(this@TimeTaskFragment)
+//            FragmentUtils.hide(this@TimeTaskFragment)
+            FragmentUtils.remove(this@TimeTaskFragment)
         }
+        lifecycle.addObserver(object : LifecycleEventObserver {
+            override fun onStateChanged(source: LifecycleOwner, event: Lifecycle.Event) {
+                L.d(TAG) { "onStateChanged: event ${event} " }
+            }
+        })
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

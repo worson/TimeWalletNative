@@ -38,6 +38,10 @@ class TimeTaskViewModel : BaseViewModel() {
 
 
     init {
+
+    }
+
+    fun init(){
         L.d(TAG) { "init: " }
         launch(Dispatchers.IO) {
 
