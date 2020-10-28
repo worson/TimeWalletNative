@@ -13,6 +13,7 @@ import app.worson.timewallet.R
 import app.worson.timewallet.page.eventtype.TimeEventSelectDialogFragment
 import app.worson.timewallet.page.home.MainViewModel
 import app.worson.timewallet.utils.time.TimeFormatUtil
+import app.worson.timewallet.utils.time.TimeFormatUtil.HOUR_MINUS_SECOND
 import com.blankj.utilcode.constant.TimeConstants
 import com.blankj.utilcode.util.FragmentUtils
 import com.blankj.utilcode.util.TimeUtils
@@ -61,15 +62,19 @@ class TimeTaskFragment : Fragment() {
         L.d(TAG) { "observeTaskViewState: " }
         state.timeEvent?.handleIfNotHandled {
             L.d(TAG) { "observeTaskViewState: timeEvent ${it}" }
-            tvTaskEvent.setText("事件名字:"+it.descDisplay())
+            tvTaskEvent.setText(it.descDisplay())
         }
         state.record?.handleIfNotHandled {
             L.d(TAG) { "observeTaskViewState: record ${it}" }
-            etTaskThing.setText(it.thing)
+
             if (it.isTasking()){
                 btStart.text="结束"
+                tvTimeCost.text=TimeFormatUtil.offsetTimeMs(it.costTimeMs())
+                etTaskThing.setText(it.thing)
             }else{
                 btStart.text="开始"
+                tvTimeCost.text=TimeFormatUtil.offsetTimeMs(0)
+                etTaskThing.setText("")
             }
             val orgin=etTaskThing.text.toString()
             if (it.thing!=orgin){
@@ -86,14 +91,11 @@ class TimeTaskFragment : Fragment() {
     private fun initClick() {
         vgRoot.setOnClickListener {  }
         btStart.setOnClickListener {
-            val record=mTaskViewModel.getRecord()
-            record?.let {
-                if (it.isTasking()){
-                    mTaskViewModel.stopTask()
-                }else{
-                    mTaskViewModel.startTask()
-                }
-            } ?: mTaskViewModel.startTask()
+            if (mTaskViewModel.isTasking()) {
+                mTaskViewModel.stopTask()
+            }else{
+                mTaskViewModel.startTask(thing = etTaskThing.text.toString())
+            }
         }
         tvTaskEvent.setOnClickListener {
             showTimeEventSelect()
@@ -128,5 +130,10 @@ class TimeTaskFragment : Fragment() {
         super.onHiddenChanged(hidden)
         L.i(TAG, "onHiddenChanged: hidden=${hidden}")
         mMainViewModel.fullScreen(!hidden)
+        if (!hidden){
+            mTaskViewModel.refreshCotent()
+        }
     }
+
+
 }

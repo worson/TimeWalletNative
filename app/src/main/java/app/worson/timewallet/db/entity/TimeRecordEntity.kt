@@ -25,4 +25,6 @@ data class TimeRecordEntity (
     val typeId: Int,
 ){
     fun isTasking()= endTime==0L
+
+    fun costTimeMs() = System.currentTimeMillis()-startTime
 }

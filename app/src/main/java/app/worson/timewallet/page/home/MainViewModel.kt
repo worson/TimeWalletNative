@@ -8,45 +8,49 @@ import androidx.lifecycle.liveData
 /**
  * @author worson  10.19 2020
  */
-class MainViewModel : ViewModel(){
+class MainViewModel : ViewModel() {
 
-    private  val TAG = "MainViewModel"
+    private val TAG = "MainViewModel"
 
-    var viewState:MainViewState=MainViewState()
+    var viewState: MainViewState = MainViewState()
         private set
 
     private val mLiveData = MutableLiveData<MainViewState>()
     val liveData = liveData { emitSource(mLiveData) }
 
 
-
     init {
 
     }
 
-    fun showTimeTask(isShow:Boolean){
-        notifyViewState(viewState.copy(showTimeTask = Event(
-            isShow
+    fun showTimeTask(isShow: Boolean) {
+        notifyViewState(
+            viewState.copy(
+                showTimeTask = Event(
+                    isShow
+                )
+            )
         )
-        ))
     }
 
-    fun fullScreen(yes:Boolean){
-        notifyViewState(viewState.copy(fullScreen = Event(
-            yes
+    fun fullScreen(yes: Boolean) {
+        notifyViewState(
+            viewState.copy(
+                fullScreen = Event(
+                    yes
+                )
+            )
         )
-        ))
     }
 
-    private fun notifyViewState(viewState:MainViewState){
-        this.viewState=viewState
+    private fun notifyViewState(viewState: MainViewState) {
+        this.viewState = viewState
         mLiveData.postValue(viewState)
     }
 
     companion object {
-        private  val TAG = "MainViewModel"
+        private val TAG = "MainViewModel"
     }
-
 
 
 }
@@ -54,6 +58,6 @@ class MainViewModel : ViewModel(){
 data class MainViewState(
     val showTimeTask: Event<Boolean>? = null,
     val fullScreen: Event<Boolean>? = null,
-){
+) {
 
 }

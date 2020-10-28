@@ -9,6 +9,7 @@ import java.util.*
 object TimeFormatUtil {
 
     val HOUR_MINUS = "HH:mm"
+    val HOUR_MINUS_SECOND = "HH:mm:ss"
 
 
     fun offsetTimeMs(millisecond:Long):String{

@@ -10,6 +10,7 @@ import app.worson.timewallet.module.storage.AccountSettings
 import app.worson.timewallet.module.storage.TimeRecordSource
 import app.worson.timewallet.module.storage.TimeWalletRepository
 import com.blankj.utilcode.constant.TimeConstants
+import com.worson.lib.appbasic.kotlinex.ifNull
 import com.worson.lib.log.L
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -46,15 +47,19 @@ class TimeTaskViewModel : BaseViewModel() {
             }
 
             val record = getRecord()
-            val timeEvent = if (record == null) {
+            val timeEvent = if (record != null) {
+                L.d(TAG) { "get record timeEvent: " }
+                TimeWalletRepository.eventDao.queryById(AccountSettings.uid, record!!.id)
+
+            }else {null}
+
+            timeEvent.ifNull{
+                L.d(TAG) { "get default timeEvent: " }
                 TimeWalletRepository.eventDao.queryEvents(AccountSettings.uid).apply {
                     sortBy { it.id }
                 }.firstOrNull()
-            } else {
-                TimeWalletRepository.eventDao.queryById(AccountSettings.uid, record.id)
-            }
-
-            timeEvent?.let {
+            }?.let {
+                L.d(TAG) { "timeEvent: ${it}" }
                 notifyViewState(
                     viewState.copy(
                         timeEvent = Event(
@@ -86,11 +91,11 @@ class TimeTaskViewModel : BaseViewModel() {
         )
     }
 
-    fun startTask(startTime:Long=System.currentTimeMillis(),typeId:Int=1) {
+    fun startTask(startTime:Long=System.currentTimeMillis(),typeId:Int=1,thing: String="") {
         L.i(TAG, "startTask: ")
         stopTask()
         launch() {
-            TimeRecordSource.startTimeRecord()?.let {
+            TimeRecordSource.startTimeRecord(startTime,typeId,thing)?.let {
                 //block
                 L.i(TAG, "startTask: ${it}")
                 startObserveCurrentRecord(it)
@@ -164,6 +169,10 @@ class TimeTaskViewModel : BaseViewModel() {
     }
 
     fun updateRecord(record:TimeRecordEntity){
+        if (!isTasking()) {
+            L.w(TAG, "updateRecord: not  tasking")
+            return
+        }
         launch(Dispatchers.IO) {
             TimeRecordSource.dao.addOrReplace(record)
         }
@@ -171,6 +180,13 @@ class TimeTaskViewModel : BaseViewModel() {
 
     fun getRecord(): TimeRecordEntity? {
         return viewState.record?.peekContent()
+    }
+
+    fun isTasking():Boolean{
+        getRecord()?.let {
+            return it.isTasking()
+        }
+        return false
     }
 
     fun getTimeEvent(): TimeEventEntity? {
@@ -182,6 +198,11 @@ class TimeTaskViewModel : BaseViewModel() {
         mLiveData.postValue(viewState)
     }
 
+    fun refreshCotent() {
+        if (isTasking()){
+            getRecord()?.let { notifyViewState(viewState.copy(record = Event(it))) }
+        }
+    }
 
 
     companion object {

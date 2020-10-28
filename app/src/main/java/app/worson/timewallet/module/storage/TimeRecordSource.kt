@@ -14,10 +14,10 @@ object TimeRecordSource {
         TimeWalletDb.instance.getTimeRecordEntityDao()
     }
 
-    suspend fun startTimeRecord(startTime:Long=System.currentTimeMillis(),typeId:Int=1):TimeRecordEntity?{
+    suspend fun startTimeRecord(startTime:Long=System.currentTimeMillis(),typeId:Int=1,thing: String=""):TimeRecordEntity?{
         val dayTimestamp = CallendarUtil.differDay(startTime)
         val day = CallendarUtil.dayFormatString(startTime)
-        var record = TimeRecordEntity(id = 0, uid=uid , day=day, dayTimestamp=dayTimestamp, distractCount=0, endTime=0, estimatedTime=0, startTime=startTime,thing= "", typeId=typeId)
+        var record = TimeRecordEntity(id = 0, uid=uid , day=day, dayTimestamp=dayTimestamp, distractCount=0, endTime=0, estimatedTime=0, startTime=startTime,thing= thing, typeId=typeId)
         dao.addOrReplace(record)
         val resultRecord=dao.queryByStartTime(uid, startTime)
         return resultRecord
