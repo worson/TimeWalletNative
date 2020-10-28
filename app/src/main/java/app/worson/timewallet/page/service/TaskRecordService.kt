@@ -7,6 +7,8 @@ import android.graphics.BitmapFactory
 import android.os.Binder
 import android.os.Build
 import android.os.IBinder
+import android.widget.RemoteViews
+import androidx.core.app.NotificationCompat
 import app.worson.timewallet.R
 import app.worson.timewallet.page.MainActivity
 import com.worson.lib.log.L
@@ -33,10 +35,13 @@ class TaskRecordService : Service() {
             val manager =
                 getSystemService(IntentService.NOTIFICATION_SERVICE) as NotificationManager
             manager.createNotificationChannel(channel)
-            Notification.Builder(this, CHANNEL_RECORD)
+            NotificationCompat.Builder(this, CHANNEL_RECORD)
         } else {
-            Notification.Builder(this)
+            NotificationCompat.Builder(this)
         }
+
+        val remoteView=RemoteViews(packageName,R.layout.notification_time_record)
+//        remoteView.setOnClickResponse(R.id.vgRoot,)
 
         builder.setContentIntent(pendingIntent)
             .setLargeIcon(
@@ -45,6 +50,7 @@ class TaskRecordService : Service() {
             .setSmallIcon(R.mipmap.ic_launcher)
             .setContentTitle(getString(R.string.app_name))
             .setContentText("点击开始新任务")
+            .setCustomContentView(remoteView)
             .setWhen(System.currentTimeMillis())
 
 
