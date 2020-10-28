@@ -1,5 +1,8 @@
 package app.worson.timewallet.utils.time
 
+import androidx.core.graphics.drawable.toDrawable
+import app.worson.timewallet.R
+import com.worson.lib.appbasic.view.string
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -8,8 +11,12 @@ import java.util.*
  */
 object TimeFormatUtil {
 
-    val HOUR_MINUS = "HH:mm"
-    val HOUR_MINUS_SECOND = "HH:mm:ss"
+    val TIME_FORMAT_HOUR by lazy { R.string.time_format_hour.string() }
+    val TIME_FORMAT_MINUTE by lazy { R.string.time_format_minute.string() }
+    val TIME_FORMAT_SECOND by lazy { R.string.time_format_second.string() }
+
+    val HOUR_MINUS = "HH${TIME_FORMAT_HOUR}mm${TIME_FORMAT_MINUTE}"
+    val HOUR_MINUS_SECOND = "HH${TIME_FORMAT_HOUR}mm${TIME_FORMAT_MINUTE}ss${TIME_FORMAT_SECOND}"
 
 
     fun offsetTimeMs(millisecond:Long):String{
@@ -17,13 +24,13 @@ object TimeFormatUtil {
         return if (seconds >= 60 * 60) {
             String.format(
                 Locale.getDefault(),
-                "%d:%d:%02d",
+                "%d${TIME_FORMAT_HOUR}%d${TIME_FORMAT_MINUTE}%02d${TIME_FORMAT_SECOND}",
                 seconds / 60 / 60,
                 seconds / 60 % 60,
                 seconds % 60
             )
         } else {
-            String.format(Locale.getDefault(), "%d:%02d", seconds / 60, seconds % 60)
+            String.format(Locale.getDefault(), "%d${TIME_FORMAT_HOUR}%02d${TIME_FORMAT_SECOND}", seconds / 60, seconds % 60)
         }
     }
 

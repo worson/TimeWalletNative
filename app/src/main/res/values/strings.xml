@@ -1,9 +1,13 @@
 <resources>
-    <string name="app_name">TimeWalletNative</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="app_name">时间钱包</string>
+    <string name="title_home">时间线</string>
+    <string name="title_dashboard">待办</string>
+    <string name="title_notifications">分析</string>
     <string name="title_setting">设置</string>
+
+    <string name="time_format_hour">时</string>
+    <string name="time_format_minute">分</string>
+    <string name="time_format_second">秒</string>
 
     <string name="shortcut_start_task">开始记录</string>
 

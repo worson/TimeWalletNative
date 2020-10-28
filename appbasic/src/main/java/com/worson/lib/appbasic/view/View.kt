@@ -49,9 +49,9 @@ fun View.onVisibilityChanged(block: (visibility: Int) -> Unit) {
     }
 }
 
-fun drawable(@DrawableRes res: Int): Drawable? = ContextCompat.getDrawable(GlobalContext.instance, res)
-fun getString(@StringRes res: Int): String = GlobalContext.instance.getString(res)
-fun getColor(@ColorRes res: Int): Int = ContextCompat.getColor(GlobalContext.instance, res)
+fun @receiver:DrawableRes Int.drawable(): Drawable? = ContextCompat.getDrawable(GlobalContext.instance, this)
+fun @receiver:StringRes Int.string(): String = GlobalContext.instance.getString(this)
+fun @receiver:ColorRes Int.color(): Int = ContextCompat.getColor(GlobalContext.instance, this)
 
 fun View.visible(){
     this.visibility=View.VISIBLE
