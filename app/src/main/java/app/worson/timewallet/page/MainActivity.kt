@@ -4,6 +4,9 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleEventObserver
+import androidx.lifecycle.LifecycleOwner
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.lifecycle.observe
 import androidx.navigation.findNavController
@@ -19,6 +22,7 @@ import app.worson.timewallet.page.timetask.TimeTaskFragment
 import app.worson.timewallet.test.page.TestMainFragment
 import com.blankj.utilcode.util.BarUtils
 import com.blankj.utilcode.util.FragmentUtils
+import com.worson.lib.appbasic.android.data.bundleStrInfo
 import com.worson.lib.log.L
 
 class MainActivity : BaseActivity() {
@@ -27,9 +31,21 @@ class MainActivity : BaseActivity() {
 
     lateinit var taskTimeTaskFragment: TimeTaskFragment
 
+
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        L.i(TAG, "onNewIntent: ${intent.bundleStrInfo()} ")
+        intent.extras?.getString(KEY_SOURCE)?.takeIf {
+            it.isNotBlank() && VALUE_SOURCE_TASKRECORD==it
+        }?.let {
+            showHideTimeTaskFragment(true)
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        L.i(TAG, "onCreate: ")
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
 
         val navController = findNavController(R.id.nav_host_fragment)
@@ -43,6 +59,11 @@ class MainActivity : BaseActivity() {
         initTimeTask()
         initViewModel()
 
+        lifecycle.addObserver(object : LifecycleEventObserver {
+            override fun onStateChanged(source: LifecycleOwner, event: Lifecycle.Event) {
+                L.d(TAG) { "onStateChanged: event ${event} " }
+            }
+        })
 //        navView.invisible()
     }
 
@@ -96,6 +117,7 @@ class MainActivity : BaseActivity() {
     }
 
     private fun showHideTimeTaskFragment(isShow: Boolean) {
+        L.i(TAG, "showHideTimeTaskFragment: ")
         showHideFragment(taskTimeTaskFragment,isShow,R.id.task_containner)
     }
 

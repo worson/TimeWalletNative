@@ -28,7 +28,7 @@ class TaskRecordService : Service() {
             val channel = NotificationChannel(
                 CHANNEL_RECORD,
                 "时间钱包",
-                NotificationManager.IMPORTANCE_DEFAULT
+                NotificationManager.IMPORTANCE_HIGH
             )
             val manager =
                 getSystemService(IntentService.NOTIFICATION_SERVICE) as NotificationManager
