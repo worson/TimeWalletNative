@@ -53,6 +53,8 @@ fun @receiver:DrawableRes Int.drawable(): Drawable? = ContextCompat.getDrawable(
 fun @receiver:StringRes Int.string(): String = GlobalContext.instance.getString(this)
 fun @receiver:ColorRes Int.color(): Int = ContextCompat.getColor(GlobalContext.instance, this)
 
+fun Int.resName(): String = GlobalContext.instance.resources.getResourceName(this)
+
 fun View.visible(){
     this.visibility=View.VISIBLE
 }

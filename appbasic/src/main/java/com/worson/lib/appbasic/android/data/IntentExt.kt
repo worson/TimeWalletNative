@@ -11,7 +11,6 @@ fun Intent.bundleStrInfo(): String {
     return JSONObject().let { jo ->
         extras?.keySet()?.forEach {
             jo.put(it, extras?.get(it))
-
         }
         jo
     }.toString()

@@ -13,6 +13,7 @@ import app.worson.timewallet.R
 import app.worson.timewallet.module.notification.RemoteViewsEventHelper
 import app.worson.timewallet.page.MainActivity
 import com.worson.lib.appbasic.android.data.bundleStrInfo
+import com.worson.lib.appbasic.view.resName
 import com.worson.lib.log.L
 
 class TaskRecordService : Service() {
@@ -46,16 +47,13 @@ class TaskRecordService : Service() {
         val remoteView=RemoteViews(packageName,R.layout.notification_time_record)
 
         mRemoteViewsEventHelper=RemoteViewsEventHelper(this,remoteView){newIntent(this)}
-//        remoteView.setOnClickResponse(R.id.vgRoot,)
-        mRemoteViewsEventHelper?.setOnclickListener(R.id.vgRoot){
-            L.i(TAG, "setOnclickListener: ")
-        }
+        mRemoteViewsEventHelper?.setOnclickListener(R.id.vgRoot,handleEventListener)
+        mRemoteViewsEventHelper?.setOnclickListener(R.id.tvTimeType,handleEventListener)
+        mRemoteViewsEventHelper?.setOnclickListener(R.id.ivCtrl,handleEventListener)
+        mRemoteViewsEventHelper?.setOnclickListener(R.id.ivPre,handleEventListener)
+        mRemoteViewsEventHelper?.setOnclickListener(R.id.ivNext,handleEventListener)
 
-        remoteView.setOnClickPendingIntent(R.id.vgRoot,PendingIntent.getService(this,CODE_CLICK_CTRL,
-            newIntent(this).apply {
-                putExtra("action",CODE_CLICK_CTRL)
-            },
-            PendingIntent.FLAG_UPDATE_CURRENT))
+
 
         builder.setContentIntent(pendingIntent)
             .setLargeIcon(
@@ -72,6 +70,15 @@ class TaskRecordService : Service() {
         L.i(TAG, "onCreate")
 
     }
+
+    val handleEventListener = {
+        id:Int ->
+        L.d(TAG) { "handleEventListener:${id.resName()} " }
+        when(id){
+
+        }
+    }
+
 
     override fun onStartCommand(intent: Intent, flags: Int, startId: Int): Int {
         L.i(TAG, "onStartCommand intent=${intent.bundleStrInfo()}, flags=$flags,startId=$startId")

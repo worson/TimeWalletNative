@@ -4,8 +4,6 @@ import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.widget.RemoteViews
-import app.worson.timewallet.R
-import app.worson.timewallet.page.service.TaskRecordService
 import com.worson.lib.appbasic.android.data.bundleStrInfo
 import com.worson.lib.log.L
 
@@ -34,12 +32,12 @@ class RemoteViewsEventHelper (val context:Context, val remoteViews: RemoteViews,
     val map:MutableMap<Int,OnclickListener?> = HashMap()
 
     fun setOnclickListener(id: Int,listener: (id:Int)-> Unit){
-        map.put(id,object :OnclickListener{
+        val newListener=object :OnclickListener{
             override fun onClick(id: Int) {
                 listener(id)
             }
-        })
-        remoteViews.setOnClickPendingIntent(id,createIntent(id))
+        }
+        setOnclickListener(id,newListener)
     }
 
 
@@ -52,7 +50,7 @@ class RemoteViewsEventHelper (val context:Context, val remoteViews: RemoteViews,
         L.i(TAG, "onIntentEvent action=${intent.action}, intent=${intent.bundleStrInfo()}")
         if (intent.action==ACTION_REMOTEVIEW_EVENT) {
             when(intent.getStringExtra(KEY_REMOTEVIEW_EVENT)){
-                KEY_EVENT_VIEW_ID -> {
+                REMOTEVIEW_EVENT_CLICK -> {
                     intent.getIntExtra(KEY_EVENT_VIEW_ID,-1).let {
                         id ->
                         map.get(id)?.onClick(id)
@@ -68,7 +66,7 @@ class RemoteViewsEventHelper (val context:Context, val remoteViews: RemoteViews,
             putExtra(KEY_REMOTEVIEW_EVENT,REMOTEVIEW_EVENT_CLICK)
             putExtra(KEY_EVENT_VIEW_ID,clickId)
         }.let {
-            PendingIntent.getService(context,CODE_REMOTEVIEW_EVENT,it,PendingIntent.FLAG_UPDATE_CURRENT)
+            PendingIntent.getService(context,clickId,it, Intent.FILL_IN_DATA)
         }
     }
 
