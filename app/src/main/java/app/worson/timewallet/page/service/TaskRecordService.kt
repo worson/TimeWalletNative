@@ -10,6 +10,7 @@ import android.os.IBinder
 import android.widget.RemoteViews
 import androidx.core.app.NotificationCompat
 import app.worson.timewallet.R
+import app.worson.timewallet.module.notification.RemoteViewsEventHelper
 import app.worson.timewallet.page.MainActivity
 import com.worson.lib.appbasic.android.data.bundleStrInfo
 import com.worson.lib.log.L
@@ -19,6 +20,7 @@ class TaskRecordService : Service() {
 
     private val mRecordBinder = RecordBinder()
 
+    private var mRemoteViewsEventHelper:RemoteViewsEventHelper?=null
 
     override fun onCreate() {
         super.onCreate()
@@ -42,7 +44,13 @@ class TaskRecordService : Service() {
         }
 
         val remoteView=RemoteViews(packageName,R.layout.notification_time_record)
+
+        mRemoteViewsEventHelper=RemoteViewsEventHelper(this,remoteView){newIntent(this)}
 //        remoteView.setOnClickResponse(R.id.vgRoot,)
+        mRemoteViewsEventHelper?.setOnclickListener(R.id.vgRoot){
+            L.i(TAG, "setOnclickListener: ")
+        }
+
         remoteView.setOnClickPendingIntent(R.id.vgRoot,PendingIntent.getService(this,CODE_CLICK_CTRL,
             newIntent(this).apply {
                 putExtra("action",CODE_CLICK_CTRL)
@@ -67,6 +75,7 @@ class TaskRecordService : Service() {
 
     override fun onStartCommand(intent: Intent, flags: Int, startId: Int): Int {
         L.i(TAG, "onStartCommand intent=${intent.bundleStrInfo()}, flags=$flags,startId=$startId")
+        mRemoteViewsEventHelper?.onIntentEvent(intent)
         return super.onStartCommand(intent, flags, startId)
     }
 
