@@ -70,7 +70,6 @@ class LibDataBindingAdapterListFragment : TestFragment() {
             return Bundle().apply {
                 if (oldItem.isEdit != newItem.isEdit) putBoolean(keyIsEdit, newItem.isEdit)
                 if (oldItem.original != newItem.original) putString(keyName, newItem.original)
-                if (oldItem.timeStamp != newItem.timeStamp) putString(keyTimeStamp, newItem.timeStamp)
             }
         }
 

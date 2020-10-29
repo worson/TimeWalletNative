@@ -11,6 +11,7 @@ import android.widget.RemoteViews
 import androidx.core.app.NotificationCompat
 import app.worson.timewallet.R
 import app.worson.timewallet.page.MainActivity
+import com.worson.lib.appbasic.android.data.bundleStrInfo
 import com.worson.lib.log.L
 
 class TaskRecordService : Service() {
@@ -42,6 +43,11 @@ class TaskRecordService : Service() {
 
         val remoteView=RemoteViews(packageName,R.layout.notification_time_record)
 //        remoteView.setOnClickResponse(R.id.vgRoot,)
+        remoteView.setOnClickPendingIntent(R.id.vgRoot,PendingIntent.getService(this,CODE_CLICK_CTRL,
+            newIntent(this).apply {
+                putExtra("action",CODE_CLICK_CTRL)
+            },
+            PendingIntent.FLAG_UPDATE_CURRENT))
 
         builder.setContentIntent(pendingIntent)
             .setLargeIcon(
@@ -59,8 +65,8 @@ class TaskRecordService : Service() {
 
     }
 
-    override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        L.i(TAG, "onStartCommand")
+    override fun onStartCommand(intent: Intent, flags: Int, startId: Int): Int {
+        L.i(TAG, "onStartCommand intent=${intent.bundleStrInfo()}, flags=$flags,startId=$startId")
         return super.onStartCommand(intent, flags, startId)
     }
 
@@ -82,6 +88,11 @@ class TaskRecordService : Service() {
     companion object {
         const val ID_RECORDING = 2
         const val CHANNEL_RECORD = "channel_id_record"
+
+
+        const val CODE_CLICK_CTRL = 1
+
+
 
         fun newIntent(context: Context): Intent {
             return Intent(context, TaskRecordService::class.java)

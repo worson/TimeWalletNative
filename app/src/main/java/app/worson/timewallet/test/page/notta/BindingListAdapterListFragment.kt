@@ -19,8 +19,6 @@ import java.lang.Math.random
 
 data class SmartNoteItem (
     val id: String,
-    val showTimeStamp: Boolean = true,
-    val timeStamp: String = "",
     var original: String = "",
     var isEdit: Boolean = false,
 )
@@ -59,28 +57,22 @@ class BindingListAdapterListFragment : TestFragment() {
 
         val keyIsEdit = "keyIsEdit"
         val keyName = "keyName"
-        val keyTimeStamp = "keyTimeStamp"
 
         override fun areItemsTheSame(oldItem: SmartNoteItem, newItem: SmartNoteItem): Boolean {
-            return (oldItem.id == newItem.id).apply {
-//                L.d(TAG) { "areItemsTheSame:${newItem}, ${this}" }
-            }
+            return (oldItem.id == newItem.id)
         }
 
         override fun areContentsTheSame(
             oldItem: SmartNoteItem,
             newItem: SmartNoteItem
         ): Boolean {
-            return (oldItem==newItem).apply{
-//                L.d(TAG) { "areContentsTheSame: ${newItem},${oldItem},${this}" }
-            }
+            return (oldItem==newItem)
         }
 
         override fun getChangePayload(oldItem: SmartNoteItem, newItem: SmartNoteItem): Any? {
             return Bundle().apply {
                 if (oldItem.isEdit != newItem.isEdit) putBoolean(keyIsEdit, newItem.isEdit)
                 if (oldItem.original != newItem.original) putString(keyName, newItem.original)
-                if (oldItem.timeStamp != newItem.timeStamp) putString(keyTimeStamp, newItem.timeStamp)
             }
         }
 
@@ -124,9 +116,6 @@ class BindingListAdapterListFragment : TestFragment() {
                         db.tvOriginal.setText(bundle.getString(it))
                     }
 
-                    if (it == diff.keyTimeStamp) {
-                        db.tvTimestamp.setText(bundle.getString(it))
-                    }
                 }
             }else{
                 if (noteItem.isEdit) { //mSmartNoteViewModel.mEditState
