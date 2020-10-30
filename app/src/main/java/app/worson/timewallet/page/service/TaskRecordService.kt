@@ -9,26 +9,35 @@ import android.os.Build
 import android.os.IBinder
 import android.widget.RemoteViews
 import androidx.core.app.NotificationCompat
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleEventObserver
+import androidx.lifecycle.LifecycleOwner
 import app.worson.timewallet.R
+import app.worson.timewallet.module.notification.BaseNotificationService
 import app.worson.timewallet.module.notification.RemoteViewsEventHelper
 import app.worson.timewallet.page.MainActivity
 import com.worson.lib.appbasic.android.data.bundleStrInfo
 import com.worson.lib.appbasic.view.resName
 import com.worson.lib.log.L
 
-class TaskRecordService : Service() {
+class TaskRecordService : BaseNotificationService() {
 
 
     private val mRecordBinder = RecordBinder()
 
-    private var mRemoteViewsEventHelper:RemoteViewsEventHelper?=null
+
 
     override fun onCreate() {
         super.onCreate()
         L.d(TAG) { "onCreate: " }
+        lifecycle.addObserver(object : LifecycleEventObserver{
+            override fun onStateChanged(source: LifecycleOwner, event: Lifecycle.Event) {
+                L.d(TAG) { "onStateChanged: ${event}" }
+            }
+        })
+
         val clickIntent = MainActivity.newTaskRecordIntent(this)
         val pendingIntent = PendingIntent.getActivity(this, 0, clickIntent, 0)
-
 
         val builder = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val channel = NotificationChannel(
@@ -47,11 +56,11 @@ class TaskRecordService : Service() {
         val remoteView=RemoteViews(packageName,R.layout.notification_time_record)
 
         mRemoteViewsEventHelper=RemoteViewsEventHelper(this,remoteView){newIntent(this)}
-        mRemoteViewsEventHelper?.setOnclickListener(R.id.vgRoot,handleEventListener)
-        mRemoteViewsEventHelper?.setOnclickListener(R.id.tvTimeType,handleEventListener)
-        mRemoteViewsEventHelper?.setOnclickListener(R.id.ivCtrl,handleEventListener)
-        mRemoteViewsEventHelper?.setOnclickListener(R.id.ivPre,handleEventListener)
-        mRemoteViewsEventHelper?.setOnclickListener(R.id.ivNext,handleEventListener)
+        setOnclickListener(R.id.vgRoot,handleEventListener)
+        setOnclickListener(R.id.tvTimeType,handleEventListener)
+        setOnclickListener(R.id.ivCtrl,handleEventListener)
+        setOnclickListener(R.id.ivPre,handleEventListener)
+        setOnclickListener(R.id.ivNext,handleEventListener)
 
 
 
@@ -80,9 +89,8 @@ class TaskRecordService : Service() {
     }
 
 
-    override fun onStartCommand(intent: Intent, flags: Int, startId: Int): Int {
-        L.i(TAG, "onStartCommand intent=${intent.bundleStrInfo()}, flags=$flags,startId=$startId")
-        mRemoteViewsEventHelper?.onIntentEvent(intent)
+    override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+        L.i(TAG, "onStartCommand intent=${intent?.bundleStrInfo()}, flags=$flags,startId=$startId")
         return super.onStartCommand(intent, flags, startId)
     }
 
@@ -91,7 +99,9 @@ class TaskRecordService : Service() {
         super.onDestroy()
     }
 
-    override fun onBind(intent: Intent): IBinder {
+
+    override fun onBind(intent: Intent): IBinder? {
+        super.onBind(intent)
         L.d(TAG) { "onBind: " }
         return mRecordBinder
     }
