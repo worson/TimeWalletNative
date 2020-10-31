@@ -36,6 +36,14 @@
             android:name=".page.service.TaskRecordService"
             android:enabled="true"
             android:exported="false" />
+        <service
+            android:name=".page.service.TimeEventService"
+            android:enabled="true"
+            android:exported="false" />
+        <service
+            android:name=".page.service.TimeEventUpdateService"
+            android:enabled="true"
+            android:exported="true" />
     </application>
 
 </manifest>

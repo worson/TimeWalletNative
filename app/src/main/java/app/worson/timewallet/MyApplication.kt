@@ -4,6 +4,7 @@ import android.app.Application
 import android.util.Log
 import app.worson.timewallet.db.TimeWalletDb
 import app.worson.timewallet.page.service.TaskRecordServiceManager
+import app.worson.timewallet.page.service.TimeEventServiceManager
 import com.langogo.lib.log.internal.Platform
 import com.worson.lib.log.L
 import com.worson.lib.log.LogConfiguration
@@ -22,6 +23,7 @@ class MyApplication: Application() {
         super.onCreate()
         initConsolePrint(true)
         L.i(TAG, { "onCreate: " })
+//        TimeEventServiceManager.bindServer()
         TaskRecordServiceManager.bindServer()
     }
 

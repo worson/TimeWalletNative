@@ -1,16 +1,71 @@
 package app.worson.timewallet.module.notification
 
+import android.app.*
 import android.content.Intent
+import android.graphics.BitmapFactory
+import android.os.Build
 import android.widget.RemoteViews
+import androidx.core.app.NotificationCompat
 import androidx.lifecycle.LifecycleService
+import app.worson.timewallet.R
+import app.worson.timewallet.page.MainActivity
+import app.worson.timewallet.page.service.NotificationConsts
+
+
+data class NotificationItem(
+    val id:Int,
+    val channelId:String,
+    val channelName:String,
+    val channelImportance:Int
+)
 
 /**
  *
  * @author worson  10.29 2020
  */
-open class BaseNotificationService :LifecycleService(){
+abstract open class BaseNotificationService :LifecycleService(){
 
     protected var mRemoteViewsEventHelper:RemoteViewsEventHelper?=null
+
+    abstract protected fun getNotifacationId():NotificationItem
+
+    protected fun pendingIntent():PendingIntent{
+        val clickIntent = MainActivity.newTaskRecordIntent(this)
+        val pendingIntent = PendingIntent.getActivity(this, 0, clickIntent, 0)
+        return pendingIntent
+    }
+
+    protected fun notificationBuilder():NotificationCompat.Builder{
+        val builder = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val channel = getNotifacationId().let { NotificationChannel(it.channelId,it.channelName,it.channelImportance) }
+            val manager =
+                getSystemService(IntentService.NOTIFICATION_SERVICE) as NotificationManager
+            manager.createNotificationChannel(channel)
+            NotificationCompat.Builder(this, NotificationConsts.CHANNEL_RECORD)
+        } else {
+            NotificationCompat.Builder(this)
+        }
+
+        return builder
+
+    }
+
+    protected fun setNotifacation(builder:NotificationCompat.Builder=notificationBuilder(),remoteView:RemoteViews):NotificationCompat.Builder{
+        builder.setContentIntent(pendingIntent())
+            .setLargeIcon(
+                BitmapFactory.decodeResource(resources, R.mipmap.ic_launcher)
+            )
+            .setSmallIcon(R.mipmap.ic_launcher)
+            .setContentTitle(getString(R.string.app_name))
+            .setContentText("点击开始新任务")
+            .setCustomContentView(remoteView)
+            .setWhen(System.currentTimeMillis())
+        return builder
+    }
+
+    protected fun startForeground(build: Notification) {
+        startForeground(getNotifacationId().id,build)
+    }
 
 
 

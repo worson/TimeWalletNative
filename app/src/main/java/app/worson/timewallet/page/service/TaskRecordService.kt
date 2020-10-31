@@ -8,12 +8,14 @@ import android.os.Binder
 import android.os.Build
 import android.os.IBinder
 import android.widget.RemoteViews
+import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.LifecycleOwner
 import app.worson.timewallet.R
 import app.worson.timewallet.module.notification.BaseNotificationService
+import app.worson.timewallet.module.notification.NotificationItem
 import app.worson.timewallet.module.notification.RemoteViewsEventHelper
 import app.worson.timewallet.page.MainActivity
 import com.worson.lib.appbasic.android.data.bundleStrInfo
@@ -25,7 +27,14 @@ class TaskRecordService : BaseNotificationService() {
 
     private val mRecordBinder = RecordBinder()
 
-
+    override fun getNotifacationId(): NotificationItem {
+        return NotificationItem(
+            NotificationConsts.ID_RECORDING,
+            NotificationConsts.CHANNEL_RECORD,
+            "时间钱包",
+            NotificationManager.IMPORTANCE_HIGH
+        )
+    }
 
     override fun onCreate() {
         super.onCreate()
@@ -36,55 +45,29 @@ class TaskRecordService : BaseNotificationService() {
             }
         })
 
-        val clickIntent = MainActivity.newTaskRecordIntent(this)
-        val pendingIntent = PendingIntent.getActivity(this, 0, clickIntent, 0)
-
-        val builder = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val channel = NotificationChannel(
-                CHANNEL_RECORD,
-                "时间钱包",
-                NotificationManager.IMPORTANCE_HIGH
-            )
-            val manager =
-                getSystemService(IntentService.NOTIFICATION_SERVICE) as NotificationManager
-            manager.createNotificationChannel(channel)
-            NotificationCompat.Builder(this, CHANNEL_RECORD)
-        } else {
-            NotificationCompat.Builder(this)
-        }
 
         val remoteView=RemoteViews(packageName,R.layout.notification_time_record)
-
         mRemoteViewsEventHelper=RemoteViewsEventHelper(this,remoteView){newIntent(this)}
         setOnclickListener(R.id.vgRoot,handleEventListener)
         setOnclickListener(R.id.tvTimeType,handleEventListener)
         setOnclickListener(R.id.ivCtrl,handleEventListener)
         setOnclickListener(R.id.ivPre,handleEventListener)
         setOnclickListener(R.id.ivNext,handleEventListener)
-
-
-
-        builder.setContentIntent(pendingIntent)
-            .setLargeIcon(
-                BitmapFactory.decodeResource(resources, R.mipmap.ic_launcher)
-            )
-            .setSmallIcon(R.mipmap.ic_launcher)
-            .setContentTitle(getString(R.string.app_name))
-            .setContentText("点击开始新任务")
-            .setCustomContentView(remoteView)
-            .setWhen(System.currentTimeMillis())
-
-
-        startForeground(ID_RECORDING, builder.build())
+        val builder=setNotifacation(remoteView = remoteView)
+        startForeground(builder.build())
         L.i(TAG, "onCreate")
 
     }
+
+
 
     val handleEventListener = {
         id:Int ->
         L.d(TAG) { "handleEventListener:${id.resName()} " }
         when(id){
-
+            R.id.tvTimeType -> {
+                TimeEventServiceManager.bindServer()
+            }
         }
     }
 
@@ -112,17 +95,12 @@ class TaskRecordService : BaseNotificationService() {
     }
 
     companion object {
-        const val ID_RECORDING = 2
-        const val CHANNEL_RECORD = "channel_id_record"
-
-
-        const val CODE_CLICK_CTRL = 1
-
 
 
         fun newIntent(context: Context): Intent {
             return Intent(context, TaskRecordService::class.java)
         }
+
         const val TAG = "RecordService"
     }
 
