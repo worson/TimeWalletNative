@@ -26,5 +26,7 @@ data class TimeRecordEntity (
 ){
     fun isTasking()= endTime==0L
 
+    fun isTimeTask()= estimatedTime!=0L
+
     fun costTimeMs() = System.currentTimeMillis()-startTime
 }

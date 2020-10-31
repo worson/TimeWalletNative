@@ -94,6 +94,11 @@ class TimeTaskFragment : Fragment() {
         state.leftTimeMs?.handleIfNotHandled {
             planTime.setText(TimeFormatUtil.offsetTimeMs(it))
         }
+        state.costTimeMs?.handleIfNotHandled {
+            state.record?.peekContent()?.let {
+                tvTimeCost.text=TimeFormatUtil.offsetTimeMs(it.costTimeMs())
+            }
+        }
 
     }
 

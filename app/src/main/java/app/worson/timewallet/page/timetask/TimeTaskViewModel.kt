@@ -37,10 +37,6 @@ class TimeTaskViewModel : BaseViewModel() {
     val liveData = liveData { emitSource(mLiveData) }
 
 
-    init {
-
-    }
-
     fun init(){
         L.d(TAG) { "init: " }
         launch(Dispatchers.IO) {
@@ -48,6 +44,7 @@ class TimeTaskViewModel : BaseViewModel() {
             dao.queryNotEnd(AccountSettings.uid).firstOrNull()?.let {
                 notifyViewState(viewState.copy(record = Event(it)))
                 startObserveCurrentRecord(it)
+                observeEstimateTime(it,it.isTimeTask())
             }
 
             val record = getRecord()
@@ -103,6 +100,7 @@ class TimeTaskViewModel : BaseViewModel() {
                 //block
                 L.i(TAG, "startTask: ${it}")
                 startObserveCurrentRecord(it)
+                observeEstimateTime(it,updateEstimate = false)
             }
         }
     }
@@ -136,20 +134,31 @@ class TimeTaskViewModel : BaseViewModel() {
         }
     }
 
-    private fun observeEstimateTime(record: TimeRecordEntity) {
+    private fun observeEstimateTime(record: TimeRecordEntity,updateEstimate:Boolean=true) {
         L.i(TAG, "observeEstimateTime: ${record} ")
-        if (record.estimatedTime<System.currentTimeMillis()){
-            L.w(TAG, "observeEstimateTime: error estimatedTime=${record.estimatedTime}")
-            return
+        if (updateEstimate){
+            if (record.estimatedTime<System.currentTimeMillis()){
+                L.w(TAG, "observeEstimateTime: error estimatedTime=${record.estimatedTime}")
+                return
+            }
         }
         resetObserveEstimateTime()
-        launch {
-            delay(TimeConstants.SEC*1L)
-            notifyViewState(
-                viewState.copy(
-                    leftTimeMs = Event(record.estimatedTime-System.currentTimeMillis())
+        taskTimeCountJob=launch(Dispatchers.IO) {
+            repeat(Int.MAX_VALUE){
+                delay(TimeConstants.SEC*1L)
+                notifyViewState(
+                    viewState.copy(
+                        costTimeMs = Event(System.currentTimeMillis()-record.startTime)
+                    ).let {
+                        if (updateEstimate){
+                            it.copy(leftTimeMs = Event(record.estimatedTime-System.currentTimeMillis()))
+                        }else{
+                            it
+                        }
+                    }
                 )
-            )
+            }
+
         }
     }
 
@@ -220,6 +229,7 @@ data class TimeTaskViewState(
     val timeEvent: Event<TimeEventEntity>? = null,
     val record: Event<TimeRecordEntity>? = null,
     val leftTimeMs: Event<Long>? = null,
+    val costTimeMs: Event<Long>? = null,
 ) {
 
 }

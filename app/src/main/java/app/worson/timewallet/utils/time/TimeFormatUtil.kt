@@ -30,7 +30,7 @@ object TimeFormatUtil {
                 seconds % 60
             )
         } else {
-            String.format(Locale.getDefault(), "%d${TIME_FORMAT_HOUR}%02d${TIME_FORMAT_SECOND}", seconds / 60, seconds % 60)
+            String.format(Locale.getDefault(), "%d${TIME_FORMAT_MINUTE}%02d${TIME_FORMAT_SECOND}", seconds / 60, seconds % 60)
         }
     }
 
