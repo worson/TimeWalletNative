@@ -30,7 +30,7 @@ abstract open class BaseNotificationService :LifecycleService(){
 
     protected lateinit var mNotification:Notification
 
-    abstract protected fun getNotifacationId():NotificationItem
+    abstract protected fun getNotifacationItem():NotificationItem
 
     protected fun pendingIntent():PendingIntent{
         val clickIntent = MainActivity.newTaskRecordIntent(this)
@@ -40,7 +40,7 @@ abstract open class BaseNotificationService :LifecycleService(){
 
     protected fun notificationBuilder():NotificationCompat.Builder{
         val builder = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val channel = getNotifacationId().let { NotificationChannel(it.channelId,it.channelName,it.channelImportance) }
+            val channel = getNotifacationItem().let { NotificationChannel(it.channelId,it.channelName,it.channelImportance) }
             val manager =
                 getSystemService(IntentService.NOTIFICATION_SERVICE) as NotificationManager
             manager.createNotificationChannel(channel)
@@ -68,11 +68,11 @@ abstract open class BaseNotificationService :LifecycleService(){
 
     protected fun startForeground(build: Notification) {
         mNotification=build
-        startForeground(getNotifacationId().id,build)
+        startForeground(getNotifacationItem().id,build)
     }
 
     protected fun updateNotification(){
-        NotificationManagerCompat.from(this).notify(getNotifacationId().id,mNotification)
+        NotificationManagerCompat.from(this).notify(getNotifacationItem().id,mNotification)
     }
 
 

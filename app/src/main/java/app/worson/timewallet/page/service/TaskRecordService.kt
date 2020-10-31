@@ -27,7 +27,7 @@ class TaskRecordService : BaseNotificationService() {
 
     private val mRecordBinder = RecordBinder()
 
-    override fun getNotifacationId(): NotificationItem {
+    override fun getNotifacationItem(): NotificationItem {
         return NotificationItem(
             NotificationConsts.ID_RECORDING,
             NotificationConsts.CHANNEL_RECORD,

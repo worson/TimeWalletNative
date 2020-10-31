@@ -22,7 +22,7 @@ import com.worson.lib.log.L
 class TimeEventService : BaseNotificationService() {
 
 
-    override fun getNotifacationId(): NotificationItem {
+    override fun getNotifacationItem(): NotificationItem {
         return NotificationItem( NotificationConsts.ID_TIME_EVENT,
             NotificationConsts.CHANNEL_TIME_EVENT,
             "时间钱包2",

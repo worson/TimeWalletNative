@@ -79,7 +79,7 @@ class StepCountingService: BaseNotificationService(), SensorEventListener {
 
     private lateinit var remoteView:RemoteViews
 
-    override fun getNotifacationId(): NotificationItem {
+    override fun getNotifacationItem(): NotificationItem {
         return NotificationItem( NotificationConsts.ID_TIME_EVENT,
             NotificationConsts.CHANNEL_TIME_EVENT,
             "时间钱包2",
