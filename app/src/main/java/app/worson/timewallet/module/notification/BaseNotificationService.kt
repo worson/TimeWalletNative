@@ -6,6 +6,7 @@ import android.graphics.BitmapFactory
 import android.os.Build
 import android.widget.RemoteViews
 import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
 import androidx.lifecycle.LifecycleService
 import app.worson.timewallet.R
 import app.worson.timewallet.page.MainActivity
@@ -26,6 +27,8 @@ data class NotificationItem(
 abstract open class BaseNotificationService :LifecycleService(){
 
     protected var mRemoteViewsEventHelper:RemoteViewsEventHelper?=null
+
+    protected lateinit var mNotification:Notification
 
     abstract protected fun getNotifacationId():NotificationItem
 
@@ -64,7 +67,12 @@ abstract open class BaseNotificationService :LifecycleService(){
     }
 
     protected fun startForeground(build: Notification) {
+        mNotification=build
         startForeground(getNotifacationId().id,build)
+    }
+
+    protected fun updateNotification(){
+        NotificationManagerCompat.from(this).notify(getNotifacationId().id,mNotification)
     }
 
 

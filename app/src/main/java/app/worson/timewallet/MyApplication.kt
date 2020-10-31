@@ -1,5 +1,6 @@
 package app.worson.timewallet
 
+import android.Manifest
 import android.app.Application
 import android.util.Log
 import androidx.work.OneTimeWorkRequest
@@ -7,6 +8,7 @@ import androidx.work.WorkManager
 import app.worson.timewallet.db.TimeWalletDb
 import app.worson.timewallet.page.service.TaskRecordServiceManager
 import app.worson.timewallet.page.service.TimeEventServiceManager
+import app.worson.timewallet.test.module.stepcounter.StepCountingService
 import app.worson.timewallet.test.module.workmanager.TestWorker
 import app.worson.timewallet.test.module.workmanager.TimerWorker
 import com.langogo.lib.log.internal.Platform
@@ -30,12 +32,19 @@ class MyApplication: Application() {
 //        TimeEventServiceManager.bindServer()
         TaskRecordServiceManager.bindServer()
         initTask()
+
+        initTest()
+    }
+
+    private fun initTest() {
+        StepCountingService.bindServer()
     }
 
     private fun initTask() {
         L.i(TAG, "initTask: ")
         TestWorker.start()
         TimerWorker.start()
+
     }
 
     fun initConsolePrint(debug:Boolean){

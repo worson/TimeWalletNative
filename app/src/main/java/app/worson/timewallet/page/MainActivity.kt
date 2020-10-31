@@ -1,7 +1,9 @@
 package app.worson.timewallet.page
 
+import android.Manifest
 import android.content.Context
 import android.content.Intent
+import android.hardware.Sensor
 import android.os.Bundle
 import android.view.Menu
 import androidx.lifecycle.Lifecycle
@@ -22,6 +24,9 @@ import app.worson.timewallet.page.timetask.TimeTaskFragment
 import app.worson.timewallet.test.page.TestMainFragment
 import com.blankj.utilcode.util.BarUtils
 import com.blankj.utilcode.util.FragmentUtils
+import com.permissionx.guolindev.PermissionX
+import com.permissionx.guolindev.callback.RequestCallback
+import com.permissionx.guolindev.request.PermissionBuilder
 import com.worson.lib.appbasic.android.data.bundleStrInfo
 import com.worson.lib.log.L
 
@@ -51,9 +56,11 @@ class MainActivity : BaseActivity() {
         val navController = findNavController(R.id.nav_host_fragment)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
-        val appBarConfiguration = AppBarConfiguration(setOf(
-            R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications
-        ))
+        val appBarConfiguration = AppBarConfiguration(
+            setOf(
+                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications
+            )
+        )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
         initTimeTask()
@@ -65,6 +72,17 @@ class MainActivity : BaseActivity() {
             }
         })
 //        navView.invisible()
+        PermissionX.init(this).permissions(Manifest.permission.ACTIVITY_RECOGNITION)
+            .request(object :
+                RequestCallback {
+                override fun onResult(
+                    allGranted: Boolean,
+                    grantedList: MutableList<String>?,
+                    deniedList: MutableList<String>?
+                ) {
+                    L.i(TAG, "onResult: allGranted ${allGranted} ")
+                }
+            })
     }
 
     val mTestMainFragment by lazy {
