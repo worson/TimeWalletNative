@@ -2,9 +2,13 @@ package app.worson.timewallet
 
 import android.app.Application
 import android.util.Log
+import androidx.work.OneTimeWorkRequest
+import androidx.work.WorkManager
 import app.worson.timewallet.db.TimeWalletDb
 import app.worson.timewallet.page.service.TaskRecordServiceManager
 import app.worson.timewallet.page.service.TimeEventServiceManager
+import app.worson.timewallet.test.module.workmanager.TestWorker
+import app.worson.timewallet.test.module.workmanager.TimerWorker
 import com.langogo.lib.log.internal.Platform
 import com.worson.lib.log.L
 import com.worson.lib.log.LogConfiguration
@@ -25,6 +29,13 @@ class MyApplication: Application() {
         L.i(TAG, { "onCreate: " })
 //        TimeEventServiceManager.bindServer()
         TaskRecordServiceManager.bindServer()
+        initTask()
+    }
+
+    private fun initTask() {
+        L.i(TAG, "initTask: ")
+        TestWorker.start()
+        TimerWorker.start()
     }
 
     fun initConsolePrint(debug:Boolean){
