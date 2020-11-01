@@ -8,9 +8,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.PopupMenu
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
-import androidx.lifecycle.observe
+import androidx.lifecycle.*
 import androidx.recyclerview.widget.LinearLayoutManager
 import app.worson.timewallet.R
 import app.worson.timewallet.db.entity.TimeEventEntity
@@ -18,6 +16,7 @@ import app.worson.timewallet.db.entity.TimeRecordEntity
 import app.worson.timewallet.module.viewex.currentCalendar
 import app.worson.timewallet.module.viewex.dayFormatString
 import app.worson.timewallet.module.viewex.differDays
+import app.worson.timewallet.page.MainActivity
 import app.worson.timewallet.page.eventtype.TimeEventSelectDialogFragment
 import app.worson.timewallet.page.eventtype.TimeEventViewModel
 import app.worson.timewallet.page.eventtype.TimeEventViewState
@@ -55,6 +54,11 @@ class HomeFragment : Fragment() {
             savedInstanceState: Bundle?
     ): View? {
         setHasOptionsMenu(true)
+        lifecycle.addObserver(object : LifecycleEventObserver {
+            override fun onStateChanged(source: LifecycleOwner, event: Lifecycle.Event) {
+                L.d(TAG) { "onStateChanged: event ${event} " }
+            }
+        })
         homeViewModel =
                 ViewModelProviders.of(this).get(HomeViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_home, container, false)
@@ -65,6 +69,7 @@ class HomeFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        L.i(TAG, "onViewCreated: ")
         btTask.setOnClickListener{
 //            showTimeEventSelect()
             L.i(TAG, "notifyDataSetChanged: ")
@@ -211,7 +216,7 @@ class HomeFragment : Fragment() {
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         L.d(TAG) { "onCreateOptionsMenu: " }
         menu.clear()
-        inflater.inflate(R.menu.test_menu_main,menu)
+        inflater.inflate(R.menu.menu_home_home,menu)
         super.onCreateOptionsMenu(menu, inflater)
     }
 
