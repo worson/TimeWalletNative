@@ -6,6 +6,7 @@ import android.content.Intent
 import android.hardware.Sensor
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.LifecycleOwner
@@ -145,7 +146,7 @@ class MainActivity : BaseActivity() {
         return super.onCreateOptionsMenu(menu);
     }*/
 
-    override fun onOptionsMenuClosed(menu: Menu?) {
+    override fun onOptionsMenuClosed(menu: Menu) {
         L.d(TAG, { "onOptionsMenuClosed: " })
         super.onOptionsMenuClosed(menu)
     }
@@ -155,10 +156,10 @@ class MainActivity : BaseActivity() {
         L.d(TAG) { "onBackPressed: " }
     }
 
-    /*override fun onOptionsItemSelected(item: MenuItem): Boolean {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
         L.d(TAG, { "onOptionsItemSelected: ${item.title}" })
         return super.onOptionsItemSelected(item)
-    }*/
+    }
 
     companion object{
         val  TAG = "MainActivity"

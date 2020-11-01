@@ -37,7 +37,7 @@ class MyApplication: Application() {
     }
 
     private fun initTest() {
-        StepCountingService.bindServer()
+//        StepCountingService.bindServer()
     }
 
     private fun initTask() {

@@ -22,6 +22,7 @@ import app.worson.timewallet.page.eventtype.TimeEventSelectDialogFragment
 import app.worson.timewallet.page.eventtype.TimeEventViewModel
 import app.worson.timewallet.page.eventtype.TimeEventViewState
 import app.worson.timewallet.page.home.MainViewModel
+import app.worson.timewallet.test.page.TestMainFragment
 import com.worson.lib.appbasic.view.rvhelper.DefaultItemDiff
 import com.blankj.utilcode.util.FragmentUtils
 import com.chad.library.adapter.base.BaseQuickAdapter
@@ -53,6 +54,7 @@ class HomeFragment : Fragment() {
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
+        setHasOptionsMenu(true)
         homeViewModel =
                 ViewModelProviders.of(this).get(HomeViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_home, container, false)
@@ -204,5 +206,16 @@ class HomeFragment : Fragment() {
                 })
             .setNegativeButton("取消", null)
         alertDialogBuilder.show()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        L.d(TAG) { "onCreateOptionsMenu: " }
+        menu.clear()
+        inflater.inflate(R.menu.test_menu_main,menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return super.onOptionsItemSelected(item)
     }
 }

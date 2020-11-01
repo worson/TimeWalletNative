@@ -9,6 +9,9 @@ import com.blankj.utilcode.util.GsonUtils
 import com.google.gson.annotations.SerializedName
 import com.worson.lib.log.L
 import org.jetbrains.annotations.NotNull
+import java.io.File
+import java.io.FileInputStream
+import java.io.InputStream
 
 /**
  * @author worson  10.23 2020
@@ -43,9 +46,17 @@ data class TLAllRecord(
 class TimeLogImport {
     val walletDb= TimeWalletDb.instance
 
-    suspend fun importFile(assetPath:String){
+    suspend fun importAssetFile(assetPath:String){
         val inputStream =
             GlobalContext.instance.assets.open(assetPath)
+        import(inputStream)
+    }
+
+    suspend fun importFile(file:File){
+        import(FileInputStream(file))
+    }
+
+    suspend fun import(inputStream:InputStream){
         val defaultDataStr = String(inputStream.readBytes())
         val defaultData =
             GsonUtils.fromJson(defaultDataStr, TLAllRecord::class.java)
