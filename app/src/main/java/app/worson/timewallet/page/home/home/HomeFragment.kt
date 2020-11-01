@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import app.worson.timewallet.R
 import app.worson.timewallet.db.entity.TimeEventEntity
 import app.worson.timewallet.db.entity.TimeRecordEntity
+import app.worson.timewallet.module.viewex.currentCalendar
 import app.worson.timewallet.module.viewex.dayFormatString
 import app.worson.timewallet.module.viewex.differDays
 import app.worson.timewallet.page.eventtype.TimeEventSelectDialogFragment
@@ -44,8 +45,8 @@ class HomeFragment : Fragment() {
     private var mTimeEventMap:MutableMap<Int,TimeEventEntity> = mutableMapOf()
     private val mAdapter: TimeRecordAdapter = TimeRecordAdapter(mutableListOf())
 
-    var currentDifferDay=18549
-//    var currentDifferDay=currentCalendar().differDays()
+//    var currentDifferDay=18549
+    var currentDifferDay=currentCalendar().differDays()
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -73,7 +74,7 @@ class HomeFragment : Fragment() {
         initTimeEvents()
         initCanlender()
         initTest()
-        mMainViewModel.showTimeTask(true)
+//        mMainViewModel.showTimeTask(true)
     }
 
     private fun initTest() {

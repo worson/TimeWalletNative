@@ -9,7 +9,7 @@ fun currentCalendar()=Calendar().apply {
     val date=Date()
     val calendar=java.util.Calendar.getInstance()
     year=calendar.get(java.util.Calendar.YEAR)
-    month=calendar.get(java.util.Calendar.MONTH)
+    month=calendar.get(java.util.Calendar.MONTH)+1
     day=calendar.get(java.util.Calendar.DATE)
 }
 
