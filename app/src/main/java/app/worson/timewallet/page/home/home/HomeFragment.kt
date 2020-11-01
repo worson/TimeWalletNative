@@ -2,10 +2,7 @@ package app.worson.timewallet.page.home.home
 
 import android.content.DialogInterface
 import android.os.Bundle
-import android.view.Gravity
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.PopupMenu
@@ -90,12 +87,14 @@ class HomeFragment : Fragment() {
             popupMenu.getMenuInflater().inflate(R.menu.menu_time_record_list_item, popupMenu.getMenu())
             popupMenu.show()
             // 通过上面这几行代码，就可以把控件显示出来了
-            /*popupMenu.setOnMenuItemClickListener(object : MenuItem.OnMenuItemClickListener {
-                override fun onMenuItemClick(item: MenuItem?): Boolean {
-                    true
+            popupMenu.setOnMenuItemClickListener{
+                item ->
+                when(item.itemId){
+                    R.id.it_delete -> mTimeRecordViewModel.delete((a.getItem(p) as TimeRecordItem).timeRecord)
                 }
-            })
-            popupMenu.setOnDismissListener(object : PopupMenu.OnDismissListener {
+                true
+            }
+            /*popupMenu.setOnDismissListener(object : PopupMenu.OnDismissListener {
                 fun onDismiss(menu: PopupMenu?) {
                     // 控件消失时的事件
                 }

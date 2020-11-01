@@ -69,6 +69,12 @@ class TimeRecordViewModel : ViewModel(){
         }
     }
 
+    fun delete(recordEntity: TimeRecordEntity){
+        viewModelScope.launch(Dispatchers.IO){
+            recordDao.deleteEvent(recordEntity.uid,recordEntity.id)
+        }
+    }
+
 
     private fun notifyList(list:MutableList<TimeRecordEntity>){
         mRecordsLive.postValue(list)

@@ -1,23 +1,25 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/next"
+        android:id="@+id/it_delete"
         android:icon="@mipmap/ic_launcher"
-        android:title="菜单一"/>
+        android:title="删除"/>
 
     <item
-        android:id="@+id/add"
+        android:id="@+id/it_add"
         android:icon="@mipmap/ic_launcher"
-        android:title="菜单二"/>
+        android:title="向后添加"/>
 
     <item
-        android:id="@+id/detail"
+        android:id="@+id/it_start_time"
         android:icon="@mipmap/ic_launcher"
-        android:title="菜单三"/>
+        android:title="调整开始时间"/>
 
     <item
-        android:id="@+id/del"
+        android:id="@+id/it_end_time"
         android:icon="@mipmap/ic_launcher"
-        android:title="菜单四"/>
+        android:title="调整结束时间"/>
+
+
 
 </menu>

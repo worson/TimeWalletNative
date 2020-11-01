@@ -15,7 +15,7 @@ interface TimeRecordEntityDao {
     suspend fun addOrReplace(event: TimeRecordEntity)
 
     @Query("DELETE FROM TimeRecordEntity WHERE uid = :uid AND id = :id")
-    suspend fun deleteEvent(uid: String, id: String)
+    suspend fun deleteEvent(uid: String, id: Int)
 
     @Query("SELECT * FROM TimeRecordEntity WHERE uid = :uid AND dayTimestamp = :dayTimestamp")
     fun queryEventsFlow(uid: String,dayTimestamp:Int): Flow<MutableList<TimeRecordEntity>>
