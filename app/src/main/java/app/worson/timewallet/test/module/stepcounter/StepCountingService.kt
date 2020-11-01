@@ -4,15 +4,12 @@ package app.worson.timewallet.test.module.stepcounter
  * @author wangshengxing  10.31 2020
  */
 import android.app.*
-import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
-import android.content.ServiceConnection
 import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
-import android.os.IBinder
 import android.widget.RemoteViews
 import androidx.core.content.ContextCompat
 import app.worson.timewallet.R
@@ -31,9 +28,6 @@ class StepCountingService: BaseNotificationService(), SensorEventListener {
 
     companion object {
         val TAG="StepCountingService"
-        const val BROADCAST_ACTION = "com.aceplus.steptracker"
-        const val COUNT_RESULT = "count_result"
-        const val DETECT_RESULT = "detect_result"
 
         fun newIntent(context: Context): Intent {
             return Intent(context, StepCountingService::class.java)
@@ -42,16 +36,6 @@ class StepCountingService: BaseNotificationService(), SensorEventListener {
         private val mIntent
             get() = newIntent(GlobalContext.instance)
 
-        private val mConn = object : ServiceConnection {
-            override fun onServiceDisconnected(name: ComponentName?) {
-                L.i(TAG) {"onServiceDisconnected $name"}
-            }
-
-            override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
-                L.i(TAG) {"onServiceConnected $name"}
-            }
-
-        }
 
         fun bindServer() {
             L.i(TAG, "bindServer: ")
@@ -59,15 +43,11 @@ class StepCountingService: BaseNotificationService(), SensorEventListener {
                 GlobalContext.instance,
                 mIntent
             )
-            GlobalContext.instance.bindService(
-                mIntent,
-                mConn, Context.BIND_AUTO_CREATE)
 
         }
 
         fun unbindServer() {
             L.i(TAG, "unbindServer: ")
-            GlobalContext.instance.unbindService(mConn)
             GlobalContext.instance.stopService(mIntent)
 
         }

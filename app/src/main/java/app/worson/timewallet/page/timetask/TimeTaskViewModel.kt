@@ -187,6 +187,7 @@ class TimeTaskViewModel : BaseViewModel() {
             return
         }
         launch(Dispatchers.IO) {
+            L.i(TAG, "updateRecord: ${record}")
             TimeRecordSource.dao.addOrReplace(record)
         }
     }

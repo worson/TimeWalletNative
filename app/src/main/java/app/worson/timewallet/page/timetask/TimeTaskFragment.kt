@@ -69,7 +69,7 @@ class TimeTaskFragment : Fragment() {
     }
 
     private fun observeTaskViewState(state: TimeTaskViewState) {
-        L.d(TAG) { "observeTaskViewState: " }
+//        L.d(TAG) { "observeTaskViewState: " }
         state.timeEvent?.handleIfNotHandled {
             L.d(TAG) { "observeTaskViewState: timeEvent ${it}" }
             tvTaskEvent.setText(it.descDisplay())
@@ -80,7 +80,7 @@ class TimeTaskFragment : Fragment() {
             if (it.isTasking()){
                 btStart.text="结束"
                 tvTimeCost.text=TimeFormatUtil.offsetTimeMs(it.costTimeMs())
-                etTaskThing.setText(it.thing)
+//                etTaskThing.setText(it.thing)
             }else{
                 btStart.text="开始"
                 tvTimeCost.text=TimeFormatUtil.offsetTimeMs(0)
@@ -88,6 +88,7 @@ class TimeTaskFragment : Fragment() {
             }
             val orgin=etTaskThing.text.toString()
             if (it.thing!=orgin){
+                L.i(TAG, "observeTaskViewState:TaskThing orgin=${orgin}, thing=${it.thing} ")
                 etTaskThing.setText(it.thing)
             }
         }
@@ -108,6 +109,7 @@ class TimeTaskFragment : Fragment() {
         btStart.setOnClickListener {
             if (mTaskViewModel.isTasking()) {
                 mTaskViewModel.stopTask()
+                mTaskViewModel.startTask(thing = etTaskThing.text.toString())
             }else{
                 mTaskViewModel.startTask(thing = etTaskThing.text.toString())
             }
