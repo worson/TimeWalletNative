@@ -44,7 +44,7 @@ open class DataBindingListAdapter<T, DB : ViewDataBinding>(
         onBind?.invoke(
             binding,
             item,
-            convertRealDataPosition(position),
+            position,
             payloads
         )
 

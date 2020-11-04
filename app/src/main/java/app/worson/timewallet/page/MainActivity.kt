@@ -107,8 +107,8 @@ class MainActivity : BaseActivity() {
 
     private fun observeMainViewState(viewState: MainViewState) {
         viewState.showTimeTask?.handleIfNotHandled {
-//            showTestFragments()
-            showHideTimeTaskFragment(it)
+            showTestFragments()
+//            showHideTimeTaskFragment(it)
         }
         viewState.fullScreen?.handleIfNotHandled {
             showFullScreen(it)

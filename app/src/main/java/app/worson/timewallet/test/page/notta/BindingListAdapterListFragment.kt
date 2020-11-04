@@ -1,7 +1,9 @@
 package app.worson.timewallet.test.page.notta
 
 import android.os.Bundle
+import android.text.Editable
 import android.view.*
+import android.widget.EditText
 import androidx.databinding.ViewDataBinding
 import androidx.databinding.library.baseAdapters.BR
 import androidx.recyclerview.widget.DiffUtil
@@ -9,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import app.worson.timewallet.R
 import app.worson.timewallet.databinding.TestItemSmartnoteBinding
 import app.worson.timewallet.test.page.base.TestFragment
+import app.worson.timewallet.view.custom.DefaultInputHandler
 import com.worson.lib.appbasic.view.extend.disableEdit
 import com.worson.lib.appbasic.view.extend.enableEdit
 import com.worson.lib.appbasic.view.rvhelper.DataBindingListAdapter
@@ -16,6 +19,7 @@ import com.worson.lib.appbasic.view.rvhelper.DataBindingViewHolder
 import com.worson.lib.log.L
 import kotlinx.android.synthetic.main.fragment_event_list_select_dialog.*
 import java.lang.Math.random
+import kotlin.math.min
 
 data class SmartNoteItem (
     val id: String,
@@ -41,12 +45,12 @@ class BindingListAdapterListFragment : TestFragment() {
             payloads: MutableList<Any>
         ) {
             super.onBindViewHolder(holder, position, payloads)
-            L.d(TAG) { "onBindViewHolder: with payloads ${payloads}" }
+//            L.d(TAG) { "onBindViewHolder: with payloads ${payloads}" }
         }
 
         override fun onBindViewHolder(holder: DataBindingViewHolder<DB>, position: Int) {
             super.onBindViewHolder(holder, position)
-            L.i(TAG, "onBindViewHolder: ")
+//            L.i(TAG, "onBindViewHolder: ")
         }
     }
 
@@ -95,28 +99,76 @@ class BindingListAdapterListFragment : TestFragment() {
             R.layout.test_item_smartnote,
             BR.item,
             diff
-        ){ db, noteItem, position, payload ->
+        ){ db, noteItem, position, payloads ->
             L.d(TAG) { "bind: position=$position,item=${noteItem}" }
 
-            if (!payload.isEmpty()) {
-                val bundle = payload[0] as Bundle
-                L.d(TAG) { "bind: payload got position=$position,bundle=${bundle}" }
-                bundle.keySet().forEach {
-                    if (it == diff.keyIsEdit){
-                        val isEdit=bundle.getBoolean(diff.keyIsEdit)
-                        L.d(TAG, "bind:addTextChangedListener position=${position},isEdit=${isEdit}")
-                        if (isEdit) { //mSmartNoteViewModel.mEditState
-                            db.tvOriginal.enableEdit()
-                        }else{
-                            db.tvOriginal.disableEdit()
-                        }
-                    }
-
-                    if (it == diff.keyName) {
-                        db.tvOriginal.setText(bundle.getString(it))
-                    }
-
+            fun removeHandler(){
+                db.tvOriginal.tag?.let {
+                    it as InputHandler
+                    db.tvOriginal.removeTextChangedListener(it)
                 }
+                db.tvOriginal.tag=null
+            }
+
+            fun resetHandler(){
+                removeHandler()
+                val inputHandler =
+                    InputHandler(db.tvOriginal, position, noteItem.id,noteItem)
+
+                db.tvOriginal.addTextChangedListener(inputHandler)
+                db.tvOriginal.inputConnectionHandler = inputHandler
+                db.tvOriginal.tag = inputHandler
+            }
+
+            if (!payloads.isEmpty()) {
+                val bundle = if (payloads.isNotEmpty()) {
+                    payloads.find { it is Bundle } as? Bundle
+                } else null
+
+                if (bundle!=null){
+                    L.d(TAG) { "bind: payloads got position=$position,bundle=${bundle}" }
+                    bundle.keySet().forEach {
+                        if (it == diff.keyIsEdit){
+                            val isEdit=bundle.getBoolean(diff.keyIsEdit)
+                            L.d(TAG, "bind:addTextChangedListener position=${position},isEdit=${isEdit}")
+                            if (isEdit) { //mSmartNoteViewModel.mEditState
+                                db.tvOriginal.enableEdit()
+                            }else{
+                                db.tvOriginal.disableEdit()
+                            }
+                        }
+
+                        if (it == diff.keyName) {
+                            db.tvOriginal.setText(bundle.getString(it))
+                        }
+
+                    }
+                }
+
+                val focusPosition = if (payloads.isNotEmpty()) {
+                    payloads.find { it is FocusPosition } as? FocusPosition
+                } else null
+                if (focusPosition!=null){
+                    if (focusPosition.position == position) {
+                        resetHandler()
+                        db.tvOriginal.requestFocus()
+                        db.tvOriginal.setSelection(
+                            db.tvOriginal.text?.length ?:0
+                        )
+                        L.i(TAG, "handle focus position:$focusPosition,${db.tvOriginal.text}")
+                    }
+                }
+
+                val updatePosition = if (payloads.isNotEmpty()) {
+                    payloads.find { it is UpdatePosition } as? UpdatePosition
+                } else null
+                if (updatePosition!=null){
+                    if (updatePosition.line == position) {
+                        removeHandler()
+                        L.i(TAG, "handle updatePosition:$updatePosition")
+                    }
+                }
+
             }else{
                 if (noteItem.isEdit) { //mSmartNoteViewModel.mEditState
                     db.tvOriginal.enableEdit()
@@ -125,11 +177,19 @@ class BindingListAdapterListFragment : TestFragment() {
                 }
             }
 
+
+
             if(noteItem.isEdit){
+
                 db.tvOriginal.setOnLongClickListener(null)
                 db.tvOriginal.setOnTouchListener(null)
                 db.tvOriginal.setOnTouchListener(null)
+
+                resetHandler()
+
             }else{
+                removeHandler()
+
                 db.tvOriginal.setOnTouchListener { v, event ->
                     when (event.action) {
                         MotionEvent.ACTION_DOWN -> {
@@ -150,14 +210,141 @@ class BindingListAdapterListFragment : TestFragment() {
         rvView.setLayoutManager(LinearLayoutManager(requireContext()))
         rvView.adapter = mAdapter
 
+        mData?.clear()
         mData?.apply {
-            for (i in 0 .. 10){
-                add(SmartNoteItem(id=i.toString(),original = "${i}. 这是一条测试笔记"))
+            for (i in 0 .. 30){
+                add(SmartNoteItem(id=i.toString(),original = "${i}. 这是一条测试笔记",isEdit = true))
             }
             mAdapter.submitList(this)
 
         }
 
+
+    }
+
+    data class FocusPosition(
+        val position: Int,
+    )
+
+    data class UpdatePosition(
+        val line: Int,
+    )
+
+    inner class InputHandler(
+        private val editText: EditText,
+        private val position: Int,
+        val id: String,
+        val item:SmartNoteItem
+    ) : DefaultInputHandler() {
+
+
+
+        fun findPositon():Int{
+            return mData.indexOf(item)
+        }
+
+        override fun sendKeyEvent(event: KeyEvent): Boolean {
+            if (event.keyCode == KeyEvent.KEYCODE_ENTER) {
+                if (event.action == KeyEvent.ACTION_UP) {
+                    L.i(TAG, "sendKeyEvent: KEYCODE_ENTER ,position=${position}")
+                }
+            }
+
+            if (event.keyCode == KeyEvent.KEYCODE_DEL && event.action == KeyEvent.ACTION_UP) {
+                L.i(TAG, "sendKeyEvent: KEYCODE_DEL ,position=${position},selectionStart=${editText.selectionStart}")
+                if (editText.selectionStart == 0 && position != 0) {
+                    L.i(TAG, "sendKeyEvent: KEYCODE_DEL ,position=${position} , selectionStart==0")
+
+
+//                    mAdapter.notifyItemRemoved(position)
+//                    mAdapter.notifyItemChanged(position)
+                    /*mAdapter.submitList(mData.map { it.copy() }){
+                        rvView.smoothScrollToPosition(position)
+                    }*/
+
+                    L.i(TAG, "sendKeyEvent: removeAt ${mAdapter.currentList.removeAt(position)}")
+
+                    mAdapter.notifyDataSetChanged()
+
+                    rvView.postDelayed({
+                        mAdapter.notifyItemChanged(position-1,FocusPosition(position = position-1))
+                        rvView.smoothScrollToPosition(min(rvView.childCount,position))
+                    },10)
+
+                    /*val dataIndex=mData.indexOf(item)
+                    if (dataIndex>0){
+                        L.i(TAG, "sendKeyEvent: dataIndex ${dataIndex}")
+                        mData.removeAt(dataIndex)
+                        mAdapter.notifyItemRemoved(dataIndex)
+                        mAdapter.submitList(mData.map { it.copy() }){
+                            val preIndex=dataIndex-1
+                            if (preIndex>=0){
+                                rvView.postDelayed({
+                                    mAdapter.notifyItemChanged(preIndex,FocusPosition(line = preIndex))
+                                    rvView.smoothScrollToPosition(preIndex)
+                                },1)
+
+
+                            }
+                        }
+                    }*/
+
+
+
+
+                    return true
+                }
+            }
+
+            return false
+        }
+
+        override fun setSelection(start: Int, end: Int): Boolean {
+            return false
+        }
+
+        var beforeText = ""
+        var before = 0
+        var start = 0
+        var count = 0
+
+        override fun afterTextChanged(s: Editable?) {
+            if (s == null) {
+                return
+            }
+            val afterText = s.toString()
+            val deleteIndex = start + before
+            val insertIndex = start + count
+            if (before != 0) {
+                L.d(TAG) { "delete position:$position, before: $beforeText, after: $afterText, startIndex:$start, stopIndex:$deleteIndex" }
+//                onUserEditCallback?.onTextChanged(position, null, start, deleteIndex)
+            }
+            if (count != 0) {
+                val subText = afterText.substring(start, insertIndex)
+                L.d(TAG ) { "insert position:$position, before: $beforeText, after: $afterText, subText:$subText, startIndex:$start, stopIndex:$insertIndex" }
+//                onUserEditCallback?.onTextChanged(position, subText, start, insertIndex)
+            }
+        }
+
+        override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            if (s == null) {
+                return
+            }
+            beforeText = s.toString()
+        }
+
+        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            if (s == null) {
+                return
+            }
+            this.start = start
+            this.before = before
+            this.count = count
+            L.d(TAG) {
+                "!@# onTextChanged s:$s, start:$start, before:$before, count:$count"
+            }
+            mData.getOrNull(findPositon())?.original=s.toString()
+        }
 
     }
 
@@ -175,15 +362,13 @@ class BindingListAdapterListFragment : TestFragment() {
         super.onCreateOptionsMenu(menu, inflater)
     }
 
+
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         L.d(TAG) { "onOptionsItemSelected: ${item.title}" }
         when(item.itemId){
             R.id.edit_enable -> {
-                mData.forEach {
-                    it.isEdit=true
-                }
-                mAdapter.submitList(mData)
-                mAdapter.notifyDataSetChanged()
+                mAdapter.submitList(mData.map { it.copy(isEdit = true) })
             }
 
             R.id.edit_disable -> {

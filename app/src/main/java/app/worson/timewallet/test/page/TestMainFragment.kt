@@ -70,6 +70,10 @@ class TestMainFragment : TestFragment() {
         }
 
         mAdapter.setDiffNewData(mData)
+        rvView.postDelayed({
+            rvView.getChildAt(1).performClick()
+        },200)
+
 
     }
 

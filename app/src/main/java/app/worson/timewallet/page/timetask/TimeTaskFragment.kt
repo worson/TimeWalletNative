@@ -152,7 +152,7 @@ class TimeTaskFragment : Fragment() {
     }
 
     private fun fullscreen(fullSreen: Boolean) {
-        mMainViewModel.fullScreen(fullSreen)
+//        mMainViewModel.fullScreen(fullSreen)
     }
 
 

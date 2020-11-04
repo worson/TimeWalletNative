@@ -81,7 +81,7 @@ class HomeFragment : Fragment() {
         initTimeEvents()
         initCanlender()
         initTest()
-//        mMainViewModel.showTimeTask(true)
+        mMainViewModel.showTimeTask(true)
     }
 
     private fun initTest() {
